@@ -150,8 +150,8 @@
                 
                 [self.navigationController pushViewController:homeVC animated:YES];
             } else {
-//                NSString *url = [NSString stringWithFormat:@"http://192.168.0.66/CodeIgniter-3.0.0/index.php/Login/LoginProcess?email=%@&password=%@", email, password];
-                NSString *url = [NSString stringWithFormat:@"http://52.26.240.113/Porsche/index.php/Login/LoginProcess?email=%@&password=%@", email, password];
+                NSString *url = [NSString stringWithFormat:@"%@index.php/Login/LoginProcess?email=%@&password=%@", BASE_URL, email, password];
+//                NSString *url = [NSString stringWithFormat:@"%@index.php/Login/LoginProcess?email=%@&password=%@", BASE_URL, email, password];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
                 
                 self.txtEmail.text = @"";

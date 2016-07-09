@@ -7,6 +7,7 @@
 //
 
 #import "WebConnector.h"
+#import "Global.h"
 
 @implementation WebConnector
 
@@ -15,6 +16,9 @@
 //        baseUrl = @"http://localhost/CodeIgniter-3.0.0/index.php/mobile/Mobile/";
         baseUrl = @"http://192.168.1.87/porsche/index.php/mobile/Mobile/";
 //        baseUrl = @"http://52.26.240.113/Porsche/index.php/mobile/Mobile/";
+        
+        baseUrl = [NSString stringWithFormat:@"%@index.php/mobile/Mobile", BASE_URL];
+        
         NSURL *url = [NSURL URLWithString:baseUrl];
         
         httpManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];        

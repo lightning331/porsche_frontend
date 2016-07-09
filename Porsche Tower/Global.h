@@ -11,6 +11,10 @@
 //Porsh Design Font Name
 #define NAME_OF_MAINFONT @"PorscheDesignFont"
 
+#define BASE_URL         @"http://192.168.1.87/porsche/"
+//#define BASE_URL         @"http://52.26.240.113/porsche/"
+
+
 #define CATEGORY_ARRAY @[@"Car Elevator", @"In-Unit", @"Car Concierge", @"Pool & Beach", @"Wellness", @"Activities", @"Dining", @"Documents", @"Information Board", @"Local Info", @"Concierge"]
 
 #define CATEGORY_COUNT CATEGORY_ARRAY.count
