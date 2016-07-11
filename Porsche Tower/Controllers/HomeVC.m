@@ -760,7 +760,7 @@
                 showroomBookingVC.type = @"detailing";
             } else if (index == 1) {
                 showroomBookingVC.type = @"service_car";
-            } else if (index == 1) {
+            } else if (index == 2) {
                 showroomBookingVC.type = @"storage";
             }
             
