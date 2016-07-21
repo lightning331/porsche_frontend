@@ -76,6 +76,7 @@
             
             NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
             if ([result[@"status"] isEqualToString:@"success"]) {
+                
                 pickup = [result[@"index"] mutableCopy];
                 self.delayTime = [result[@"delay"] integerValue];
                 sendTime = [result[@"send_time"] mutableCopy];

@@ -40,12 +40,15 @@
         if ([result[@"status"] isEqualToString:@"success"]) {
             carInfoArray = [[NSMutableArray alloc] initWithArray:[result[@"car_info_list"] mutableCopy]];
             
+            NSLog(@"%@", carInfoArray);
+            
             for (int i = 0; i < carInfoArray.count; i++) {
                 NSMutableDictionary *carInfo = [carInfoArray[i] mutableCopy];
                 NSURL *url = [NSURL URLWithString:carInfo[@"image"]];
                 NSData *data = [NSData dataWithContentsOfURL:url];
                 UIImage *image = [UIImage imageWithData:data];
-                [carInfo setObject:image forKey:@"imageData"];
+                if (image)
+                    [carInfo setObject:image forKey:@"imageData"];
                 [carInfoArray replaceObjectAtIndex:i withObject:carInfo];
             }
             
@@ -204,7 +207,8 @@
             NSMutableDictionary *requestElevator = [[NSMutableDictionary alloc] init];
             
             NSMutableDictionary *carInfo = [carInfoArray[indexPath.row] mutableCopy];
-            [carInfo removeObjectForKey:@"imageData"];
+            if ([carInfo objectForKey:@"imageData"])
+                [carInfo removeObjectForKey:@"imageData"];
             [requestElevator setObject:carInfo forKey:@"SelectedCar"];
             
             NSMutableArray *owners = [userDefaults objectForKey:@"CurrentUser"];
