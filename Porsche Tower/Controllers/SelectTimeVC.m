@@ -149,6 +149,7 @@
             }];
         }
         // Dining Order/Reservation Request
+        /*
         else if ([type isEqualToString:@"restaurants_in_house"] ||
                  [type isEqualToString:@"local_restaurants"]) {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -170,7 +171,7 @@
             } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             }];
-        }
+        }*/
         else {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             

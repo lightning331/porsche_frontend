@@ -103,6 +103,7 @@
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
+    /*
     WebConnector *webConnector = [[WebConnector alloc] init];
     [webConnector sendRestaurantRequest:@"order" restaurant:[self.scheduleData objectForKey:@"index"] datetime:datetimeString completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -112,6 +113,23 @@
         if ([result[@"status"] isEqualToString:@"success"]) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Order Request Confirmed" message:@"Your request was sent. A staff member will call to take your order shortly." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
             [alertView show];
+        }
+    } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];*/
+    NSLog(@"%@", [self.scheduleData objectForKey:@"type"]);
+    NSString *type = [self.scheduleData objectForKey:@"type"];
+    WebConnector *webConnector = [[WebConnector alloc] init];
+    [webConnector sendScheduleRequest:type index:[self.scheduleData objectForKey:@"index"] datetime:datetimeString completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+        if ([result[@"status"] isEqualToString:@"success"]) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Your Request has been sent." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            [self.homeVC dismissViewControllerAnimated:NO completion:^{
+                [self.homeVC setHiddenCategories:NO];
+            }];
         }
     } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
