@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
 
-@interface ShowroomBookingVC : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate,
+@interface ShowroomBookingVC : BaseVC <UICollectionViewDataSource, UICollectionViewDelegate,
                                                  UIAlertViewDelegate>
 
 @property HomeVC *homeVC;

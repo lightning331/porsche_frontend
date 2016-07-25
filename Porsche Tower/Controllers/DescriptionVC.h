@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
 
-@interface DescriptionVC : UIViewController <UIAlertViewDelegate>
+@interface DescriptionVC : BaseVC <UIAlertViewDelegate>
 
 @property HomeVC *homeVC;
 @property NSMutableDictionary *scheduleData;

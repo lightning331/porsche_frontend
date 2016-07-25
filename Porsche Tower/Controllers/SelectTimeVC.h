@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "HomeVC.h"
 
-@interface SelectTimeVC : UIViewController <MFMailComposeViewControllerDelegate,
+@interface SelectTimeVC : BaseVC <MFMailComposeViewControllerDelegate,
                                             UIAlertViewDelegate>
 
 @property HomeVC *homeVC;

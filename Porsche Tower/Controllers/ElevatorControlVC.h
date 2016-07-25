@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
 
-@interface ElevatorControlVC : UIViewController <UIAlertViewDelegate>
+@interface ElevatorControlVC : BaseVC <UIAlertViewDelegate>
 
 @property HomeVC *homeVC;
 @property NSInteger delayTime;

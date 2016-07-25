@@ -10,7 +10,7 @@
 #import "HomeVC.h"
 #import "PMCalendar.h"
 
-@interface CalendarVC : UIViewController <PMCalendarControllerDelegate,
+@interface CalendarVC : BaseVC <PMCalendarControllerDelegate,
                                           UIAlertViewDelegate>
 
 @property HomeVC *homeVC;

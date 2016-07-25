@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
 
-@interface BeachRequestVC : UIViewController <UIAlertViewDelegate>
+@interface BeachRequestVC : BaseVC <UIAlertViewDelegate>
 
 @property HomeVC *homeVC;
 @property NSMutableDictionary *scheduleData;

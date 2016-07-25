@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "HomeVC.h"
 
-@interface GymServiceVC : UIViewController <MFMailComposeViewControllerDelegate,
+@interface GymServiceVC : BaseVC <MFMailComposeViewControllerDelegate,
                                             UIAlertViewDelegate>
 
 @property HomeVC *homeVC;

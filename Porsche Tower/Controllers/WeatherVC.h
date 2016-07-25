@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
 
-@interface WeatherVC : UIViewController <UIAlertViewDelegate>
+@interface WeatherVC : BaseVC <UIAlertViewDelegate>
 
 @property HomeVC *homeVC;
 

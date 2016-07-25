@@ -7,8 +7,9 @@
 //
 #import "DLCustomScrollView.h"
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
-@interface HomeVC : UIViewController <DLCustomScrollViewDelegate,
+@interface HomeVC : BaseVC <DLCustomScrollViewDelegate,
                                       DLCustomScrollViewDataSource,
                                       UIPickerViewDataSource,
                                       UIPickerViewDelegate,

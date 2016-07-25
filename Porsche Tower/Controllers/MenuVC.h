@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HomeVC.h"
+#import "BaseVC.h"
 
-@interface MenuVC : UIViewController <UITableViewDelegate,
+@interface MenuVC : BaseVC <UITableViewDelegate,
                                       UITableViewDataSource,
                                       UIAlertViewDelegate>
 

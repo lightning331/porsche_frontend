@@ -107,6 +107,15 @@
         return;
     }
     
+    if ([Utility validateEmailWithString:email]) {
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_valid_email", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        return;
+    }
+    
     [self loginProcess:email password:password];
 }
 

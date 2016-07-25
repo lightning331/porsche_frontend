@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		245320AF33713421AFFB2B94 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC1EBEAD4BE97C75D258DF9 /* libPods.a */; };
 		65C568111D45459200F3C40C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C568131D45459200F3C40C /* Localizable.strings */; };
+		65C568191D46630800F3C40C /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C568181D46630800F3C40C /* BaseVC.m */; };
+		65C5681E1D4664BF00F3C40C /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C5681D1D4664BF00F3C40C /* Utility.m */; };
 		6D02FD301C6B337E006D3246 /* WeatherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D02FD2F1C6B337E006D3246 /* WeatherVC.m */; };
 		6D116C8A1B55571200C3BF22 /* SelectTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D116C891B55571200C3BF22 /* SelectTimeVC.m */; };
 		6D1A4D931CD30E0D006AF006 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1A4D921CD30E0D006AF006 /* LocalAuthentication.framework */; };
@@ -78,6 +80,10 @@
 		65C568141D4545EA00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65C568151D4545ED00F3C40C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65C568161D4545F000F3C40C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65C568171D46630800F3C40C /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		65C568181D46630800F3C40C /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		65C5681C1D4664BF00F3C40C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		65C5681D1D4664BF00F3C40C /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		6D02FD2E1C6B337E006D3246 /* WeatherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherVC.h; sourceTree = "<group>"; };
 		6D02FD2F1C6B337E006D3246 /* WeatherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherVC.m; sourceTree = "<group>"; };
 		6D116C881B55571200C3BF22 /* SelectTimeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeVC.h; sourceTree = "<group>"; };
@@ -189,6 +195,26 @@
 				545BDEDB77B8692721BB0C78 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		65C5681A1D46631F00F3C40C /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				65C568171D46630800F3C40C /* BaseVC.h */,
+				65C568181D46630800F3C40C /* BaseVC.m */,
+			);
+			name = BaseVC;
+			sourceTree = "<group>";
+		};
+		65C5681B1D46648E00F3C40C /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				8390CA7F1AFBBE090075B4E5 /* Global.h */,
+				8390CA801AFBBE090075B4E5 /* Global.m */,
+				65C5681C1D4664BF00F3C40C /* Utility.h */,
+				65C5681D1D4664BF00F3C40C /* Utility.m */,
+			);
+			name = Global;
 			sourceTree = "<group>";
 		};
 		6D02FD2D1C6B232E006D3246 /* Login */ = {
@@ -314,6 +340,7 @@
 		83205F2A1AFD516300D42AA5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				65C5681A1D46631F00F3C40C /* BaseVC */,
 				6D02FD2D1C6B232E006D3246 /* Login */,
 				83205F2E1AFD516800D42AA5 /* Home */,
 				6DB1E7221C81444D000A3F58 /* Menu */,
@@ -380,14 +407,13 @@
 		83E736161AFA84F500B59A52 /* Porsche Tower */ = {
 			isa = PBXGroup;
 			children = (
+				65C5681B1D46648E00F3C40C /* Global */,
 				83205F2A1AFD516300D42AA5 /* Controllers */,
 				83EC61E91AFCEF71008ED7CC /* RES */,
 				8390CA771AFB94A00075B4E5 /* External */,
 				6D6046251B8468BD00810D32 /* WebConnector */,
 				83E7361B1AFA84F500B59A52 /* AppDelegate.h */,
 				83E7361C1AFA84F500B59A52 /* AppDelegate.m */,
-				8390CA7F1AFBBE090075B4E5 /* Global.h */,
-				8390CA801AFBBE090075B4E5 /* Global.m */,
 				83E736211AFA84F500B59A52 /* Main.storyboard */,
 				8348D89B1AFA8D80008E67EE /* StoryboardiPad.storyboard */,
 				83E736241AFA84F500B59A52 /* Images.xcassets */,
@@ -597,6 +623,7 @@
 				6D6C02C41B4D7DE2006E0508 /* MenuVC.m in Sources */,
 				6DEB98011B8EFF7800A9B8CC /* MaintenanceVC.m in Sources */,
 				83205F281AFD4E8000D42AA5 /* TPKeyboardAvoidingTableView.m in Sources */,
+				65C5681E1D4664BF00F3C40C /* Utility.m in Sources */,
 				6D6046281B8468FE00810D32 /* WebConnector.m in Sources */,
 				83205F311AFD51BD00D42AA5 /* LoginVC.m in Sources */,
 				6DD93CB41B666F36007DDEF1 /* ShowroomBookingVC.m in Sources */,
@@ -621,6 +648,7 @@
 				6DB1E7271C814612000A3F58 /* DiningVC.m in Sources */,
 				6D8D7C3E1C6C6CB200576C3C /* BeachRequestVC.m in Sources */,
 				6D6C02E11B501308006E0508 /* PMCalendarController.m in Sources */,
+				65C568191D46630800F3C40C /* BaseVC.m in Sources */,
 				83E7361D1AFA84F500B59A52 /* AppDelegate.m in Sources */,
 				6D6C02E31B501308006E0508 /* PMDimmingView.m in Sources */,
 				83205F261AFD4E8000D42AA5 /* TPKeyboardAvoidingCollectionView.m in Sources */,
