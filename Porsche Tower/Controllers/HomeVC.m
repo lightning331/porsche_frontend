@@ -255,7 +255,7 @@
     self.pickerView.hidden = YES;
     
     if ([type isEqualToString:@"repeat_schedule"]) {
-        self.lblSubTitle.text = @"Repeat Scheduled Pick-up";
+        self.lblSubTitle.text = NSLocalizedString(@"msg_repeat_scheduled_pickup", nil);
     }
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -734,15 +734,15 @@
         }
         else if (status == 1) { // In-Unit
             if (index == 0) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Maintenance Request Confirmed" message:@"Your request was sent. A staff member will call you shortly." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_maintenance_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
                 [alertView show];
             }
             else if (index == 1) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Front Desk Request Confirmed" message:@"Your request was sent. The Front Desk will call you shortly." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_front_desk_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_front_desk", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
                 [alertView show];
             }
             else if (index == 3) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Security Request Confirmed" message:@"Your request was sent. Security will be contacting you immediately." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_security_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_security", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
                 [alertView show];
             }
         }
@@ -812,7 +812,7 @@
                 [self openMenu:@"restaurants_in_house"];
             }
             else if (index == 1) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Order Request Confirmed" message:@"Your request was sent. A staff member will call you shortly." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_order_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
                 [alertView show];
             }
         }
@@ -888,11 +888,11 @@
             self.lblSubTitle.text = [subMenuArray objectAtIndex:index];
             
             if (index == 0) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"HouseKeeping Request Confirmed" message:@"Your request was sent. A staff member will call you shortly." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_housekeeping_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
                 [alertView show];
             }
             else if (index == 1) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Transportation Request Confirmed" message:@"Your request was sent. A staff member will call you shortly." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_transportation_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
                 [alertView show];
             }
             else if (index == 2) {
@@ -913,7 +913,7 @@
 - (void)handleLongPressBottom:(UILongPressGestureRecognizer *)longPress {
     
     if (longPress.state == UIGestureRecognizerStateEnded && bottomItems.count > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Remove Shortcut" message:@"Are you sure you want to remove this shortcut from the toolbar?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_remove_shortcut", nil) message:NSLocalizedString(@"msg_sure_to_remove_shortcut", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         
         alertView.tag = longPress.view.tag;
         

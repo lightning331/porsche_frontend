@@ -78,7 +78,7 @@
         [[UIApplication sharedApplication] openURL:phoneURL];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Call is not available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:NSLocalizedString(@"msg_call_not_available",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
 }
@@ -160,7 +160,7 @@
 - (void)handleLongPressBottom:(UILongPressGestureRecognizer *)longPress {
     
     if (longPress.state == UIGestureRecognizerStateEnded && self.bottomItems.count > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Remove Shortcut" message:@"Are you sure you want to remove this shortcut from the toolbar?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_remove_shortcut", nil) message:NSLocalizedString(@"msg_sure_to_remove_shortcut", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         
         alertView.tag = longPress.view.tag;
         

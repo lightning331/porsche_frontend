@@ -1,0 +1,174 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0P8-Zf-vGV"; */
+"0P8-Zf-vGV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2BM-Ja-9rR"; */
+"2BM-Ja-9rR.text" = "Label";
+
+/* Class = "UILabel"; text = "UV index"; ObjectID = "2FB-yM-KoE"; */
+"2FB-yM-KoE.text" = "UV index";
+
+/* Class = "UILabel"; text = "FROM"; ObjectID = "3sg-Ho-gPd"; */
+"3sg-Ho-gPd.text" = "FROM";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "3u4-WZ-OV2"; */
+"3u4-WZ-OV2.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "4B0-Fz-jlF"; */
+"4B0-Fz-jlF.text" = "0";
+
+/* Class = "UILabel"; text = "FROM"; ObjectID = "4tm-Cd-tth"; */
+"4tm-Cd-tth.text" = "FROM";
+
+/* Class = "UILabel"; text = "CANCEL"; ObjectID = "4w0-fE-eTP"; */
+"4w0-fE-eTP.text" = "CANCEL";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "7JE-tR-b5R"; */
+"7JE-tR-b5R.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7XB-pj-9oJ"; */
+"7XB-pj-9oJ.text" = "Label";
+
+/* Class = "UILabel"; text = "95%"; ObjectID = "7vG-qg-gpl"; */
+"7vG-qg-gpl.text" = "95%";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8vm-yF-afJ"; */
+"8vm-yF-afJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CI6-ya-Cg5"; */
+"CI6-ya-Cg5.text" = "Label";
+
+/* Class = "UILabel"; text = "LOGIN"; ObjectID = "DB1-9L-7UD"; */
+"DB1-9L-7UD.text" = "LOGIN";
+
+/* Class = "UILabel"; text = "Visibility"; ObjectID = "EVM-Ys-Svy"; */
+"EVM-Ys-Svy.text" = "Visibility";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "EVO-ml-aYm"; */
+"EVO-ml-aYm.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GA5-ep-28j"; */
+"GA5-ep-28j.text" = "Label";
+
+/* Class = "UILabel"; text = "TIME"; ObjectID = "GLO-c8-btB"; */
+"GLO-c8-btB.text" = "TIME";
+
+/* Class = "UILabel"; text = "PORSCHE DESIGN"; ObjectID = "Gxt-Rh-135"; */
+"Gxt-Rh-135.text" = "PORSCHE DESIGN";
+
+/* Class = "UILabel"; text = "12:59PM"; ObjectID = "InJ-bo-UH9"; */
+"InJ-bo-UH9.text" = "12:59PM";
+
+/* Class = "UILabel"; text = "54F"; ObjectID = "JT0-GL-1ay"; */
+"JT0-GL-1ay.text" = "54F";
+
+/* Class = "UILabel"; text = "FROM"; ObjectID = "L0T-xm-LpA"; */
+"L0T-xm-LpA.text" = "FROM";
+
+/* Class = "UILabel"; text = "TOWER MIAMI"; ObjectID = "LnB-Ka-UrH"; */
+"LnB-Ka-UrH.text" = "TOWER MIAMI";
+
+/* Class = "UILabel"; text = "Wind"; ObjectID = "MXA-x6-jxu"; */
+"MXA-x6-jxu.text" = "Wind";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Mcx-nr-b06"; */
+"Mcx-nr-b06.text" = "Label";
+
+/* Class = "UILabel"; text = "EVENT"; ObjectID = "NZB-oq-sxo"; */
+"NZB-oq-sxo.text" = "EVENT";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "O85-3Q-Eog"; */
+"O85-3Q-Eog.placeholder" = "E-mail";
+
+/* Class = "UILabel"; text = "12:59"; ObjectID = "OEK-v4-wRS"; */
+"OEK-v4-wRS.text" = "12:59";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "QtM-kW-tCs"; */
+"QtM-kW-tCs.text" = "0";
+
+/* Class = "UILabel"; text = "CAR ELEVATOR"; ObjectID = "Tt5-Ac-37D"; */
+"Tt5-Ac-37D.text" = "CAR ELEVATOR";
+
+/* Class = "UILabel"; text = "YOUR CAR WILL BE PICKED UP AND DELIVERED CURBSIDE BY THE VALET"; ObjectID = "UnM-SS-COf"; */
+"UnM-SS-COf.text" = "YOUR CAR WILL BE PICKED UP AND DELIVERED CURBSIDE BY THE VALET";
+
+/* Class = "UILabel"; text = "MAINTENANCE"; ObjectID = "XtV-rw-zJP"; */
+"XtV-rw-zJP.text" = "MAINTENANCE";
+
+/* Class = "UILabel"; text = "Countdown"; ObjectID = "YIy-An-XN2"; */
+"YIy-An-XN2.text" = "Countdown";
+
+/* Class = "UILabel"; text = "Feels Like: 54.6F"; ObjectID = "YVd-cR-2zs"; */
+"YVd-cR-2zs.text" = "Feels Like: 54.6F";
+
+/* Class = "UILabel"; text = "Jan 18, 4:49 AM PST"; ObjectID = "aST-H5-44J"; */
+"aST-H5-44J.text" = "Jan 18, 4:49 AM PST";
+
+/* Class = "UILabel"; text = "0 mph"; ObjectID = "b8j-Ip-7ah"; */
+"b8j-Ip-7ah.text" = "0 mph";
+
+/* Class = "UILabel"; text = "Humidity"; ObjectID = "d46-fl-vEN"; */
+"d46-fl-vEN.text" = "Humidity";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "d61-Ev-xbC"; */
+"d61-Ev-xbC.text" = "0";
+
+/* Class = "UILabel"; text = "Currently"; ObjectID = "dda-HR-3Hn"; */
+"dda-HR-3Hn.text" = "Currently";
+
+/* Class = "UILabel"; text = "CAR"; ObjectID = "eYG-KR-tDT"; */
+"eYG-KR-tDT.text" = "CAR";
+
+/* Class = "UILabel"; text = "PORSCHE DESIGN"; ObjectID = "eZj-LD-trL"; */
+"eZj-LD-trL.text" = "PORSCHE DESIGN";
+
+/* Class = "UILabel"; text = "0.00 in"; ObjectID = "ekm-JI-Dcs"; */
+"ekm-JI-Dcs.text" = "0.00 in";
+
+/* Class = "UILabel"; text = "P'0001"; ObjectID = "f8T-av-Xar"; */
+"f8T-av-Xar.text" = "P'0001";
+
+/* Class = "UILabel"; text = "Sunny Isles"; ObjectID = "fgW-3i-C34"; */
+"fgW-3i-C34.text" = "Sunny Isles";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "g9r-wL-RLB"; */
+"g9r-wL-RLB.text" = "Label";
+
+/* Class = "UILabel"; text = "14:59"; ObjectID = "hdv-Ob-MTd"; */
+"hdv-Ob-MTd.text" = "14:59";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "kEF-Wf-95U"; */
+"kEF-Wf-95U.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Use Touch ID"; ObjectID = "kav-e3-eRd"; */
+"kav-e3-eRd.normalTitle" = "Use Touch ID";
+
+/* Class = "UILabel"; text = "MESSAGE"; ObjectID = "lBT-CH-C9X"; */
+"lBT-CH-C9X.text" = "MESSAGE";
+
+/* Class = "UILabel"; text = "Next Hour Precip."; ObjectID = "m7U-hb-ne8"; */
+"m7U-hb-ne8.text" = "Next Hour Precip.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mMj-Ze-4r7"; */
+"mMj-Ze-4r7.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "uGE-yn-QKe"; */
+"uGE-yn-QKe.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "10.0 mi"; ObjectID = "uoo-II-82f"; */
+"uoo-II-82f.text" = "10.0 mi";
+
+/* Class = "UILabel"; text = "DATE"; ObjectID = "vdh-2V-dnZ"; */
+"vdh-2V-dnZ.text" = "DATE";
+
+/* Class = "UILabel"; text = "Overcast"; ObjectID = "w3h-yA-IaB"; */
+"w3h-yA-IaB.text" = "Overcast";
+
+/* Class = "UILabel"; text = "0000-00-00"; ObjectID = "wLc-6t-hFQ"; */
+"wLc-6t-hFQ.text" = "0000-00-00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zRf-16-1ed"; */
+"zRf-16-1ed.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "SIGN-IN"; ObjectID = "zST-cZ-qXQ"; */
+"zST-cZ-qXQ.normalTitle" = "SIGN-IN";

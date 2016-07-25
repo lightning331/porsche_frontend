@@ -195,11 +195,11 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.type isEqualToString:@"request"]) {
         if ([carInfoArray[indexPath.row][@"status"] isEqualToString:@"out"]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Car Unavailable" message:@"is currently unavailable. Please contact the Valet for futher information." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Valet", nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_unavailable", nil) message:NSLocalizedString(@"msg_unavailable_contact_valet", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:NSLocalizedString(@"title_valet", nil), nil];
             alertView.tag = 1001;
             [alertView show];
         } else if ([carInfoArray[indexPath.row][@"space"] isEqualToString:@"garage"]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Car in Garage" message:@"is parked in the Garage. Please contact the Valet to have your Car delivered curbside." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:@"Valet", nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_in_gargage", nil) message:NSLocalizedString(@"msg_parked_gargage_contact_valet", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:NSLocalizedString(@"title_valet", nil), nil];
             alertView.tag = 1001;
             [alertView show];
         } else {
@@ -308,7 +308,7 @@
 - (void)handleLongPressBottom:(UILongPressGestureRecognizer *)longPress {
     
     if (longPress.state == UIGestureRecognizerStateEnded && self.bottomItems.count > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Remove Shortcut" message:@"Are you sure you want to remove this shortcut from the toolbar?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_remove_shortcut", nil) message:NSLocalizedString(@"msg_sure_to_remove_shortcut", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         
         alertView.tag = longPress.view.tag;
         

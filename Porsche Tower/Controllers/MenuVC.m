@@ -44,26 +44,26 @@
     
     // Car Elevator -> Request/Schedule -> Select Car
     if ([self.type isEqualToString:@"request_car_elevator"] || [self.type isEqualToString:@"schedule_car_elevator"]) {
-        menuArray = [NSArray arrayWithObjects:@"Ride Down", @"Valet", nil];
+        menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_ride_down", nil), @"Valet", nil];
         [self.tableView reloadData];
     }
     else if ([self.type isEqualToString:@"repeat_schedule"]) {
-        menuArray = [NSArray arrayWithObjects:@"One Time", @"Daily", @"Weekly", nil];
+        menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_one_time", nil), NSLocalizedString(@"title_daily", nil), NSLocalizedString(@"title_weekly", nil), nil];
         [self.tableView reloadData];
     }
     // Wellness -> Fitness
     else if ([self.type isEqualToString:@"gym"]) {
-        menuArray = [NSArray arrayWithObjects:@"Personal Trainers", @"Classes", nil];
+        menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_personal_trainers", nil), NSLocalizedString(@"title_classes", nil), nil];
         [self.tableView reloadData];
     }
     // Activities -> Theater
     else if ([self.type isEqualToString:@"theater"]) {
-        menuArray = [NSArray arrayWithObjects:@"Schedule for Private Use", @"Movie Schedule", nil];
+        menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_schedule_for_priate", nil), NSLocalizedString(@"title_movie_schedule", nil), nil];
         [self.tableView reloadData];
     }
     // Concierge -> Transportation
     else if ([self.type isEqualToString:@"transportation"]) {
-        menuArray = [NSArray arrayWithObjects:@"Taxis", @"Shuttles", @"Car Rental", nil];
+        menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_taxis", nil), NSLocalizedString(@"title_shuttles", nil), NSLocalizedString(@"title_car_rental", nil), nil];
         [self.tableView reloadData];
     }
     // Car Concierge -> Detailing/Service/Storage
@@ -611,7 +611,7 @@
 - (void)handleLongPressBottom:(UILongPressGestureRecognizer *)longPress {
     
     if (longPress.state == UIGestureRecognizerStateEnded && self.bottomItems.count > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Remove Shortcut" message:@"Are you sure you want to remove this shortcut from the toolbar?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_remove_shortcut", nil) message:NSLocalizedString(@"msg_sure_to_remove_shortcut", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         
         alertView.tag = longPress.view.tag;
         

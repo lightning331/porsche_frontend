@@ -92,7 +92,7 @@
     BOOL ok = [MFMailComposeViewController canSendMail];
     ok = YES;
     if (!ok) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Device not configured to send mail...!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil) message:NSLocalizedString(@"msg_dev_not_configured", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
     else {
@@ -108,7 +108,7 @@
         self.selectedDate = [calendar dateFromComponents:components];
         
         if ([self.selectedDate timeIntervalSinceNow] < 5*60) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can't select this date" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil) message:@"Can't select this date" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
             return;
         }
@@ -182,11 +182,11 @@
                 NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
                 if ([result[@"status"] isEqualToString:@"success"]) {
                     if ([type isEqualToString:@"storage"]) {
-                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Your car has been scheduled for storage, an attendant will contact you if necessary." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_car_scheduled_for_storage",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                         [alertView show];
                     }
                     else {
-                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Your Request has been sent." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_request_sent",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                         [alertView show];
                     }
                     
@@ -284,7 +284,7 @@
 - (void)handleLongPressBottom:(UILongPressGestureRecognizer *)longPress {
     
     if (longPress.state == UIGestureRecognizerStateEnded && self.bottomItems.count > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Remove Shortcut" message:@"Are you sure you want to remove this shortcut from the toolbar?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_remove_shortcut", nil) message:NSLocalizedString(@"msg_sure_to_remove_shortcut", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         
         alertView.tag = longPress.view.tag;
         
@@ -316,23 +316,23 @@
     {
         case MFMailComposeResultCancelled:
             //NSLog(@"Mail cancelled");
-            //NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
-            [self messageAlert:@"Mail cancelled: you cancelled the operation and no email message was queued." stats:@"Cancelled"];
+            //NSLog(NSLocalizedString(@"msg_mail_cancelled",nil));
+            [self messageAlert:NSLocalizedString(@"msg_mail_cancelled",nil) stats:@"Cancelled"];
             break;
         case MFMailComposeResultSaved:
             //NSLog(@"Mail saved");
-            //NSLog(@"Mail saved: you saved the email message in the drafts folder.");
-            [self messageAlert:@"Mail saved: you saved the email message in the drafts folder." stats:@"Saved"];
+            //NSLog(NSLocalizedString(@"msg_mail_saved",nil));
+            [self messageAlert:NSLocalizedString(@"msg_mail_saved",nil) stats:@"Saved"];
             break;
         case MFMailComposeResultSent:
             //NSLog(@"Mail sent");
-            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
-            [self messageAlert:@"Mail send: the email message is queued in the outbox. It is ready to send." stats:@"Sent"];
+            NSLog(NSLocalizedString(@"msg_mail_send",nil));
+            [self messageAlert:NSLocalizedString(@"msg_mail_send",nil) stats:@"Sent"];
             break;
         case MFMailComposeResultFailed:
             //NSLog(@"Mail sent failure: %@", [error localizedDescription]);
             //NSLog(@"Due to some error your email sending failed.");
-            [self messageAlert:@"Due to some error your email sending failed" stats:@"Failed"];
+            [self messageAlert:NSLocalizedString(@"msg_mail_failed",nil) stats:@"Failed"];
             break;
         default:
             break;
@@ -345,7 +345,7 @@
 -(void) messageAlert:(NSString*)str stats:(NSString*)status {
     if ([status isEqualToString:@"Failed"]) {
         UIAlertView *connectionAlert = [[UIAlertView alloc] init];
-        [connectionAlert setTitle:@"Error"];
+        [connectionAlert setTitle:NSLocalizedString(@"title_error", nil)];
         [connectionAlert setMessage:str];
         [connectionAlert setDelegate:self];
         [connectionAlert setTag:1];

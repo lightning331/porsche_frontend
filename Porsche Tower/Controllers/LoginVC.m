@@ -53,8 +53,8 @@
                                     } else {
                                         NSLog(@"User did not authenticate successfully, look at error and take appropriate action");
                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                            message:@"You are not the device owner."
+                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil)
+                                                                                            message:NSLocalizedString(@"msg_not_device_owner", nil)
                                                                                            delegate:nil
                                                                                   cancelButtonTitle:@"Ok"
                                                                                   otherButtonTitles:nil];
@@ -67,11 +67,8 @@
             // Could not evaluate policy; look at authError and present an appropriate message to user
             NSLog(@"%@", authError);
             dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                message:@"Your device cannot authenticate using TouchID."
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil)
+                message:NSLocalizedString(@"msg_cannot_authenticate_touchid", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
                 [alert show];
                 self.viewContent.hidden = NO;
             });
@@ -105,7 +102,7 @@
     NSString *password = self.txtPassword.text;
     
     if ([email isEqualToString:@""] || [password isEqualToString:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please fill fields" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_pls_all_fields", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
         return;
     }

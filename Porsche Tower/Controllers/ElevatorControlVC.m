@@ -157,7 +157,7 @@
         [self sendRequest];
     }
     else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Car Elevator Activated" message:@"Are you sure that you want to Cancel the this Elevator?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_elevator_activated", nil) message:NSLocalizedString(@"msg_sure_to_cancel_elevator", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         alertView.tag = 1001;
         [alertView show];
     }
@@ -363,7 +363,7 @@
         }
     }
     else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Car Ready For Pick-Up" message:@"Your Car has been delivered Curbside and is ready to be pick-up." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_ready_pickup", nil) message:NSLocalizedString(@"msg_car_delivered_ready_to_pickup", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alertView show];
         
         [self successElevator];
@@ -386,7 +386,7 @@
 - (void)handleLongPressBottom:(UILongPressGestureRecognizer *)longPress {
     
     if (longPress.state == UIGestureRecognizerStateEnded && self.bottomItems.count > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Remove Shortcut" message:@"Are you sure you want to remove this shortcut from the toolbar?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_remove_shortcut", nil) message:NSLocalizedString(@"msg_sure_to_remove_shortcut", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         
         alertView.tag = longPress.view.tag;
         

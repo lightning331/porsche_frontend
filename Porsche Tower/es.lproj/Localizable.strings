@@ -1,0 +1,9 @@
+/* 
+  File.strings
+  P'0001
+
+  Created by Daniel Liu on 7/24/16.
+  Copyright © 2016 Daniel Liu. All rights reserved.
+*/
+
+"msg_cannot_authenticate_touchid"="Your device cannot authenticate using TouchID.";

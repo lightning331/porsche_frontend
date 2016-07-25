@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		245320AF33713421AFFB2B94 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC1EBEAD4BE97C75D258DF9 /* libPods.a */; };
+		65C568111D45459200F3C40C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C568131D45459200F3C40C /* Localizable.strings */; };
 		6D02FD301C6B337E006D3246 /* WeatherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D02FD2F1C6B337E006D3246 /* WeatherVC.m */; };
 		6D116C8A1B55571200C3BF22 /* SelectTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D116C891B55571200C3BF22 /* SelectTimeVC.m */; };
 		6D1A4D931CD30E0D006AF006 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1A4D921CD30E0D006AF006 /* LocalAuthentication.framework */; };
@@ -64,6 +65,19 @@
 /* Begin PBXFileReference section */
 		3377A8F042258775D7271217 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		545BDEDB77B8692721BB0C78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		65C568081D45453E00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		65C568091D45453F00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/StoryboardiPad.strings; sourceTree = "<group>"; };
+		65C5680A1D45453F00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		65C5680B1D45454C00F3C40C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		65C5680C1D45454C00F3C40C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/StoryboardiPad.strings; sourceTree = "<group>"; };
+		65C5680D1D45454C00F3C40C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		65C5680E1D45455D00F3C40C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		65C5680F1D45455E00F3C40C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/StoryboardiPad.strings; sourceTree = "<group>"; };
+		65C568101D45455E00F3C40C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		65C568121D45459200F3C40C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65C568141D4545EA00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65C568151D4545ED00F3C40C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65C568161D4545F000F3C40C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D02FD2E1C6B337E006D3246 /* WeatherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherVC.h; sourceTree = "<group>"; };
 		6D02FD2F1C6B337E006D3246 /* WeatherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherVC.m; sourceTree = "<group>"; };
 		6D116C881B55571200C3BF22 /* SelectTimeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeVC.h; sourceTree = "<group>"; };
@@ -388,6 +402,7 @@
 			children = (
 				83E736181AFA84F500B59A52 /* Info.plist */,
 				83E736191AFA84F500B59A52 /* main.m */,
+				65C568131D45459200F3C40C /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -502,6 +517,9 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				it,
+				de,
 			);
 			mainGroup = 83E7360B1AFA84F500B59A52;
 			productRefGroup = 83E736151AFA84F500B59A52 /* Products */;
@@ -521,6 +539,7 @@
 			files = (
 				83E736231AFA84F500B59A52 /* Main.storyboard in Resources */,
 				83EC61EC1AFCEF7E008ED7CC /* PorscheDesignFont.otf in Resources */,
+				65C568111D45459200F3C40C /* Localizable.strings in Resources */,
 				83E736281AFA84F500B59A52 /* LaunchScreen.xib in Resources */,
 				83E736251AFA84F500B59A52 /* Images.xcassets in Resources */,
 				8348D89D1AFA8D80008E67EE /* StoryboardiPad.storyboard in Resources */,
@@ -630,10 +649,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		65C568131D45459200F3C40C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65C568121D45459200F3C40C /* en */,
+				65C568141D4545EA00F3C40C /* es */,
+				65C568151D4545ED00F3C40C /* it */,
+				65C568161D4545F000F3C40C /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		8348D89B1AFA8D80008E67EE /* StoryboardiPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8348D89C1AFA8D80008E67EE /* Base */,
+				65C568091D45453F00F3C40C /* es */,
+				65C5680C1D45454C00F3C40C /* it */,
+				65C5680F1D45455E00F3C40C /* de */,
 			);
 			name = StoryboardiPad.storyboard;
 			sourceTree = "<group>";
@@ -642,6 +675,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				83E736221AFA84F500B59A52 /* Base */,
+				65C568081D45453E00F3C40C /* es */,
+				65C5680B1D45454C00F3C40C /* it */,
+				65C5680E1D45455D00F3C40C /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -650,6 +686,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				83E736271AFA84F500B59A52 /* Base */,
+				65C5680A1D45453F00F3C40C /* es */,
+				65C5680D1D45454C00F3C40C /* it */,
+				65C568101D45455E00F3C40C /* de */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

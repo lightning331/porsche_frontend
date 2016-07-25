@@ -81,7 +81,7 @@
         [[UIApplication sharedApplication] openURL:phoneURL];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Call is not available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:NSLocalizedString(@"msg_call_not_available",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
 }
@@ -111,7 +111,7 @@
         
         NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
         if ([result[@"status"] isEqualToString:@"success"]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Order Request Confirmed" message:@"Your request was sent. A staff member will call to take your order shortly." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_order_req_confirmed", nil) message:@"Your request was sent. A staff member will call to take your order shortly." delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
             [alertView show];
         }
     } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -125,7 +125,7 @@
         
         NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
         if ([result[@"status"] isEqualToString:@"success"]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Your Request has been sent." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_request_sent",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
             [self.homeVC dismissViewControllerAnimated:NO completion:^{
                 [self.homeVC setHiddenCategories:NO];
@@ -241,7 +241,7 @@
 - (void)handleLongPressBottom:(UILongPressGestureRecognizer *)longPress {
     
     if (longPress.state == UIGestureRecognizerStateEnded && self.bottomItems.count > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Remove Shortcut" message:@"Are you sure you want to remove this shortcut from the toolbar?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_remove_shortcut", nil) message:NSLocalizedString(@"msg_sure_to_remove_shortcut", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         
         alertView.tag = longPress.view.tag;
         

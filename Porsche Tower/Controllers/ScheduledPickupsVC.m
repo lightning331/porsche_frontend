@@ -166,7 +166,7 @@
 
 - (void)cancelPickup:(UIButton*)sender {
     cancelPickupIndex = sender.tag;
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cancel Pick-Up" message:@"Are you sure you want to cancel this event?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_cancel_pickup", nil) message:NSLocalizedString(@"msg_sure_to_cancel_event", nil) delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
     [alertView show];
 }
 
