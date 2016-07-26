@@ -81,8 +81,17 @@
 }
 
 - (IBAction)onBtnCancel:(id)sender {
-    MenuVC *menuVC = (MenuVC *)self.presentationController.presentingViewController;
-    [menuVC updateBottomButtons];
+    NSString *type = [self.scheduleData objectForKey:@"type"];
+    if ([type isEqualToString:@"pool_beach"])
+    {
+        HomeVC *homeVC = (HomeVC*)self.presentationController.presentingViewController;
+        [homeVC updatePickerViewHidden:NO];
+    }
+    else
+    {
+        MenuVC *menuVC = (MenuVC *)self.presentationController.presentingViewController;
+        [menuVC updateBottomButtons];
+    }
     [self dismissViewControllerAnimated:NO completion:^{
         
     }];
@@ -349,7 +358,7 @@
         [connectionAlert setMessage:str];
         [connectionAlert setDelegate:self];
         [connectionAlert setTag:1];
-        [connectionAlert addButtonWithTitle:@"Ok"];
+        [connectionAlert addButtonWithTitle:@"OK"];
         [connectionAlert show];
     }
     else {
@@ -358,7 +367,7 @@
         [connectionAlert setMessage:str];
         [connectionAlert setDelegate:self];
         [connectionAlert setTag:1];
-        [connectionAlert addButtonWithTitle:@"Ok"];
+        [connectionAlert addButtonWithTitle:@"OK"];
         [connectionAlert show];
         
         if (![status isEqualToString:@"Cancelled"]) {

@@ -363,7 +363,7 @@
         }
     }
     else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_ready_pickup", nil) message:NSLocalizedString(@"msg_car_delivered_ready_to_pickup", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_ready_pickup", nil) message:NSLocalizedString(@"msg_car_delivered_ready_to_pickup", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         
         [self successElevator];

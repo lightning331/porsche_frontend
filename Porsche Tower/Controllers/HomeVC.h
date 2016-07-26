@@ -34,6 +34,7 @@
 - (void)showSubcategories:(NSInteger)index;
 - (void)openMenu:(NSString *)type;
 - (void)gotoCarSelect;
+- (void)updatePickerViewHidden:(BOOL)isHidden;
 - (void)gotoPersonalNotifications;
 - (void)gotoEventNotifications;
 

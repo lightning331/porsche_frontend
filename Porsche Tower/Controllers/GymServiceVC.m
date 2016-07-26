@@ -238,7 +238,7 @@
         [connectionAlert setMessage:str];
         [connectionAlert setDelegate:self];
         [connectionAlert setTag:1];
-        [connectionAlert addButtonWithTitle:@"Ok"];
+        [connectionAlert addButtonWithTitle:@"OK"];
         [connectionAlert show];
     }
     else {
@@ -247,7 +247,7 @@
         [connectionAlert setMessage:str];
         [connectionAlert setDelegate:self];
         [connectionAlert setTag:1];
-        [connectionAlert addButtonWithTitle:@"Ok"];
+        [connectionAlert addButtonWithTitle:@"OK"];
         [connectionAlert show];
         
         if (![status isEqualToString:@"Cancelled"]) {

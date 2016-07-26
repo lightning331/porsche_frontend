@@ -94,7 +94,6 @@
     
     NSLog(@"%f %f", self.view.bounds.size.width, self.scrollView.bounds.size.width);
     
-    
     //Background Image Size for each device
     if (self.view.bounds.size.width == 736)
         self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.4f, img.size.height);
@@ -172,6 +171,10 @@
         
         [self.view addSubview:imgView];
     }
+}
+
+- (void)updatePickerViewHidden:(BOOL)isHidden {
+    self.pickerView.hidden = isHidden;
 }
 
 - (void)setHiddenCategories:(BOOL)hidden {

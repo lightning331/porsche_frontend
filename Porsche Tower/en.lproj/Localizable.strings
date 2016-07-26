@@ -11,8 +11,8 @@
 "msg_not_device_owner" = "You are not the device owner.";
 "msg_cannot_authenticate_touchid" = "Your device cannot authenticate using TouchID.";
 "msg_pls_all_fields" = "Please fill fields";
-
-"msg_failed_login"="Failed to login";
+"msg_valid_email" = "Invalid e-mail";
+"msg_failed_login" = "Failed to login";
 
 //- HomeVC
 

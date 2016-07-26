@@ -53,11 +53,7 @@
                                     } else {
                                         NSLog(@"User did not authenticate successfully, look at error and take appropriate action");
                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil)
-                                                                                            message:NSLocalizedString(@"msg_not_device_owner", nil)
-                                                                                           delegate:nil
-                                                                                  cancelButtonTitle:@"Ok"
-                                                                                  otherButtonTitles:nil];
+                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil) message:NSLocalizedString(@"msg_not_device_owner", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                                             [alert show];
                                             self.viewContent.hidden = NO;
                                         });
@@ -68,7 +64,7 @@
             NSLog(@"%@", authError);
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil)
-                message:NSLocalizedString(@"msg_cannot_authenticate_touchid", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                message:NSLocalizedString(@"msg_cannot_authenticate_touchid", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 self.viewContent.hidden = NO;
             });
@@ -102,7 +98,7 @@
     NSString *password = self.txtPassword.text;
     
     if ([email isEqualToString:@""] || [password isEqualToString:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_pls_all_fields", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_pls_all_fields", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
     }
@@ -112,7 +108,8 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_valid_email", nil) delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_valid_email", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
         return;
     }
     
@@ -157,7 +154,6 @@
                 [self.navigationController pushViewController:homeVC animated:YES];
             } else {
                 NSString *url = [NSString stringWithFormat:@"%@index.php/Login/LoginProcess?email=%@&password=%@", BASE_URL, email, password];
-//                NSString *url = [NSString stringWithFormat:@"%@index.php/Login/LoginProcess?email=%@&password=%@", BASE_URL, email, password];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
                 
                 self.txtEmail.text = @"";
@@ -165,13 +161,13 @@
             }
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Failed to login" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Failed to login" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
     } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Failed to login" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Failed to login" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }];
 }
