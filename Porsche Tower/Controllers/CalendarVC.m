@@ -209,7 +209,7 @@
     NSInteger delta = [now timeIntervalSinceDate:self.selectedDate] / 86400;
     
     if (delta > 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil) message:@"Can't select this date" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_error", nil) message:NSLocalizedString(@"msg_cant_select_date", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         return;
     }

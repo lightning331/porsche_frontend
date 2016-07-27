@@ -25,6 +25,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+//    self.settingInfo.isGerman = YES;
+//    LocalizationSetLanguage(@"de");
+    
+    self.settingInfo.isEnglish = YES;
+    LocalizationSetLanguage(@"en");
+//
+//    self.settingInfo.isSpanish = YES;
+//    LocalizationSetLanguage(@"es");
+//    
+//    self.settingInfo.isItalian = YES;
+//    LocalizationSetLanguage(@"it");
+    
+    
     UIFont *font = [UIFont fontWithName:NAME_OF_MAINFONT size:11.0f];
     [self.lblLogin setFont:font];
 }

@@ -19,7 +19,10 @@
 // Check if Valid Email
 + (BOOL)validateEmailWithString:(NSString*)email;
 
-+ (BOOL) isArabicUser;
++ (BOOL) isEnglishUser;
++ (BOOL) isGermanUser;
++ (BOOL) isSpanishUser;
++ (BOOL) isItalianUser;
 
 //alert
 + (void) showMessage: (NSString *) message title:(NSString *) title cancel:(NSString *)cancel;

@@ -1,9 +1,139 @@
-/* 
-  File.strings
-  P'0001
+/*
+ File.strings
+ P'0001
+ 
+ Created by Daniel Liu on 7/24/16.
+ Copyright © 2016 Daniel Liu. All rights reserved.
+ */
+//- LoginVC
 
-  Created by Daniel Liu on 7/24/16.
-  Copyright © 2016 Daniel Liu. All rights reserved.
-*/
 
-"msg_cannot_authenticate_touchid"="Your device cannot authenticate using TouchID.";
+"msg_not_device_owner" = 					"Du bist nicht der Gerätebesitzer.";
+"msg_cannot_authenticate_touchid" = 		"Das Gerät kann die Authentifizierung nicht TouchID verwenden.";
+"msg_pls_all_fields" = 						"Bitte füllen Sie Felder";
+"msg_valid_email" = 						"Ungültige E-Mail";
+"msg_failed_login" = 						"Einloggen fehlgeschlagen";
+
+//- HomeVC
+
+"msg_repeat_scheduled_pickup" = 			"Repeat Spiel Pick-up";
+"msg_maintenance_req_confirmed"  = 			"Wartungsbedarf Bestätigt";
+"msg_req_sent_staff_member" = 				"Ihre Anfrage wurde gesendet. Ein Mitarbeiter wird Sie in Kürze nennen.";
+"msg_front_desk_req_confirmed" = 			"Rezeption Anfrage bestätigt";
+"msg_req_sent_front_desk" = 				"Ihre Anfrage gesendet wurde. Die Rezeption wird Sie in Kürze anrufen.";
+"msg_security_req_confirmed" = 				"Sicherheitsabfrage bestätigt";
+"msg_req_sent_security" = 					"Ihre Anfrage wurde gesendet. Sicherheit wird Sie sofort kontaktieren.";
+"msg_order_req_confirmed" = 				"Order Anfrage bestätigt";
+"msg_housekeeping_req_confirmed" = 			"Haushalt Anfrage bestätigt";
+"msg_transportation_req_confirmed" = 		"Transport Anfrage bestätigt";
+"title_remove_shortcut" = 					"Entfernen Shortcut";
+"msg_sure_to_remove_shortcut" = 			"Sind Sie sicher, dass Sie diese Abkürzung aus der Symbolleiste zu entfernen?";
+
+//- MenuVC
+
+"title_ride_down" = 						"Ride Down";
+"title_valet" = 							"Kammerdiener";
+"title_one_time" = 							"Einmal";
+"title_daily" = 							"Täglich";
+"title_weekly" = 							"Wöchentlich";
+"title_personal_trainers" = 				"Personal Trainer";
+"title_classes" = 							"Klassen";
+"title_schedule_for_priate" = 				"Zeitplan für privaten Gebrauch";
+"title_movie_schedule" = 					"Movie Schedule";
+"title_taxis" = 							"Taxen";
+"title_shuttles" = 							"Shuttles";
+"title_car_rental" = 						"Autovermietung";
+
+//- ShowroomBookingVC
+
+"title_car_unavailable" = 					"Car nicht verfügbar";
+"msg_unavailable_contact_valet" = 			"Ist zur Zeit nicht verfügbar. Bitte kontaktieren Sie das Valet für weitere Informationen.";
+"title_car_in_gargage" = 					"Auto in der Garage";
+"msg_parked_gargage_contact_valet" = 		"Befindet sich in der Garage geparkt. Bitte geben Sie die Park kontaktieren Sie Ihren Auto Bordsteinkante geliefert zu haben.";
+"title_close" = 							"Schließen";
+
+//- ElevatorControlVC
+
+"title_elevator_activated" = 				"Auto-Aufzug aktiviert";
+"msg_sure_to_cancel_elevator" = 			"Sind Sie sicher, dass Sie die diesen Aufzug abbrechen?";
+"title_car_ready_pickup" = 					"Auto bereit für Pick-Up";
+"msg_car_delivered_ready_to_pickup" = 		"Ihr Auto wurde Bordsteinkante geliefert und ist bereit, Pick-up zu sein.";
+
+//- ScheduledPickups
+
+"title_cancel_pickup" = 					"Abbrechen Pick-Up";
+"msg_sure_to_cancel_event" = 				"Bist du sicher, dass du dieses Event abbrechen möchten?";
+
+//- CalendarVC
+
+"title_error" = 							"Fehler";
+"msg_cant_select_date" = 					"Kann nicht wählen diesen Termin";
+
+//- SelectTimeVC
+
+"msg_dev_not_configured" = 					"Gerät nicht konfiguriert E-Mail senden ...!";
+
+"msg_car_scheduled_for_storage" = 			"Ihr Auto für die Lagerung geplant ist, ein Begleiter Sie, wenn nötig in Verbindung setzen.";
+"msg_request_sent" = 						"Ihre Anfrage wurde verschickt.";
+"msg_mail_cancelled" = 						"Mail abgebrochen. Sie hat die Operation abgebrochen und keine E-Mail-Nachricht die Warteschlange gestellt wurde.";
+"msg_mail_saved" = 							"E-Mail gespeichert. Sie rettete die E-Mail-Nachricht im Ordner Entwürfe.";
+"msg_mail_send" = 							"E-Mail senden. Die E-Mail-Nachricht in der Outbox die Warteschlange gestellt wird. Sie ist bereit, zu senden.";
+"msg_mail_failed" = 						"Aufgrund einiger Fehler Ihre E-Mail gesendet werden konnten";
+
+//- GymServiceVC
+
+"msg_call_not_available" = 					"Ruf ist nicht verfügbar";
+
+
+//++++++++Global.h+++++++++++++++
+
+
+"title_car_elevator" = 						"Auto-Aufzug";
+"title_in_unit" = 							"In-Unit";
+"title_car_concierge" = 					"Car Concierge";
+"title_pool_beach" = 						"Pool & Beach";
+"title_wellness" = 							"Wellness";
+"title_activities" = 						"Aktivitäten";
+"title_dining" = 							"Dining";
+"title_documents" = 						"Unterlagen";
+"title_information_board" = 				"Informationstafel";
+"title_local_info" = 						"Local Info";
+"title_concierge" = 						"Portier";
+
+
+"title_request_car_elevator" = 				"Request Auto Elevator";
+"title_schedule_car_elevator" = 			"Schedule Car Elevator";
+"title_scheduled_pickups" = 				"Geplante Pickups";
+"title_request_maintenance" = 				"Request Wartung";
+"title_request_front_desk_call_back" = 		"Anfordern Rezeption Rückruf";
+"title_view_front_desk_camera" = 			"Sehen Rezeption Kamera";
+"title_request_security" = 					"Sicherheit anfordern";
+"title_detailing" = 						"Detaillierung";
+"title_service" = 							"Bedienung";
+"title_storage" = 							"Lagerung";
+"title_pool" = 								"Schwimmbad";
+"title_beach" = 							"Strand";
+"title_salon_spa" = 						"Salon Spa";
+"title_fitness" = 							"Fitness";
+"title_request_room" = 						"Request Room";
+"title_golf_sim" = 							"Golf Sim";
+"title_racing_sim" = 						"Racing Sim";
+"title_theater" = 							"Theater";
+"title_community_room" = 					"Gemeinschaftsraum";
+"title_in_house_dining" = 					"In House Dining";
+"title_request_a_call" = 					"Fordern Sie ein Call";
+"title_warranties" = 						"Garantien";
+"title_owners_manual" = 					"Bedienungsanleitung";
+"title_contractors_manual" = 				"Bauunternehmer Manual";
+"title_condominium_documents" = 			"Condominium Documents";
+"title_authorization_forms" = 				"Authorization Forms";
+"title_directory" = 						"Verzeichnis";
+"title_personal_notifications" = 			"Persönliche Mitteilungen";
+"title_building_maintenance" = 				"Gebäudewartung";
+"title_building_events" = 					"Building Events";
+"title_weather" = 							"Wetter";
+"title_view_weather" = 						"View Wetter";
+"title_view_beach" = 						"View Beach";
+"title_request_housekeeping" = 				"Request house keeping";
+"title_request_transportation" = 			"Request Transport";
+"title_dry_cleaning" = 						"Chemische Reinigung";

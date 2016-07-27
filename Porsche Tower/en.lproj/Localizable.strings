@@ -1,85 +1,139 @@
-/* 
-  File.strings
-  P'0001
-
-  Created by Daniel Liu on 7/24/16.
-  Copyright © 2016 Daniel Liu. All rights reserved.
-*/
+/*
+ File.strings
+ P'0001
+ 
+ Created by Daniel Liu on 7/24/16.
+ Copyright © 2016 Daniel Liu. All rights reserved.
+ */
 //- LoginVC
 
 
-"msg_not_device_owner" = "You are not the device owner.";
-"msg_cannot_authenticate_touchid" = "Your device cannot authenticate using TouchID.";
-"msg_pls_all_fields" = "Please fill fields";
-"msg_valid_email" = "Invalid e-mail";
-"msg_failed_login" = "Failed to login";
+"msg_not_device_owner" = 					"You are not the device owner.";
+"msg_cannot_authenticate_touchid" = 		"Your device cannot authenticate using TouchID.";
+"msg_pls_all_fields" = 						"Please fill fields";
+"msg_valid_email" = 						"Invalid e-mail";
+"msg_failed_login" = 						"Failed to login";
 
 //- HomeVC
 
-"msg_repeat_scheduled_pickup" = "Repeat Scheduled Pick-up";
-"msg_maintenance_req_confirmed"  = "Maintenance Request Confirmed";
-"msg_req_sent_staff_member" = "Your request was sent. A staff member will call you shortly.";
-"msg_front_desk_req_confirmed" = "Front Desk Request Confirmed";
-"msg_req_sent_front_desk" = "Your request was sent. The Front Desk will call you shortly.";
-"msg_security_req_confirmed" = "Security Request Confirmed";
-"msg_req_sent_security" = "Your request was sent. Security will be contacting you immediately.";
-"msg_order_req_confirmed" = "Order Request Confirmed";
-"msg_housekeeping_req_confirmed" = "HouseKeeping Request Confirmed";
-"msg_transportation_req_confirmed" = "Transportation Request Confirmed";
-"title_remove_shortcut" = "Remove Shortcut";
-"msg_sure_to_remove_shortcut" = "Are you sure you want to remove this shortcut from the toolbar?";
+"msg_repeat_scheduled_pickup" = 			"Repeat Scheduled Pick-up";
+"msg_maintenance_req_confirmed"  = 			"Maintenance Request Confirmed";
+"msg_req_sent_staff_member" = 				"Your request was sent. A staff member will call you shortly.";
+"msg_front_desk_req_confirmed" = 			"Front Desk Request Confirmed";
+"msg_req_sent_front_desk" = 				"Your request was sent. The Front Desk will call you shortly.";
+"msg_security_req_confirmed" = 				"Security Request Confirmed";
+"msg_req_sent_security" = 					"Your request was sent. Security will be contacting you immediately.";
+"msg_order_req_confirmed" = 				"Order Request Confirmed";
+"msg_housekeeping_req_confirmed" = 			"HouseKeeping Request Confirmed";
+"msg_transportation_req_confirmed" = 		"Transportation Request Confirmed";
+"title_remove_shortcut" = 					"Remove Shortcut";
+"msg_sure_to_remove_shortcut" = 			"Are you sure you want to remove this shortcut from the toolbar?";
 
 //- MenuVC
 
-"title_ride_down" = "Ride Down";
-"title_valet" = "Valet";
-"title_one_time" = "One Time";
-"title_daily" = "Daily";
-"title_weekly" = "Weekly";
-"title_personal_trainers" = "Personal Trainers";
-"title_classes" = "Classes";
-"title_schedule_for_priate" = "Schedule for Private Use";
-"title_movie_schedule" = "Movie Schedule";
-"title_taxis" = "Taxis";
-"title_shuttles" = "Shuttles";
-"title_car_rental" = "Car Rental";
+"title_ride_down" = 						"Ride Down";
+"title_valet" = 							"Valet";
+"title_one_time" = 							"One Time";
+"title_daily" = 							"Daily";
+"title_weekly" = 							"Weekly";
+"title_personal_trainers" = 				"Personal Trainers";
+"title_classes" = 							"Classes";
+"title_schedule_for_priate" = 				"Schedule for Private Use";
+"title_movie_schedule" = 					"Movie Schedule";
+"title_taxis" = 							"Taxis";
+"title_shuttles" = 							"Shuttles";
+"title_car_rental" = 						"Car Rental";
 
 //- ShowroomBookingVC
 
-"title_car_unavailable" = "Car Unavailable";
-"msg_unavailable_contact_valet" = "is currently unavailable. Please contact the Valet for futher information.";
-"title_car_in_gargage" = "Car in Garage";
-"msg_parked_gargage_contact_valet" = "is parked in the Garage. Please contact the Valet to have your Car delivered curbside.";
-"title_close" = "Close";
+"title_car_unavailable" = 					"Car Unavailable";
+"msg_unavailable_contact_valet" = 			"is currently unavailable. Please contact the Valet for futher information.";
+"title_car_in_gargage" = 					"Car in Garage";
+"msg_parked_gargage_contact_valet" = 		"is parked in the Garage. Please contact the Valet to have your Car delivered curbside.";
+"title_close" = 							"Close";
 
 //- ElevatorControlVC
 
-"title_elevator_activated" = "Car Elevator Activated";
-"msg_sure_to_cancel_elevator" = "Are you sure that you want to Cancel the this Elevator?";
-"title_car_ready_pickup" = "Car Ready For Pick-Up";
-"msg_car_delivered_ready_to_pickup" = "Your Car has been delivered Curbside and is ready to be pick-up.";
+"title_elevator_activated" = 				"Car Elevator Activated";
+"msg_sure_to_cancel_elevator" = 			"Are you sure that you want to Cancel the this Elevator?";
+"title_car_ready_pickup" = 					"Car Ready For Pick-Up";
+"msg_car_delivered_ready_to_pickup" = 		"Your Car has been delivered Curbside and is ready to be pick-up.";
 
 //- ScheduledPickups
 
-"title_cancel_pickup" = "Cancel Pick-Up";
-"msg_sure_to_cancel_event" = "Are you sure you want to cancel this event?";
+"title_cancel_pickup" = 					"Cancel Pick-Up";
+"msg_sure_to_cancel_event" = 				"Are you sure you want to cancel this event?";
 
 //- CalendarVC
 
-"title_error" = "Error";
-"msg_cant_select_date" = "Can't select this date";
+"title_error" = 							"Error";
+"msg_cant_select_date" = 					"Can't select this date";
 
 //- SelectTimeVC
 
-"msg_dev_not_configured" = "Device not configured to send mail...!";
+"msg_dev_not_configured" = 					"Device not configured to send mail...!";
 
-"msg_car_scheduled_for_storage" = "Your car has been scheduled for storage, an attendant will contact you if necessary.";
-"msg_request_sent" = "Your Request has been sent.";
-"msg_mail_cancelled" = "Mail cancelled: you cancelled the operation and no email message was queued.";
-"msg_mail_saved" = "Mail saved: you saved the email message in the drafts folder.";
-"msg_mail_send" = "Mail send: the email message is queued in the outbox. It is ready to send.";
-"msg_mail_failed" = "Due to some error your email sending failed";
+"msg_car_scheduled_for_storage" = 			"Your car has been scheduled for storage, an attendant will contact you if necessary.";
+"msg_request_sent" = 						"Your Request has been sent.";
+"msg_mail_cancelled" = 						"Mail cancelled: you cancelled the operation and no email message was queued.";
+"msg_mail_saved" = 							"Mail saved: you saved the email message in the drafts folder.";
+"msg_mail_send" = 							"Mail send: the email message is queued in the outbox. It is ready to send.";
+"msg_mail_failed" = 						"Due to some error your email sending failed";
 
 //- GymServiceVC
 
-"msg_call_not_available" = "Call is not available";
+"msg_call_not_available" = 					"Call is not available";
+
+
+//++++++++Global.h+++++++++++++++
+
+
+"title_car_elevator" = 						"Car Elevator";
+"title_in_unit" = 							"In-Unit";
+"title_car_concierge" = 					"Car Concierge";
+"title_pool_beach" = 						"Pool & Beach";
+"title_wellness" = 							"Wellness";
+"title_activities" = 						"Activities";
+"title_dining" = 							"Dining";
+"title_documents" = 						"Documents";
+"title_information_board" = 				"Information Board";
+"title_local_info" = 						"Local Info";
+"title_concierge" = 						"Concierge";
+
+
+"title_request_car_elevator" = 				"Request Car Elevator";
+"title_schedule_car_elevator" = 			"Schedule Car Elevator";
+"title_scheduled_pickups" = 				"Scheduled Pickups";
+"title_request_maintenance" = 				"Request Maintenance";
+"title_request_front_desk_call_back" = 		"Request Front Desk Call Back";
+"title_view_front_desk_camera" = 			"View Front Desk Camera";
+"title_request_security" = 					"Request Security";
+"title_detailing" = 						"Detailing";
+"title_service" = 							"Service";
+"title_storage" = 							"Storage";
+"title_pool" = 								"Pool";
+"title_beach" = 							"Beach";
+"title_salon_spa" = 						"Salon Spa";
+"title_fitness" = 							"Fitness";
+"title_request_room" = 						"Request Room";
+"title_golf_sim" = 							"Golf Sim";
+"title_racing_sim" = 						"Racing Sim";
+"title_theater" = 							"Theater";
+"title_community_room" = 					"Community Room";
+"title_in_house_dining" = 					"In House Dining";
+"title_request_a_call" = 					"Request a Call";
+"title_warranties" = 						"Warranties";
+"title_owners_manual" = 					"Owners Manual";
+"title_contractors_manual" = 				"Contractors Manual";
+"title_condominium_documents" = 			"Condominium Documents";
+"title_authorization_forms" = 				"Authorization Forms";
+"title_directory" = 						"Directory";
+"title_personal_notifications" = 			"Personal Notifications";
+"title_building_maintenance" = 				"Building Maintenance";
+"title_building_events" = 					"Building Events";
+"title_weather" = 							"Weather";
+"title_view_weather" = 						"View Weather";
+"title_view_beach" = 						"View Beach";
+"title_request_housekeeping" = 				"Request HouseKeeping";
+"title_request_transportation" = 			"Request Transportation";
+"title_dry_cleaning" = 						"Dry Cleaning";

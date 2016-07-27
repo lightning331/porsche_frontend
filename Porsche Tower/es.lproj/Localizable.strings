@@ -1,9 +1,139 @@
-/* 
-  File.strings
-  P'0001
+/*
+ File.strings
+ P'0001
+ 
+ Created by Daniel Liu on 7/24/16.
+ Copyright © 2016 Daniel Liu. All rights reserved.
+ */
+//- LoginVC
 
-  Created by Daniel Liu on 7/24/16.
-  Copyright © 2016 Daniel Liu. All rights reserved.
-*/
 
-"msg_cannot_authenticate_touchid"="Your device cannot authenticate using TouchID.";
+"msg_not_device_owner" = 					"Usted no es el propietario del dispositivo.";
+"msg_cannot_authenticate_touchid" = 		"El dispositivo no puede autenticar usando TouchID.";
+"msg_pls_all_fields" = 						"Por favor, rellene los campos";
+"msg_valid_email" = 						"Email inválido";
+"msg_failed_login" = 						"Error al iniciar sesión";
+
+//- HomeVC
+
+"msg_repeat_scheduled_pickup" = 			"Repetir recogida programada";
+"msg_maintenance_req_confirmed"  = 			"Solicitud de mantenimiento Confirmado";
+"msg_req_sent_staff_member" = 				"Tu solicitud fue enviada. Un miembro del personal le llamará en breve.";
+"msg_front_desk_req_confirmed" = 			"Frente Solicitud turística Confirmado";
+"msg_req_sent_front_desk" = 				"Tu solicitud fue enviada. El personal de recepción le llamará en breve.";
+"msg_security_req_confirmed" = 				"Solicitud de Seguridad Confirmado";
+"msg_req_sent_security" = 					"Tu solicitud fue enviada. Seguridad se pondrá en contacto con usted inmediatamente.";
+"msg_order_req_confirmed" = 				"Solicitud de Orden Confirmada";
+"msg_housekeeping_req_confirmed" = 			"Solicitud HouseKeeping Confirmado";
+"msg_transportation_req_confirmed" = 		"Solicitud de Transporte Confirmado";
+"title_remove_shortcut" = 					"Eliminar acceso directo";
+"msg_sure_to_remove_shortcut" = 			"¿Está seguro que desea eliminar este acceso directo de la barra de herramientas?";
+
+//- MenuVC
+
+"title_ride_down" = 						"Montar abajo";
+"title_valet" = 							"Ayudante de cámara";
+"title_one_time" = 							"Una vez";
+"title_daily" = 							"Diariamente";
+"title_weekly" = 							"Semanal";
+"title_personal_trainers" = 				"Entrenadores personales";
+"title_classes" = 							"Clases";
+"title_schedule_for_priate" = 				"Calendario para uso privado";
+"title_movie_schedule" = 					"Lista de películas";
+"title_taxis" = 							"Taxis";
+"title_shuttles" = 							"Servicio de transporte";
+"title_car_rental" = 						"Alquiler de coches";
+
+//- ShowroomBookingVC
+
+"title_car_unavailable" = 					"No Disponible coche";
+"msg_unavailable_contact_valet" = 			"No se encuentra disponible. Por favor, póngase en contacto con el Valet de información adicional de entrega.";
+"title_car_in_gargage" = 					"Coche en el garaje";
+"msg_parked_gargage_contact_valet" = 		"Está aparcado en el garaje. Por favor, póngase en contacto con el Valet de tener la acera entregado su coche.";
+"title_close" = 							"Cerca";
+
+//- ElevatorControlVC
+
+"title_elevator_activated" = 				"Coches Ascensor Activado";
+"msg_sure_to_cancel_elevator" = 			"¿Estás seguro de que desea cancelar la presente Ascensor?";
+"title_car_ready_pickup" = 					"Listo coche para Pick-up";
+"msg_car_delivered_ready_to_pickup" = 		"Tu coche ha sido entregado en la acera y está lista para ser recogida.";
+
+//- ScheduledPickups
+
+"title_cancel_pickup" = 					"Cancelar Pick-up";
+"msg_sure_to_cancel_event" = 				"¿Estas seguro que quieres cancelar este evento?";
+
+//- CalendarVC
+
+"title_error" = 							"Error";
+"msg_cant_select_date" = 					"No se puede seleccionar esta fecha";
+
+//- SelectTimeVC
+
+"msg_dev_not_configured" = 					"El dispositivo no configurado para enviar correo ...!";
+
+"msg_car_scheduled_for_storage" = 			"Tu coche ha sido programada para el almacenamiento, una operadora pondrá en contacto con usted si es necesario.";
+"msg_request_sent" = 						"Tu solicitud ha sido enviada.";
+"msg_mail_cancelled" = 						"Correo cancelada. Tú cancelado la operación y ningún mensaje de correo electrónico se puso en cola.";
+"msg_mail_saved" = 							"Correo guardados. Se pone el correo electrónico en la carpeta de borradores.";
+"msg_mail_send" = 							"Enviar correo. El mensaje de correo electrónico se pone en cola en el buzón de salida. Está listo para enviar.";
+"msg_mail_failed" = 						"Debido a un error de su correo electrónico no ha podido enviar";
+
+//- GymServiceVC
+
+"msg_call_not_available" = 					"La llamada no está disponible";
+
+
+//++++++++Global.h+++++++++++++++
+
+
+"title_car_elevator" = 						"Ascensor de coche";
+"title_in_unit" = 							"Dentro de la Unidad";
+"title_car_concierge" = 					"Conserje de coches";
+"title_pool_beach" = 						"La piscina y playa";
+"title_wellness" = 							"Bienestar";
+"title_activities" = 						"Ocupaciones";
+"title_dining" = 							"Comida";
+"title_documents" = 						"Documentos";
+"title_information_board" = 				"Tarjeta de la información";
+"title_local_info" = 						"Información local";
+"title_concierge" = 						"Conserje";
+
+
+"title_request_car_elevator" = 				"Solicitud de coches Ascensor";
+"title_schedule_car_elevator" = 			"Ascensor Horario de coches";
+"title_scheduled_pickups" = 				"recogidas programadas";
+"title_request_maintenance" = 				"Solicitud de mantenimiento";
+"title_request_front_desk_call_back" = 		"Solicitar Recepción llamen de vuelta";
+"title_view_front_desk_camera" = 			"Vista de la cámara de recepción";
+"title_request_security" = 					"Solicitud de Seguridad";
+"title_detailing" = 						"Detallado";
+"title_service" = 							"Servicio";
+"title_storage" = 							"Almacenamiento";
+"title_pool" = 								"Piscina";
+"title_beach" = 							"Playa";
+"title_salon_spa" = 						"Salon Spa";
+"title_fitness" = 							"Aptitud";
+"title_request_room" = 						"Solicitud de habitaciones";
+"title_golf_sim" = 							"Campo de Sim";
+"title_racing_sim" = 						"Simulador de carreras";
+"title_theater" = 							"Teatro";
+"title_community_room" = 					"Sala de la Comunidad";
+"title_in_house_dining" = 					"Restaurante propio";
+"title_request_a_call" = 					"Solicitar una llamada";
+"title_warranties" = 						"Garantías";
+"title_owners_manual" = 					"El manual del propietario";
+"title_contractors_manual" = 				"Manual de Contratistas";
+"title_condominium_documents" = 			"Documentos de Apartamentos";
+"title_authorization_forms" = 				"Formas de autorización";
+"title_directory" = 						"Directorio";
+"title_personal_notifications" = 			"Notificaciones personales";
+"title_building_maintenance" = 				"Mantenimiento del edificio";
+"title_building_events" = 					"Creación de eventos";
+"title_weather" = 							"Clima";
+"title_view_weather" = 						"Ver el clima";
+"title_view_beach" = 						"Vista de la playa";
+"title_request_housekeeping" = 				"Solicitud de mantenimiento";
+"title_request_transportation" = 			"Solicitud de Transporte";
+"title_dry_cleaning" = 						"Limpieza en seco";

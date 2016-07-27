@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseVC.h"
+#import "Setting.h"
 
 @interface LoginVC : BaseVC
 
@@ -19,5 +20,7 @@
 
 - (IBAction)onLogin:(id)sender;
 - (IBAction)onUseTouchID:(id)sender;
+
+@property (strong, nonatomic) Setting *settingInfo;
 
 @end

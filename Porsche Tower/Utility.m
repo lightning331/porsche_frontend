@@ -88,17 +88,54 @@
     return [emailTest evaluateWithObject:email];
 }
 
-+(BOOL) isArabicUser{
++(BOOL) isEnglishUser{
     
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
     NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
     countryCode = [countryCode lowercaseString];
-    if ([countryCode isEqualToString:@"ar"]) {
+    if ([countryCode isEqualToString:@"en"]) {
         return YES;
     }
     
     return NO;
 }
+
++(BOOL) isSpanishUser{
+    
+    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+    countryCode = [countryCode lowercaseString];
+    if ([countryCode isEqualToString:@"es"]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
++(BOOL) isGermanUser{
+    
+    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+    countryCode = [countryCode lowercaseString];
+    if ([countryCode isEqualToString:@"gr"]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
++(BOOL) isItalianUser{
+    
+    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+    countryCode = [countryCode lowercaseString];
+    if ([countryCode isEqualToString:@"it"]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 +(NSDictionary *)getUserInformation{
     
     NSString *url = [NSString stringWithFormat:@"http://ip-api.com/json"];
