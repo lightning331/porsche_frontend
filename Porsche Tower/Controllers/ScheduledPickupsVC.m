@@ -51,6 +51,11 @@
         self.lblTime.font = [UIFont systemFontOfSize:10];
         self.lblCancel.font = [UIFont systemFontOfSize:10];
     }
+    
+    self.lblCar.text = NSLocalizedString(@"outlet_car", nil);
+    self.lblDate.text = NSLocalizedString(@"outlet_date", nil);
+    self.lblTime.text = NSLocalizedString(@"outlet_time", nil);
+    self.lblCancel.text = NSLocalizedString(@"outlet_cancel_upper", nil);
 }
 
 - (void)didReceiveMemoryWarning {

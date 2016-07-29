@@ -30,6 +30,15 @@
     self.btnImageArray = global.btnImageArray;
     self.bottomItems = global.bottomItems;
     
+    self.lblCurrentlyTitle.text = NSLocalizedString(@"outlet_currently", nil);
+    self.lblSunnyTitle.text = NSLocalizedString(@"outlet_sunny", nil);
+    self.lblWindTitle.text = NSLocalizedString(@"outlet_wind", nil);
+    self.lblHumidityTitle.text = NSLocalizedString(@"outlet_humidity", nil);
+    self.lblUVIndexTitle.text = NSLocalizedString(@"outlet_uvindex", nil);
+    self.lblVisibilityTitle.text = NSLocalizedString(@"outlet_visibility", nil);
+    self.lblNextHourPrecipTitle.text = NSLocalizedString(@"outlet_nexthourprecip", nil);
+    
+    
     if ([[UIDevice currentDevice].model containsString:@"iPad"]) {
         
         UIFont *font = self.lblCurrentlyTitle.font;
@@ -64,7 +73,7 @@
     [self showCurrentTime];
     
     self.lblTemperature.text = @" ";
-    self.lblFeelslike.text = @"Feels Like: ";
+    self.lblFeelslike.text = [NSString stringWithFormat:@"%@: ", NSLocalizedString(@"outlet_feels_like", nil)];
     self.lblWeather.text = @"";
     self.lblWind.text = @"";
     self.lblHumidity.text = @"";

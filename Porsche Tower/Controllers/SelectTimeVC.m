@@ -42,6 +42,9 @@
     
     NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:10*60];
     [self.timePicker setDate:date];
+    
+    [self.btnCancel setTitle:NSLocalizedString(@"outlet_cancel", nil) forState:UIControlStateNormal];
+    [self.btnSave setTitle:NSLocalizedString(@"outlet_save", nil) forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

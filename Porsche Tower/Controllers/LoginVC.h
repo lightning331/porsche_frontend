@@ -17,9 +17,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UIButton *btnCheckbox;
+@property (weak, nonatomic) IBOutlet UIButton *btnSignIn;
+@property (weak, nonatomic) IBOutlet UIButton *btnUseTouchID;
 
 - (IBAction)onLogin:(id)sender;
 - (IBAction)onUseTouchID:(id)sender;
+- (IBAction)onChxUseTouchId:(id)sender;
 
 @property (strong, nonatomic) Setting *settingInfo;
 

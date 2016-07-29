@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblStartTime;
 @property (weak, nonatomic) IBOutlet UILabel *lblEndTime;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
 
 - (IBAction)onBtnCategory:(id)sender;
 - (IBAction)onClose:(id)sender;

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewMessage;
 @property (weak, nonatomic) IBOutlet UIView *viewMessageContent;
 @property (weak, nonatomic) IBOutlet UITextView *txtMessage;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
 
 - (IBAction)onBtnCategory:(id)sender;
 - (IBAction)onClose:(id)sender;

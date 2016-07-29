@@ -137,3 +137,27 @@
 "title_request_housekeeping" = 				"Solicitud de mantenimiento";
 "title_request_transportation" = 			"Solicitud de Transporte";
 "title_dry_cleaning" = 						"Limpieza en seco";
+
+//++++++++++++++++Storyboard+++++++++++++++++++++++++++
+
+"outlet_login" =                            "INICIAR SESIÓN";
+"outlet_email" =                            "Email";
+"outlet_password" =                         "Contraseña";
+"outlet_signin" =                           "REGISTRARSE";
+"outlet_use_touchid" =                      "USE ID TOQUE";
+"outlet_cancel" =                           "Cancelar";
+"outlet_save" =                             "Salvar";
+
+"outlet_currently" =                        "Actualmente";
+"outlet_sunny" =                            "Sunny Isles";
+"outlet_wind" =                             "Viento";
+"outlet_humidity" =                         "Humedad";
+"outlet_uvindex" =                          "Índice UV";
+"outlet_visibility" =                       "Visibilidad";
+"outlet_nexthourprecip" =                   "A continuación horas precip.";
+"outlet_feels_like" =                       "Se siente como";
+
+"outlet_car" =                              "COCHE";
+"outlet_date" =                             "FECHA";
+"outlet_time" =                             "HORA";
+"outlet_cancel_upper" =                     "CANCELAR";

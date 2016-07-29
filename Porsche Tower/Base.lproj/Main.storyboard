@@ -492,7 +492,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aZh-ak-jU2" secondAttribute="height" multiplier="28:11" id="5xA-Jn-ONY"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="cancel">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -618,6 +620,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnCancel" destination="aZh-ak-jU2" id="61D-lH-QCN"/>
                         <outlet property="lblFrom" destination="4tm-Cd-tth" id="7bM-vO-DBK"/>
                         <outlet property="lblMessage" destination="lBT-CH-C9X" id="U7M-zk-DcN"/>
                         <outlet property="tableView" destination="sBE-oC-mGV" id="id1-cN-4TE"/>
@@ -1124,7 +1127,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jNL-N6-qM0" secondAttribute="height" multiplier="28:11" id="60N-TM-DHA"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="cancel">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1282,6 +1287,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnCancel" destination="jNL-N6-qM0" id="yG7-fV-28g"/>
                         <outlet property="lblDate" destination="0P8-Zf-vGV" id="Qca-V8-C57"/>
                         <outlet property="lblEndTime" destination="zRf-16-1ed" id="hlk-lw-MRe"/>
                         <outlet property="lblEvent" destination="NZB-oq-sxo" id="H3X-IO-Ty2"/>
@@ -1327,7 +1333,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8Al-F7-uoc" secondAttribute="height" multiplier="28:11" id="gMA-ox-jU1"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="cancel">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1485,6 +1493,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnCancel" destination="8Al-F7-uoc" id="MaY-px-kNc"/>
                         <outlet property="lblDate" destination="7XB-pj-9oJ" id="qOc-wg-SSe"/>
                         <outlet property="lblEndTime" destination="mMj-Ze-4r7" id="Hvn-5t-ILc"/>
                         <outlet property="lblFrom" destination="3sg-Ho-gPd" id="DhX-P6-sZ4"/>
@@ -1565,10 +1574,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGE-yn-QKe">
-                                        <rect key="frame" x="15" y="-2" width="48" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGE-yn-QKe">
+                                        <rect key="frame" x="15" y="-2" width="65" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="uGE-yn-QKe" secondAttribute="height" multiplier="8:5" id="LU8-K9-n6V"/>
+                                            <constraint firstAttribute="width" secondItem="uGE-yn-QKe" secondAttribute="height" multiplier="8:5" constant="17" id="LU8-K9-n6V"/>
                                         </constraints>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1578,16 +1587,17 @@
                                             <action selector="onBtnCancel:" destination="oon-Zl-97G" eventType="touchUpInside" id="lgQ-RO-4wF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3u4-WZ-OV2">
-                                        <rect key="frame" x="479" y="-2" width="34" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3u4-WZ-OV2">
+                                        <rect key="frame" x="440" y="-2" width="73" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="3u4-WZ-OV2" secondAttribute="height" multiplier="17:15" id="7mp-nv-aMz"/>
+                                            <constraint firstAttribute="width" secondItem="3u4-WZ-OV2" secondAttribute="height" multiplier="17:15" constant="39" id="7mp-nv-aMz"/>
                                         </constraints>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="onBtnPlus:" destination="oon-Zl-97G" eventType="touchUpInside" id="XTB-Ak-1Kl"/>
                                             <action selector="onBtnSave:" destination="oon-Zl-97G" eventType="touchUpInside" id="rpc-n3-EUG"/>
                                         </connections>
                                     </button>
@@ -1695,7 +1705,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btnCancel" destination="uGE-yn-QKe" id="JEO-Pb-p7F"/>
+                        <outlet property="btnCancel" destination="uGE-yn-QKe" id="0lu-4d-qrn"/>
                         <outlet property="btnHome" destination="EHE-FA-T21" id="u6D-1n-B9x"/>
                         <outlet property="btnPlus" destination="cHE-d5-YLi" id="8m5-Ca-Yup"/>
                         <outlet property="btnSave" destination="3u4-WZ-OV2" id="yk7-uA-qAT"/>
@@ -1933,7 +1943,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="66Y-Dx-vpa" secondAttribute="height" multiplier="28:11" id="aKv-Qe-cxc"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="cancel">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2203,7 +2215,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yHT-8k-Nqs" secondAttribute="height" multiplier="28:11" id="G6b-YI-JIo"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" backgroundImage="select">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -2303,6 +2317,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnCancel" destination="yHT-8k-Nqs" id="fAY-Ey-Btm"/>
                         <outlet property="btnHome" destination="Z0K-NX-yRS" id="FmP-bB-jhA"/>
                         <outlet property="btnPlus" destination="jZf-c7-PZy" id="NqK-TS-gTD"/>
                         <outlet property="txtDescription" destination="BhO-9z-duf" id="wmy-60-a5Y"/>
@@ -2591,6 +2606,7 @@
                                                 </constraints>
                                                 <state key="normal" image="checkbox_unchecked"/>
                                                 <connections>
+                                                    <action selector="onChxUseTouchId:" destination="1Th-7R-WGK" eventType="touchUpInside" id="kaD-MG-ghL"/>
                                                     <action selector="onUseTouchID:" destination="1Th-7R-WGK" eventType="touchUpInside" id="t8s-bz-s62"/>
                                                 </connections>
                                             </button>
@@ -2677,6 +2693,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnCheckbox" destination="QgB-2m-ima" id="gwv-CL-syK"/>
+                        <outlet property="btnSignIn" destination="zST-cZ-qXQ" id="xzy-Ie-GBN"/>
+                        <outlet property="btnUseTouchID" destination="kav-e3-eRd" id="yZK-DE-lId"/>
                         <outlet property="lblLogin" destination="DB1-9L-7UD" id="mdO-aj-vHh"/>
                         <outlet property="txtEmail" destination="O85-3Q-Eog" id="7Tl-U8-RlB"/>
                         <outlet property="txtPassword" destination="7JE-tR-b5R" id="Nh7-LF-iJc"/>

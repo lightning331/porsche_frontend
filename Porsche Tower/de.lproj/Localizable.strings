@@ -137,3 +137,27 @@
 "title_request_housekeeping" = 				"Request house keeping";
 "title_request_transportation" = 			"Request Transport";
 "title_dry_cleaning" = 						"Chemische Reinigung";
+
+//++++++++++++++++Storyboard+++++++++++++++++++++++++++
+
+"outlet_login" =                            "ANMELDUNG";
+"outlet_email" =                            "Email";
+"outlet_password" =                         "Passwort";
+"outlet_signin" =                           "ANMELDEN";
+"outlet_use_touchid" =                      "USE TOUCH ID";
+"outlet_cancel" =                           "Stornieren";
+"outlet_save" =                             "Sparen";
+
+"outlet_currently" =                        "Zur Zeit";
+"outlet_sunny" =                            "Sunny Isles";
+"outlet_wind" =                             "Wind";
+"outlet_humidity" =                         "Feuchtigkeit";
+"outlet_uvindex" =                          "UV-Index";
+"outlet_visibility" =                       "Sichtweite";
+"outlet_nexthourprecip" =                   "Nächste Stunde Niederschlag .";
+"outlet_feels_like" =                       "Fühlt sich an wie";
+
+"outlet_car" =                              "AUTO";
+"outlet_date" =                             "DATUM";
+"outlet_time" =                             "ZEIT";
+"outlet_cancel_upper" =                     "STORNIEREN";

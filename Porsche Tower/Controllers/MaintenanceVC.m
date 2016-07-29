@@ -56,6 +56,12 @@
     else {
         [self.txtEvent setFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
     }
+    
+    if ([[UIDevice currentDevice].model containsString:@"iPad"]) {
+        [self.btnCancel.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:24]];
+    }
+    
+    [self.btnCancel setTitle:NSLocalizedString(@"outlet_cancel", nil) forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

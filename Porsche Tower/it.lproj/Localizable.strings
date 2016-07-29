@@ -139,3 +139,27 @@
 "title_request_housekeeping" = 				"Richiesta di pulizie";
 "title_request_transportation" = 			"Richiesta Trasporti";
 "title_dry_cleaning" = 						"Lavaggio a secco";
+
+//++++++++++++++++Storyboard+++++++++++++++++++++++++++
+
+"outlet_login" =                            "ACCESSO";
+"outlet_email" =                            "E-mail";
+"outlet_password" =                         "Parola d'ordine";
+"outlet_signin" =                           "REGISTRATI";
+"outlet_use_touchid" =                      "USARE ID TOUCH";
+"outlet_cancel" =                           "Annulla";
+"outlet_save" =                             "Salvare";
+
+"outlet_currently" =                        "Attualmente";
+"outlet_sunny" =                            "Sunny Isles";
+"outlet_wind" =                             "Vento";
+"outlet_humidity" =                         "Umidità";
+"outlet_uvindex" =                          "Indice UV";
+"outlet_visibility" =                       "Visibilità";
+"outlet_nexthourprecip" =                   "Ora successiva pioggia.";
+"outlet_feels_like" =                       "Si sente come";
+
+"outlet_car" =                              "AUTO";
+"outlet_date" =                             "DATA";
+"outlet_time" =                             "TEMPO";
+"outlet_cancel_upper" =                     "ANNULLA";

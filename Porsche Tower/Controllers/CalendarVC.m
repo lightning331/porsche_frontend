@@ -40,6 +40,8 @@
         [self.btnCancel setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self.btnCancel.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:24]];
     }
+    
+    [self.btnCancel setTitle:NSLocalizedString(@"outlet_cancel", nil) forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

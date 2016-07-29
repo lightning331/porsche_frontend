@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtDescription;
 @property (weak, nonatomic) IBOutlet UIButton *btnHome;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlus;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
 
 - (IBAction)onBtnCategory:(id)sender;
 - (IBAction)onBtnSelect:(id)sender;

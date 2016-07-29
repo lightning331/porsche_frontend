@@ -28,14 +28,55 @@
 //    self.settingInfo.isGerman = YES;
 //    LocalizationSetLanguage(@"de");
     
-    self.settingInfo.isEnglish = YES;
-    LocalizationSetLanguage(@"en");
-//
+//    self.settingInfo.isEnglish = YES;
+//    LocalizationSetLanguage(@"en");
+
 //    self.settingInfo.isSpanish = YES;
 //    LocalizationSetLanguage(@"es");
 //    
-//    self.settingInfo.isItalian = YES;
-//    LocalizationSetLanguage(@"it");
+    self.settingInfo.isItalian = YES;
+    LocalizationSetLanguage(@"it");
+    
+    NSLog(@"language: %@",LocalizationGetLanguage);
+    
+    self.lblLogin.text = NSLocalizedString(@"outlet_login", nil);
+    self.txtEmail.placeholder = NSLocalizedString(@"outlet_email", nil);
+    self.txtPassword.placeholder = NSLocalizedString(@"outlet_password", nil);
+    [self.btnSignIn setTitle:NSLocalizedString(@"outlet_signin", nil) forState:UIControlStateNormal];
+    [self.btnUseTouchID setTitle:NSLocalizedString(@"outlet_use_touchid", nil) forState:UIControlStateNormal];
+    
+//    NSString *language = LocalizationGetLanguage;
+//    switch (language)
+//    
+//    {
+//        case "en":
+//            
+//            statements
+//            
+//            break;
+//            
+//        case "de":
+//            
+//            statements
+//            
+//            break;
+//            
+//        case "es":
+//            
+//            statements
+//            
+//            break;
+//            
+//        case "it":
+//            
+//            statements
+//            
+//            break;
+//            
+//        default:
+//            break;
+//            
+//    }
     
     
     UIFont *font = [UIFont fontWithName:NAME_OF_MAINFONT size:11.0f];
@@ -130,6 +171,16 @@
 }
 
 - (IBAction)onUseTouchID:(id)sender {
+    if (self.isChecked) {
+        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
+        self.isChecked = false;
+    } else {
+        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateNormal];
+        self.isChecked = true;
+    }
+}
+
+- (IBAction)onChxUseTouchId:(id)sender {
     if (self.isChecked) {
         [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
         self.isChecked = false;
