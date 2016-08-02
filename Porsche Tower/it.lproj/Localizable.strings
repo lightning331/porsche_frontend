@@ -148,6 +148,7 @@
 "outlet_signin" =                           "REGISTRATI";
 "outlet_use_touchid" =                      "USARE ID TOUCH";
 "outlet_cancel" =                           "Annulla";
+"outlet_select" =                           "Selezionare";
 "outlet_save" =                             "Salvare";
 
 "outlet_currently" =                        "Attualmente";

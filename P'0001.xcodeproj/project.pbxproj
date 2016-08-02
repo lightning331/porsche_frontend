@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B08DC41D4FCC3F009C480E /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B08DC31D4FCC3F009C480E /* SettingsVC.m */; };
 		245320AF33713421AFFB2B94 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC1EBEAD4BE97C75D258DF9 /* libPods.a */; };
 		650B56B31D488D17006779AD /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B56B21D488D17006779AD /* Setting.m */; };
 		650B56B61D4899C4006779AD /* LocalizationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B56B51D4899C4006779AD /* LocalizationSystem.m */; };
@@ -67,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05B08DC21D4FCC3F009C480E /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		05B08DC31D4FCC3F009C480E /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		3377A8F042258775D7271217 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		545BDEDB77B8692721BB0C78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		650B56B11D488D17006779AD /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
@@ -201,6 +204,15 @@
 				545BDEDB77B8692721BB0C78 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		05B08DC11D4FCC30009C480E /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				05B08DC21D4FCC3F009C480E /* SettingsVC.h */,
+				05B08DC31D4FCC3F009C480E /* SettingsVC.m */,
+			);
+			name = SettingsVC;
 			sourceTree = "<group>";
 		};
 		65C5681A1D46631F00F3C40C /* BaseVC */ = {
@@ -350,6 +362,7 @@
 		83205F2A1AFD516300D42AA5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				05B08DC11D4FCC30009C480E /* SettingsVC */,
 				65C5681A1D46631F00F3C40C /* BaseVC */,
 				6D02FD2D1C6B232E006D3246 /* Login */,
 				83205F2E1AFD516800D42AA5 /* Home */,
@@ -652,6 +665,7 @@
 				6D6C02E21B501308006E0508 /* PMCalendarView.m in Sources */,
 				6D1C33571C521155001E835C /* ElevatorControlVC.m in Sources */,
 				6D116C8A1B55571200C3BF22 /* SelectTimeVC.m in Sources */,
+				05B08DC41D4FCC3F009C480E /* SettingsVC.m in Sources */,
 				6DFA74861B7DD48000AFF19C /* DescriptionWithCallVC.m in Sources */,
 				6D6C02C71B4EC986006E0508 /* DescriptionVC.m in Sources */,
 				6D6C02E41B501308006E0508 /* PMPeriod.m in Sources */,
@@ -774,7 +788,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "ff7c847e-3cca-447d-8d97-1ff77dc08372";
+				PROVISIONING_PROFILE = "433ffdf0-3eda-4ebd-a5ab-8d094fa1a17e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -811,7 +825,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "106bac19-520a-4390-9de8-5cbdc40307cb";
+				PROVISIONING_PROFILE = "b2aafb31-ac80-410f-a4ca-e133f693c1e4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -830,7 +844,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "ff7c847e-3cca-447d-8d97-1ff77dc08372";
+				PROVISIONING_PROFILE = "433ffdf0-3eda-4ebd-a5ab-8d094fa1a17e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -847,7 +861,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "106bac19-520a-4390-9de8-5cbdc40307cb";
+				PROVISIONING_PROFILE = "b2aafb31-ac80-410f-a4ca-e133f693c1e4";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -9,6 +9,7 @@
 #import "HomeVC.h"
 #import "Global.h"
 #import "MenuVC.h"
+#import "SettingsVC.h"
 #import "ShowroomBookingVC.h"
 #import "PersonalNotificationsVC.h"
 #import "EventNotificationsVC.h"
@@ -365,6 +366,21 @@
         [bottomItems addObject:imgView];
         [self updateBottomButtons];
     }
+}
+
+- (IBAction)onBtnSettings:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SettingsVC *settingsVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingsVC"];
+    settingsVC.view.backgroundColor = [UIColor clearColor];
+    settingsVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        
+    settingsVC.homeVC = self;
+    self.definesPresentationContext = YES;
+    [self presentViewController:settingsVC animated:NO completion:^{
+        
+    }];
+
 }
 
 - (IBAction)onBtnHome:(id)sender {

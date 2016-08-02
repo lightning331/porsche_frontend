@@ -28,14 +28,14 @@
 //    self.settingInfo.isGerman = YES;
 //    LocalizationSetLanguage(@"de");
     
-//    self.settingInfo.isEnglish = YES;
-//    LocalizationSetLanguage(@"en");
+    self.settingInfo.isEnglish = YES;
+    LocalizationSetLanguage(@"en");
 
 //    self.settingInfo.isSpanish = YES;
 //    LocalizationSetLanguage(@"es");
-//    
-    self.settingInfo.isItalian = YES;
-    LocalizationSetLanguage(@"it");
+   
+//    self.settingInfo.isItalian = YES;
+//    LocalizationSetLanguage(@"it");
     
     NSLog(@"language: %@",LocalizationGetLanguage);
     
@@ -190,7 +190,7 @@
     }
 }
 
-#pragma mark - Self Methods
+#pragma mark - Self Methodsdf
 
 - (void)loginProcess:(NSString *)email password:(NSString *)password {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

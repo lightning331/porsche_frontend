@@ -12,8 +12,8 @@
 //Porsh Design Font Name
 #define NAME_OF_MAINFONT @"PorscheDesignFont"
 
-#define BASE_URL         @"http://192.168.1.87/porsche/"
-//#define BASE_URL         @"http://52.26.240.113/Porsche/"
+//#define BASE_URL         @"http://192.168.1.87/porsche/"
+#define BASE_URL         @"http://52.26.240.113/Porsche/"
 
 #define LANGUAGE         @"Language"
 
@@ -41,17 +41,6 @@
                             @[NSLocalizedString(@"title_weather", nil), NSLocalizedString(@"title_view_weather", nil), NSLocalizedString(@"title_view_beach", nil)], \
                             @[NSLocalizedString(@"title_request_housekeeping", nil), NSLocalizedString(@"title_request_transportation", nil), NSLocalizedString(@"title_dry_cleaning", nil)]]
 
-//#define SUBCATEGORY_ARRAY @[@[@"Request Car Elevator", @"Schedule Car Elevator", @"Scheduled Pickups"], \
-//                            @[@"Request Maintenance", @"Request Front Desk Call Back", @"View Front Desk Camera", @"Request Security"], \
-//                            @[@"Detailing", @"Service", @"Storage"], \
-//                            @[@"Pool", @"Beach"], \
-//                            @[@"Salon Spa", @"Fitness", @"Request Room"], \
-//                            @[@"Golf Sim", @"Racing Sim", @"Theater", @"Community Room"], \
-//                            @[@"In House Dining", @"Request a Call"], \
-//                            @[@"Warranties", @"Owners Manual", @"Contractors Manual", @"Condominium Documents", @"Authorization Forms"], \
-//                            @[@"Directory", @"Personal Notifications", @"Building Maintenance", @"Building Events"], \
-//                            @[@"Weather", @"View Weather", @"View Beach"], \
-//                            @[@"Request HouseKeeping", @"Request Transportation", @"Dry Cleaning"]]
 
 
 @interface Global : NSObject

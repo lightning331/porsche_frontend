@@ -146,6 +146,7 @@
 "outlet_signin" =                           "SIGN-IN";
 "outlet_use_touchid" =                      "USE TOUCH ID";
 "outlet_cancel" =                           "Cancel";
+"outlet_select" =                           "Select";
 "outlet_save" =                             "Save";
 
 "outlet_currently" =                        "Currently";

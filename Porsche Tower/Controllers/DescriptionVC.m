@@ -30,10 +30,10 @@
     self.backImageArray = global.backImageArray;
     self.bottomItems = global.bottomItems;
     if ([[UIDevice currentDevice].model containsString:@"iPad"]) {
-        [self.btnCancel.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:24]];
+        [self.btnSelect.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:24]];
     }
     
-    [self.btnCancel setTitle:NSLocalizedString(@"outlet_cancel", nil) forState:UIControlStateNormal];
+    [self.btnSelect setTitle:NSLocalizedString(@"outlet_select", nil) forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

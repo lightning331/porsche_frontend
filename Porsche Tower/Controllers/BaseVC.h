@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Utility.h"
+#import "Global.h"
 
 @interface BaseVC : UIViewController
 

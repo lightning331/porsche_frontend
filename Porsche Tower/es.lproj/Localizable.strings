@@ -146,6 +146,7 @@
 "outlet_signin" =                           "REGISTRARSE";
 "outlet_use_touchid" =                      "USE ID TOQUE";
 "outlet_cancel" =                           "Cancelar";
+"outlet_select" =                           "Seleccionar";
 "outlet_save" =                             "Salvar";
 
 "outlet_currently" =                        "Actualmente";

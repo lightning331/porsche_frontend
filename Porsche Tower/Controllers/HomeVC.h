@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseVC.h"
 
+
 @interface HomeVC : BaseVC <DLCustomScrollViewDelegate,
                                       DLCustomScrollViewDataSource,
                                       UIPickerViewDataSource,
@@ -40,6 +41,7 @@
 
 - (IBAction)onBtnHome:(id)sender;
 - (IBAction)onBtnPlus:(id)sender;
+- (IBAction)onBtnSettings:(id)sender;
 
 @end
 
