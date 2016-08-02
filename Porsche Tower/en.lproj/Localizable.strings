@@ -162,3 +162,14 @@
 "outlet_date" =                             "DATE";
 "outlet_time" =                             "TIME";
 "outlet_cancel_upper" =                     "CANCEL";
+
+"outlet_logout" =                           "Log-out";
+"outlet_reset_pass" =                       "Reset Password";
+"outlet_touch_id" =                         "Touch ID";
+"outlet_language_setting" =                 "Language Setting";
+"outlet_logout_time" =                      "Automatic Car Elevator Log-out Time";
+"outlet_english" =                          "English";
+"outlet_german" =                           "German";
+"outlet_italian" =                          "Italian";
+"outlet_spanish" =                          "Spanish";
+"outlet_minute" =                           "Minute";

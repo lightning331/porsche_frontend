@@ -15,9 +15,14 @@
 @property (assign, nonatomic) BOOL isSpanish;
 @property (assign, nonatomic) BOOL isGerman;
 @property (assign, nonatomic) BOOL isItalian;
+@property (strong, nonatomic) NSString *language;
+@property (assign, nonatomic) NSInteger logout_time;
 
 + (Setting *)sharedInstance;
 - (id)initWithCoder:(NSCoder *)decoder;
 - (void)encodeWithCoder:(NSCoder *)encoder;
+- (void)setCurrentLanguage:(NSString*)lang;
+- (void)setLogoutTime:(NSInteger)lgtime;
+
 
 @end

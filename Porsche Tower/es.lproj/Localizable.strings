@@ -162,3 +162,14 @@
 "outlet_date" =                             "FECHA";
 "outlet_time" =                             "HORA";
 "outlet_cancel_upper" =                     "CANCELAR";
+
+"outlet_logout" =                           "Cerrar sesión";
+"outlet_reset_pass" =                       "Restablecer la contraseña";
+"outlet_touch_id" =                         "Touch ID";
+"outlet_language_setting" =                 "Configuración de idioma";
+"outlet_logout_time" =                      "Automático de coches Ascensor Registro de Salida Tiempo";
+"outlet_english" =                          "Inglés";
+"outlet_german" =                           "Alemán";
+"outlet_italian" =                          "Italiano";
+"outlet_spanish" =                          "Español";
+"outlet_minute" =                           "Minuto";

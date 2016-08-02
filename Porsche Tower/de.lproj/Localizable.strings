@@ -162,3 +162,14 @@
 "outlet_date" =                             "DATUM";
 "outlet_time" =                             "ZEIT";
 "outlet_cancel_upper" =                     "STORNIEREN";
+
+"outlet_logout" =                           "Ausloggen";
+"outlet_reset_pass" =                       "Passwort zurücksetzen";
+"outlet_touch_id" =                         "Touch-ID";
+"outlet_language_setting" =                 "Spracheinstellungen";
+"outlet_logout_time" =                      "Automatische Auto-Aufzug Log-out-Zeit";
+"outlet_english" =                          "Englisch";
+"outlet_german" =                           "Deutsche";
+"outlet_italian" =                          "Italienisch";
+"outlet_spanish" =                          "Spanisch";
+"outlet_minute" =                           "Minute";

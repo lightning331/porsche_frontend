@@ -12,6 +12,7 @@
 #import "WebConnector.h"
 #import "HomeVC.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#import "Setting.h"
 
 @interface LoginVC ()
 
@@ -24,20 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-//    self.settingInfo.isGerman = YES;
-//    LocalizationSetLanguage(@"de");
-    
-    self.settingInfo.isEnglish = YES;
-    LocalizationSetLanguage(@"en");
-
-//    self.settingInfo.isSpanish = YES;
-//    LocalizationSetLanguage(@"es");
-   
-//    self.settingInfo.isItalian = YES;
-//    LocalizationSetLanguage(@"it");
-    
-    NSLog(@"language: %@",LocalizationGetLanguage);
     
     self.lblLogin.text = NSLocalizedString(@"outlet_login", nil);
     self.txtEmail.placeholder = NSLocalizedString(@"outlet_email", nil);

@@ -164,3 +164,14 @@
 "outlet_date" =                             "DATA";
 "outlet_time" =                             "TEMPO";
 "outlet_cancel_upper" =                     "ANNULLA";
+
+"outlet_logout" =                           "Disconnettersi";
+"outlet_reset_pass" =                       "Resetta la password";
+"outlet_touch_id" =                         "ID Touch";
+"outlet_language_setting" =                 "Impostazione della lingua";
+"outlet_logout_time" =                      "Car automatico ascensore Log-out";
+"outlet_english" =                          "Inglese";
+"outlet_german" =                           "Tedesco";
+"outlet_italian" =                          "Italiano";
+"outlet_spanish" =                          "Spagnolo";
+"outlet_minute" =                           "Minute";

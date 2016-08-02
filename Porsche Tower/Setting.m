@@ -20,6 +20,10 @@
         self.isSpanish = [Utility isSpanishUser]?YES:NO;
         self.isItalian = [Utility isItalianUser]?YES:NO;
     }
+    
+    self.isEnglish = YES;
+    self.language = @"en";
+    self.logout_time = 1;
     return self;
 }
 
@@ -47,6 +51,7 @@ static Setting *sharedInstance = nil;
         self.isSpanish = [decoder decodeBoolForKey:LANGUAGE];
         self.isItalian = [decoder decodeBoolForKey:LANGUAGE];
     }
+    
     return self;
 }
 
@@ -58,4 +63,42 @@ static Setting *sharedInstance = nil;
     [encoder encodeBool:self.isItalian forKey:LANGUAGE];
 }
 
+- (void)setCurrentLanguage:(NSString*)lang{
+    self.language = lang;
+    
+    if ([lang isEqualToString:@"en"])
+    {
+        [self setIsEnglish:YES];
+        [self setIsSpanish:NO];
+        [self setIsGerman:NO];
+        [self setIsItalian:NO];
+    }
+    else if([lang isEqualToString:@"es"])
+    {
+        [self setIsEnglish:NO];
+        [self setIsSpanish:YES];
+        [self setIsGerman:NO];
+        [self setIsItalian:NO];
+    }
+    else if([lang isEqualToString:@"de"])
+    {
+        [self setIsEnglish:NO];
+        [self setIsSpanish:NO];
+        [self setIsGerman:YES];
+        [self setIsItalian:NO];
+    }
+    else if([lang isEqualToString:@"it"])
+    {
+        [self setIsEnglish:NO];
+        [self setIsSpanish:NO];
+        [self setIsGerman:NO];
+        [self setIsItalian:YES];
+    }
+    LocalizationSetLanguage(lang);
+}
+
+- (void)setLogoutTime:(NSInteger)lgtime{
+    self.logout_time = lgtime;
+    
+}
 @end
