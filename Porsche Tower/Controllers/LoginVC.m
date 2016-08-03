@@ -158,26 +158,23 @@
 }
 
 - (IBAction)onUseTouchID:(id)sender {
-    if (self.isChecked) {
-        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
-        self.isChecked = false;
-    } else {
-        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateNormal];
-        self.isChecked = true;
-    }
+    self.isChecked = !self.isChecked;
+    [self updateCheckBox];
 }
 
 - (IBAction)onChxUseTouchId:(id)sender {
-    if (self.isChecked) {
-        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
-        self.isChecked = false;
-    } else {
-        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateNormal];
-        self.isChecked = true;
-    }
+    self.isChecked = !self.isChecked;
+    [self updateCheckBox];
 }
 
 #pragma mark - Self Methodsdf
+
+- (void)updateCheckBox {
+    if (self.isChecked == false)
+        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
+    else
+        [self.btnCheckbox setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateNormal];
+}
 
 - (void)loginProcess:(NSString *)email password:(NSString *)password {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -202,7 +199,14 @@
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 HomeVC *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
                 
+                
                 [self.navigationController pushViewController:homeVC animated:YES];
+                self.txtEmail.text = @"";
+                self.txtPassword.text = @"";
+                self.isChecked = false;
+                [self updateCheckBox];
+                [self.view endEditing:YES];
+                
             } else {
                 NSString *url = [NSString stringWithFormat:@"%@index.php/Login/LoginProcess?email=%@&password=%@", BASE_URL, email, password];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
@@ -222,5 +226,4 @@
         [alert show];
     }];
 }
-
 @end

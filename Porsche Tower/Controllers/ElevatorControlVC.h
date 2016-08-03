@@ -25,4 +25,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnPlus;
 @property (weak, nonatomic) IBOutlet UIImageView *imgDescription;
 
+-(void)setHomeVCSettingHide:(BOOL)ishidden;
 @end

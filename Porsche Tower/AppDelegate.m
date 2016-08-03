@@ -16,6 +16,17 @@
 
 @implementation AppDelegate
 
+- (void)logout
+{
+    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+    
+    for (UIViewController *controller in navController.viewControllers){
+        if ([controller isKindOfClass:[LoginVC class]]){
+            [navController popToViewController:controller animated:YES];
+            break;
+        }
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

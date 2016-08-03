@@ -8,11 +8,13 @@
 
 #import "SettingsVC.h"
 #import "Setting.h"
+#import "AppDelegate.h"
 
 @interface SettingsVC ()
 {
     NSString *language;
     NSInteger logout_time;
+    BOOL useTouchID;
 }
 
 @property (nonatomic) NSArray *btnImageArray;
@@ -30,7 +32,8 @@
     [self updateLogoutTimeButtons];
     
     [self updateUIComponentTexts];
-    
+    [self updateBottomButtons];
+    [self updateTouchIDCheckBox];
     
 //    [self.btnSelect setTitle:NSLocalizedString(@"outlet_select", nil) forState:UIControlStateNormal];
     
@@ -53,7 +56,7 @@
         [self.btnEnglish.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
         [self.btnItalian.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
         [self.btnSpanish.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
-        [self.btnTouchID.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
+        [self.btnTouchIDName.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
         [self.lblLanguage setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
         [self.lblLogoutTime setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
     }
@@ -61,7 +64,7 @@
     
     [self.btnLogout setTitle:NSLocalizedString(@"outlet_logout", nil) forState:UIControlStateNormal];
     [self.btnResetPass setTitle:NSLocalizedString(@"outlet_reset_pass", nil) forState:UIControlStateNormal];
-    [self.btnTouchID setTitle:NSLocalizedString(@"outlet_touch_id", nil) forState:UIControlStateNormal];
+    [self.btnTouchIDName setTitle:NSLocalizedString(@"outlet_touch_id", nil) forState:UIControlStateNormal];
     [self.btnEnglish setTitle:NSLocalizedString(@"outlet_english", nil) forState:UIControlStateNormal];
     [self.btnGerman setTitle:NSLocalizedString(@"outlet_german", nil) forState:UIControlStateNormal];
     [self.btnItalian setTitle:NSLocalizedString(@"outlet_italian", nil) forState:UIControlStateNormal];
@@ -106,7 +109,8 @@
         [self.btnSpanish setBackgroundImage:[UIImage imageNamed:@"btn_language_last_selected"] forState:UIControlStateNormal];
     }
     
-
+    //SubTitle of HomeVC has to be changed
+    [self.homeVC.lblSubTitle setText:NSLocalizedString(@"outlet_settings", nil)];
 }
 
 - (void)updateLogoutTimeButtons{
@@ -140,6 +144,16 @@
         [self.btn4Min setBackgroundImage:[UIImage imageNamed:@"btn_language_last_selected"] forState:UIControlStateNormal];
     }
 }
+
+- (void)updateTouchIDCheckBox {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    useTouchID = [[prefs objectForKey:@"UseTouchID"] boolValue];
+    if (useTouchID)
+        [self.btnTouchID setBackgroundImage:[UIImage imageNamed:@"btn_touchid_on"] forState:UIControlStateNormal];
+    else
+        [self.btnTouchID setBackgroundImage:[UIImage imageNamed:@"btn_touchid_off"] forState:UIControlStateNormal];
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -160,12 +174,23 @@
 }
 
 - (IBAction)onLogout:(id)sender {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs removeObjectForKey:@"UseTouchID"];
+    [prefs removeObjectForKey:@"CurrentUser"];
+    
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [delegate logout];
 }
 
 - (IBAction)onResetPass:(id)sender {
 }
 
 - (IBAction)onTouchID:(id)sender {
+    useTouchID = !useTouchID;
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:[NSNumber numberWithBool:useTouchID] forKey:@"UseTouchID"];
+    [self updateTouchIDCheckBox];
+
 }
 
 - (IBAction)onEnglish:(id)sender {

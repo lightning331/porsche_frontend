@@ -125,7 +125,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XHP-nN-3Ah" secondAttribute="height" multiplier="1:1" id="zqt-lG-Rqm"/>
                                 </constraints>
-                                <state key="normal" image="cross2">
+                                <state key="normal" image="setting_icon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -193,6 +193,7 @@
                     <connections>
                         <outlet property="btnHome" destination="qyp-k3-ZVj" id="BaK-vs-7bu"/>
                         <outlet property="btnPlus" destination="ped-wh-xD7" id="Mvn-GM-Ejw"/>
+                        <outlet property="btnSettings" destination="XHP-nN-3Ah" id="crF-9e-UkD"/>
                         <outlet property="imgTopLeft" destination="Xh1-jm-aiq" id="xIa-mm-RU0"/>
                         <outlet property="lblSubTitle" destination="Tt5-Ac-37D" id="jNa-6m-9FN"/>
                         <outlet property="lblTitle" destination="Gxt-Rh-135" id="2mb-yx-1Zg"/>
@@ -3601,6 +3602,9 @@
                                                 <rect key="frame" x="198" y="0.0" width="42" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                 <state key="normal" backgroundImage="btn_touchid_on"/>
+                                                <connections>
+                                                    <action selector="onTouchID:" destination="IRg-mr-dlS" eventType="touchUpInside" id="FYl-JZ-wDk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V86-EL-5CR">
                                                 <rect key="frame" x="157" y="0.0" width="42" height="17"/>
@@ -3798,7 +3802,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="2Y7-GT-yuR" firstAttribute="height" secondItem="Lcp-bm-SfL" secondAttribute="height" multiplier="42:162" id="2Yq-Kl-BHQ"/>
                                     <constraint firstItem="en6-j9-Uwc" firstAttribute="leading" secondItem="Lcp-bm-SfL" secondAttribute="leading" constant="10" id="5gj-LW-xrU"/>
@@ -3880,8 +3884,8 @@
                         <outlet property="btnPlus" destination="KEl-Fn-5Rh" id="QwT-xr-0SL"/>
                         <outlet property="btnResetPass" destination="C6H-lM-wKm" id="vxs-YN-2wb"/>
                         <outlet property="btnSpanish" destination="qvS-mD-nyj" id="GB7-7e-4xp"/>
-                        <outlet property="btnTouchID" destination="V86-EL-5CR" id="STJ-U6-3uq"/>
-                        <outlet property="btnTouchIDName" destination="LSk-p0-BYS" id="glZ-Oc-Z8B"/>
+                        <outlet property="btnTouchID" destination="LSk-p0-BYS" id="97d-um-Ess"/>
+                        <outlet property="btnTouchIDName" destination="V86-EL-5CR" id="rRm-J8-dFS"/>
                         <outlet property="lblLanguage" destination="khu-Vz-eje" id="CmX-II-xDw"/>
                         <outlet property="lblLogoutTime" destination="aqy-2n-su6" id="CYr-2j-eSx"/>
                     </connections>
@@ -3924,6 +3928,7 @@
         <image name="select" width="56" height="22"/>
         <image name="send_beach_request_btn" width="118" height="23"/>
         <image name="setting_background" width="613" height="208"/>
+        <image name="setting_icon" width="25" height="26"/>
         <image name="setting_panel" width="336" height="208"/>
         <image name="underline" width="183" height="1"/>
         <image name="view_menu_btn" width="108" height="22"/>

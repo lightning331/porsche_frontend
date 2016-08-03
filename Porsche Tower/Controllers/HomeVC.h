@@ -30,6 +30,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnHome;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlus;
+@property (weak, nonatomic) IBOutlet UIButton *btnSettings;
 
 - (void)setHiddenCategories:(BOOL)hidden;
 - (void)showSubcategories:(NSInteger)index;

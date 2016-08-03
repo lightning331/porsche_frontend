@@ -113,6 +113,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self.btnSettings setHidden:NO];
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL isCarScheduled = [userDefaults boolForKey:@"IsCarScheduled"];
     BOOL isGotMessage = [userDefaults boolForKey:@"IsGotMessage"];
@@ -374,13 +376,13 @@
     SettingsVC *settingsVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingsVC"];
     settingsVC.view.backgroundColor = [UIColor clearColor];
     settingsVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        
     settingsVC.homeVC = self;
     self.definesPresentationContext = YES;
     [self presentViewController:settingsVC animated:NO completion:^{
         
     }];
-
+    
+    [self.lblSubTitle setText:NSLocalizedString(@"outlet_settings", nil)];
 }
 
 - (IBAction)onBtnHome:(id)sender {
@@ -722,6 +724,7 @@
 }
 
 - (void)handleTapSubmenu:(UITapGestureRecognizer *)tap {
+    
     CGPoint touchPoint = [tap locationInView:self.pickerView];
     CGSize rowSize = [self.pickerView rowSizeForComponent:0];
     CGSize pickerSize = self.pickerView.frame.size;
@@ -919,6 +922,7 @@
             }
         }
     }
+    
 }
 
 - (void)handlePanSubmenu:(UIPanGestureRecognizer *)pan {
