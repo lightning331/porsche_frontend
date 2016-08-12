@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
+#import "BaseVC.h"
 
-@interface DiningVC : UIViewController
+@interface DiningVC : BaseVC
 
 @property HomeVC *homeVC;
 @property NSMutableDictionary *scheduleData;

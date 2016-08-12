@@ -9,16 +9,17 @@
 #import "SettingsVC.h"
 #import "Setting.h"
 #import "AppDelegate.h"
+#import "Global.h"
 
 @interface SettingsVC ()
 {
     NSString *language;
     NSInteger logout_time;
     BOOL useTouchID;
+
 }
 
 @property (nonatomic) NSArray *btnImageArray;
-@property (nonatomic) NSArray *backImageArray;
 @property (nonatomic) NSMutableArray *bottomItems;
 
 @end
@@ -28,15 +29,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    Global *global = [Global sharedInstance];
+    self.btnImageArray = global.btnImageArray;
+    self.bottomItems = global.bottomItems;
+    
     [self updateLanguageButtons];
     [self updateLogoutTimeButtons];
     
     [self updateUIComponentTexts];
-    [self updateBottomButtons];
     [self updateTouchIDCheckBox];
+    
+    
     
 //    [self.btnSelect setTitle:NSLocalizedString(@"outlet_select", nil) forState:UIControlStateNormal];
     
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self updateBottomButtons];
 }
 
 
@@ -238,9 +249,11 @@
 }
 
 - (void)updateBottomButtons {
-    
+    self.btnPlus.hidden = YES;
     for (int i = 0; i < self.bottomItems.count; i++ ) {
         UIImageView *imgView = [self.bottomItems objectAtIndex:i];
+        NSLog(@"bottoms items :%@", self.bottomItems);
+        
         imgView.frame = CGRectMake(self.btnHome.frame.origin.x + ((self.btnPlus.frame.origin.x - self.btnHome.frame.origin.x) / self.btnImageArray.count) * (i+ 1), self.btnHome.frame.origin.y, self.btnHome.frame.size.width, self.btnHome.frame.size.height);
         
         imgView.userInteractionEnabled = YES;

@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseVC.h"
 #import "Setting.h"
 
-@interface LoginVC : BaseVC
+@interface LoginVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *viewContent;
 @property (weak, nonatomic) IBOutlet UILabel *lblLogin;

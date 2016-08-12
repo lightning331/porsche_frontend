@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
+#import "BaseVC.h"
 
-@interface ScheduledPickupsVC : UIViewController <UIAlertViewDelegate>
+@interface ScheduledPickupsVC : BaseVC <UIAlertViewDelegate>
 
 @property HomeVC *homeVC;
 

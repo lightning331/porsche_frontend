@@ -388,7 +388,7 @@
 #pragma mark - TapGesture
 
 - (void)handleTapBottom:(UITapGestureRecognizer *)tap {
-    [self setHomeVCSettingHide:YES];
+    [self setHomeVCSettingHide:NO];
     NSInteger index = tap.view.tag;
     
     [self.homeVC dismissViewControllerAnimated:NO completion:^{

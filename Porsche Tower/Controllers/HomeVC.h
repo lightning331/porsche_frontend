@@ -15,7 +15,8 @@
                                       UIPickerViewDataSource,
                                       UIPickerViewDelegate,
                                       UIAlertViewDelegate,
-                                      UIGestureRecognizerDelegate>
+                                      UIGestureRecognizerDelegate,
+                                      UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgTopLeft;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;

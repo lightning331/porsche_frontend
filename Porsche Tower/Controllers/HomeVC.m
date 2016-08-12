@@ -46,6 +46,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.delegate = self;
+    
     // Sub Title Font
     if ([[UIDevice currentDevice].model containsString:@"iPad"]) {
         [self.lblSubTitle setFont:[UIFont fontWithName:NAME_OF_MAINFONT size:27]];
@@ -110,10 +112,18 @@
         self.viewBackSize = CGSizeMake(img.size.width, img.size.height);
 }
 
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [self.btnSettings setHidden:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.btnSettings setHidden:NO];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self.btnSettings setHidden:NO];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL isCarScheduled = [userDefaults boolForKey:@"IsCarScheduled"];
@@ -272,7 +282,7 @@
     menuVC.type = type;
     
     self.definesPresentationContext = YES;
-    [self presentViewController:menuVC animated:NO completion:^{
+    [self customPresentViewController:menuVC animated:NO completion:^{
         
     }];
 }
@@ -291,7 +301,7 @@
     selectTimeVC.selectedDate = [NSDate date];
     
     self.definesPresentationContext = YES;
-    [self presentViewController:selectTimeVC animated:NO completion:^{
+    [self customPresentViewController:selectTimeVC animated:NO completion:^{
         
     }];
 }
@@ -310,7 +320,7 @@
     showroomBookingVC.type = @"request";
     
     self.definesPresentationContext = YES;
-    [self presentViewController:showroomBookingVC animated:NO completion:^{
+    [self customPresentViewController:showroomBookingVC animated:NO completion:^{
         
     }];
 }
@@ -329,7 +339,7 @@
     personalNotificationsVC.homeVC = self;
     
     self.definesPresentationContext = YES;
-    [self presentViewController:personalNotificationsVC animated:NO completion:^{
+    [self customPresentViewController:personalNotificationsVC animated:NO completion:^{
         
     }];
 }
@@ -348,9 +358,18 @@
     eventNotificationsVC.homeVC = self;
     
     self.definesPresentationContext = YES;
-    [self presentViewController:eventNotificationsVC animated:NO completion:^{
+    [self customPresentViewController:eventNotificationsVC animated:NO completion:^{
         
     }];
+}
+
+-(void)customPresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
+{
+//    [self.btnSettings setHidden:YES];
+    [self presentViewController:viewControllerToPresent animated:flag completion:^{
+        
+    }];
+
 }
 
 #pragma mark - UI Actions
@@ -378,7 +397,7 @@
     settingsVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     settingsVC.homeVC = self;
     self.definesPresentationContext = YES;
-    [self presentViewController:settingsVC animated:NO completion:^{
+    [self customPresentViewController:settingsVC animated:NO completion:^{
         
     }];
     
@@ -692,7 +711,7 @@
             }
             
             self.definesPresentationContext = YES;
-            [self presentViewController:showroomBookingVC animated:NO completion:^{
+            [self customPresentViewController:showroomBookingVC animated:NO completion:^{
                 
             }];
         } else if (indexPath.row == 2) {
@@ -703,7 +722,7 @@
             scheduledPickupsVC.homeVC = self;
             
             self.definesPresentationContext = YES;
-            [self presentViewController:scheduledPickupsVC animated:NO completion:^{
+            [self customPresentViewController:scheduledPickupsVC animated:NO completion:^{
                 
             }];
         }
@@ -749,7 +768,7 @@
             }
             
             self.definesPresentationContext = YES;
-            [self presentViewController:showroomBookingVC animated:NO completion:^{
+            [self customPresentViewController:showroomBookingVC animated:NO completion:^{
                     
             }];
 
@@ -787,7 +806,7 @@
             }
             
             self.definesPresentationContext = YES;
-            [self presentViewController:showroomBookingVC animated:NO completion:^{
+            [self customPresentViewController:showroomBookingVC animated:NO completion:^{
                 
             }];
         }
@@ -855,7 +874,7 @@
                 personalNotificationsVC.homeVC = self;
                 
                 self.definesPresentationContext = YES;
-                [self presentViewController:personalNotificationsVC animated:NO completion:^{
+                [self customPresentViewController:personalNotificationsVC animated:NO completion:^{
                     
                 }];
             }
@@ -867,7 +886,7 @@
                 maintenanceVC.homeVC = self;
                 
                 self.definesPresentationContext = YES;
-                [self presentViewController:maintenanceVC animated:NO completion:^{
+                [self customPresentViewController:maintenanceVC animated:NO completion:^{
                     
                 }];
             }
@@ -879,7 +898,7 @@
                 eventNotificationsVC.homeVC = self;
                 
                 self.definesPresentationContext = YES;
-                [self presentViewController:eventNotificationsVC animated:NO completion:^{
+                [self customPresentViewController:eventNotificationsVC animated:NO completion:^{
                     
                 }];
             }
@@ -895,7 +914,7 @@
                 weatherVC.homeVC = self;
                 
                 self.definesPresentationContext = YES;
-                [self presentViewController:weatherVC animated:NO completion:^{
+                [self customPresentViewController:weatherVC animated:NO completion:^{
                     
                 }];
                 

@@ -788,7 +788,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "433ffdf0-3eda-4ebd-a5ab-8d094fa1a17e";
+				PROVISIONING_PROFILE = "7892cdb3-4707-4ff7-9a75-f8800c4abd34";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -844,7 +844,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "433ffdf0-3eda-4ebd-a5ab-8d094fa1a17e";
+				PROVISIONING_PROFILE = "7892cdb3-4707-4ff7-9a75-f8800c4abd34";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
