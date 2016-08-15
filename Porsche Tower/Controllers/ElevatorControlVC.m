@@ -125,7 +125,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self setHomeVCSettingHide:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -151,7 +150,7 @@
 #pragma mark - UI Actions
 
 - (IBAction)onBtnCategory:(id)sender {
-    [self setHomeVCSettingHide:NO];
+    [self.homeVC setSettingButtonHidden:NO];
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:YES];
     }];
@@ -174,7 +173,7 @@
 - (IBAction)onBtnHome:(id)sender {
     [timer invalidate];
     [currentTimer invalidate];
-    [self setHomeVCSettingHide:NO];
+    [self.homeVC setSettingButtonHidden:NO];
     
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:NO];
@@ -289,10 +288,6 @@
     }];
 }
 
-- (void)setHomeVCSettingHide:(BOOL)ishidden {
-    [self.homeVC.btnSettings setHidden:ishidden];
-}
-
 - (void)sendRequest {
     WebConnector *webConnector = [[WebConnector alloc] init];
     [webConnector requestCarElevator:selectedCar[@"index"] valet:valet elevator:owner[@"unit"][@"elevator1"] delay:[NSString stringWithFormat:@"%ld", (long)self.delayTime] completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -388,7 +383,7 @@
 #pragma mark - TapGesture
 
 - (void)handleTapBottom:(UITapGestureRecognizer *)tap {
-    [self setHomeVCSettingHide:NO];
+    [self.homeVC setSettingButtonHidden:NO];
     NSInteger index = tap.view.tag;
     
     [self.homeVC dismissViewControllerAnimated:NO completion:^{

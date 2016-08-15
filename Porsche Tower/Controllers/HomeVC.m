@@ -114,12 +114,12 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self.btnSettings setHidden:NO];
+    [self setSettingButtonHidden:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.btnSettings setHidden:NO];
+    [self setSettingButtonHidden:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -365,11 +365,15 @@
 
 -(void)customPresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
 {
-//    [self.btnSettings setHidden:YES];
+    [self setSettingButtonHidden:YES];
     [self presentViewController:viewControllerToPresent animated:flag completion:^{
         
     }];
 
+}
+
+- (void)setSettingButtonHidden: (BOOL)hidden{
+    [self.btnSettings setHidden:hidden];
 }
 
 #pragma mark - UI Actions

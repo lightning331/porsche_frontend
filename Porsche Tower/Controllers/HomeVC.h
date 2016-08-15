@@ -40,6 +40,7 @@
 - (void)updatePickerViewHidden:(BOOL)isHidden;
 - (void)gotoPersonalNotifications;
 - (void)gotoEventNotifications;
+- (void)setSettingButtonHidden: (BOOL)hidden;
 
 - (IBAction)onBtnHome:(id)sender;
 - (IBAction)onBtnPlus:(id)sender;

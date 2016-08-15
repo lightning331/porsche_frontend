@@ -154,14 +154,17 @@
     if (application.applicationState == UIApplicationStateInactive) {
         NSLog(@"*******************Inactive");
         completionHandler(UIBackgroundFetchResultNewData);
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     }
     else if (application.applicationState == UIApplicationStateBackground) {
         NSLog(@"*******************Backround");
         completionHandler(UIBackgroundFetchResultNewData);
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     }
     else {
         NSLog(@"*******************Activie");
         completionHandler(UIBackgroundFetchResultNewData);
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     }
 }
 

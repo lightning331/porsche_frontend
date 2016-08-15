@@ -551,6 +551,11 @@
 					83E736131AFA84F500B59A52 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 9FX43XXU4W;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					83E7362C1AFA84F500B59A52 = {
 						CreatedOnToolsVersion = 6.1;

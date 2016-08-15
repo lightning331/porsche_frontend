@@ -176,6 +176,7 @@
 */
 
 - (IBAction)onBtnHome:(id)sender {
+    [self.homeVC setSettingButtonHidden:NO];
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:NO];
     }];

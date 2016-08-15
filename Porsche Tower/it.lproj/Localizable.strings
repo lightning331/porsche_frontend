@@ -151,14 +151,22 @@
 "outlet_select" =                           "Selezionare";
 "outlet_save" =                             "Salvare";
 
-"outlet_currently" =                        "Attualmente";
+//"outlet_currently" =                        "Attualmente";
+//"outlet_sunny" =                            "Sunny Isles";
+//"outlet_wind" =                             "Vento";
+//"outlet_humidity" =                         "Umidità";
+//"outlet_uvindex" =                          "Indice UV";
+//"outlet_visibility" =                       "Visibilità";
+//"outlet_nexthourprecip" =                   "Ora successiva pioggia.";
+//"outlet_feels_like" =                       "Si sente come";
+"outlet_currently" =                        "Currently";
 "outlet_sunny" =                            "Sunny Isles";
-"outlet_wind" =                             "Vento";
-"outlet_humidity" =                         "Umidità";
-"outlet_uvindex" =                          "Indice UV";
-"outlet_visibility" =                       "Visibilità";
-"outlet_nexthourprecip" =                   "Ora successiva pioggia.";
-"outlet_feels_like" =                       "Si sente come";
+"outlet_wind" =                             "Wind";
+"outlet_humidity" =                         "Humidity";
+"outlet_uvindex" =                          "UV Index";
+"outlet_visibility" =                       "Visibility";
+"outlet_nexthourprecip" =                   "Next Hour Precip.";
+"outlet_feels_like" =                       "Feels Like";
 
 "outlet_car" =                              "AUTO";
 "outlet_date" =                             "DATA";

@@ -90,12 +90,14 @@
 #pragma mark - UI Actions
 
 - (IBAction)onBtnCategory:(id)sender {
+    [self.homeVC setSettingButtonHidden:NO];
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:YES];
     }];
 }
 
 - (IBAction)onBtnHome:(id)sender {
+    [self.homeVC setSettingButtonHidden:NO];
     [self dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:NO];
     }];
@@ -299,6 +301,8 @@
 #pragma mark - TapGesture
 
 - (void)handleTapBottom:(UITapGestureRecognizer *)tap {
+    [self.homeVC setSettingButtonHidden:NO];
+    
     [self dismissViewControllerAnimated:NO completion:^{
         NSInteger index = tap.view.tag;
         [self.homeVC showSubcategories:index];
