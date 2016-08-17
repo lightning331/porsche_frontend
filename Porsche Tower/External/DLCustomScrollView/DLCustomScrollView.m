@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Daniel Liu. All rights reserved.
 //
 
-
+#define OFFSET 2.0f
 
 #import "DLCustomScrollView.h"
 
@@ -53,6 +53,7 @@
     self.scrollView.clipsToBounds = YES;
     self.scrollView.pagingEnabled = self.pagingEnabled;
     [self addSubview:self.scrollView];
+    NSLog(@"OFFSET : %f", OFFSET);
 }
 
 #pragma mark - public methods
@@ -89,6 +90,7 @@
     self.viewSize = CGSizeMake(viewWidth, viewHeight);
     
     int visibleCount = (int)(CGRectGetWidth(self.bounds) / viewWidth);
+    NSLog(@"visible count : %d", visibleCount);
     CGFloat modular = CGRectGetWidth(self.bounds) - (viewWidth * visibleCount);
     if (modular >= 1.f)
         visibleCount += 2;
@@ -100,8 +102,8 @@
     
     self.views = [NSMutableArray array];
     
-    int begin = -ceil(self.visibleViewCount / 2.0f);
-    int end = ceil(self.visibleViewCount / 2.0f);
+    int begin = -ceil(self.visibleViewCount / OFFSET);
+    int end = ceil(self.visibleViewCount / OFFSET);
     _currentIndex = 0;
     
     self.scrollView.contentOffset = CGPointMake(self.totalWidth / 2-CGRectGetWidth(self.bounds) / 2, 0);
@@ -158,7 +160,7 @@
 {
     CGPoint center = [self centerForViewAtIndex:index];
     for (UIView *view in self.views) {
-        if (fabs(center.x - view.center.x) <= self.viewSize.width / 2.0f) {
+        if (fabs(center.x - view.center.x) <= self.viewSize.width / OFFSET) {
             return view;
         }
     }
@@ -273,7 +275,7 @@
 
 - (CGPoint)currentCenter
 {
-    CGFloat x = self.scrollView.contentOffset.x + CGRectGetWidth(self.bounds) / 2.0f;
+    CGFloat x = self.scrollView.contentOffset.x + CGRectGetWidth(self.bounds) / OFFSET;
     CGFloat y = self.scrollView.contentOffset.y;
     return  CGPointMake(x, y);
 }
@@ -294,7 +296,7 @@
 - (BOOL)viewCanBeQueuedForReuse:(UIView *)view
 {
     CGFloat distanceToCenter = [self currentCenter].x - view.center.x;
-    CGFloat threshold = (ceil(self.visibleViewCount/2.0f)) * self.viewSize.width + self.viewSize.width / 2.0f;
+    CGFloat threshold = (ceil(self.visibleViewCount/OFFSET)) * self.viewSize.width + self.viewSize.width / OFFSET;
     if (self.scrollDirection == ScrollDirectionLeft) {
         if (distanceToCenter < 0){
             return NO;

@@ -95,7 +95,7 @@
     
     UIImage *img = [self.backImageArray objectAtIndex:0];
     
-    NSLog(@"%f %f", self.view.bounds.size.width, self.scrollView.bounds.size.width);
+    NSLog(@"bound.width : %f scrollview.width : %f", self.view.bounds.size.width, self.scrollView.bounds.size.width);
     
     //Background Image Size for each device
     if (self.view.bounds.size.width == 736)
@@ -105,6 +105,10 @@
     else if (self.view.bounds.size.width == 568)
         self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.8f, img.size.height);
     else if (self.view.bounds.size.width == 1024) {
+        self.viewSize = img1.size.width;
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width, img.size.height / img.size.width * self.scrollView.bounds.size.width);
+    }
+    else if (self.view.bounds.size.width == 1366) {
         self.viewSize = img1.size.width;
         self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width, img.size.height / img.size.width * self.scrollView.bounds.size.width);
     }
@@ -425,7 +429,8 @@
     if (scrollView.tag == 1) {
         return (scrollView.bounds.size.width / 3.5f);
     } else {
-        return (scrollView.bounds.size.width /1.7f);
+        return (scrollView.bounds.size.width / 1.7f);
+//        return (scrollView.bounds.size.width /1.7f);
     }
 }
 
