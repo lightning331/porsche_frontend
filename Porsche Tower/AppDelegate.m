@@ -70,6 +70,9 @@
     NSLog(@"content---%@", token);
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (token == nil)
+        token = @"d212d100f8e5706e257088151fe90fff669040e92c1eef5c5a12d3d4580b5837";
+    NSLog(@"token :%@", token);
     [userDefaults setObject:token forKey:@"DeviceToken"];
 }
 

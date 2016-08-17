@@ -30,8 +30,9 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *deviceToken = [prefs objectForKey:@"DeviceToken"];
+    if (deviceToken == nil)
+        deviceToken = @"d212d100f8e5706e257088151fe90fff669040e92c1eef5c5a12d3d4580b5837";
     [parameters setObject:deviceToken forKey:@"device_token"];
-//    [parameters setObject:@"1bfe0817206ea50c7e62cd66a89286ed39c09892133d26e841bf828c3aeb0b75" forKey:@"device_token"];
     
     [httpManager POST:@"login" parameters:parameters success:completed failure:errorBlock];
 }

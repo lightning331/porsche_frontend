@@ -63,6 +63,8 @@
     
     [self.btnCancel setTitle:NSLocalizedString(@"outlet_cancel", nil) forState:UIControlStateNormal];
     
+    //applicationIconBadgeNumber = 0
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)didReceiveMemoryWarning {
