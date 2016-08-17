@@ -187,7 +187,7 @@
         }*/
         else {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            
+            NSLog(@"schedule data:%@", self.scheduleData);
             WebConnector *webConnector = [[WebConnector alloc] init];
             [webConnector sendScheduleRequest:type index:[self.scheduleData objectForKey:@"index"] datetime:datetimeString completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
                 [MBProgressHUD hideHUDForView:self.view animated:YES];

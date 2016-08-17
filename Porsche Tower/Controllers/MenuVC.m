@@ -51,6 +51,12 @@
         menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_one_time", nil), NSLocalizedString(@"title_daily", nil), NSLocalizedString(@"title_weekly", nil), nil];
         [self.tableView reloadData];
     }
+//    // In Unit -> Request Maintenance
+//    else if ([self.type isEqualToString:@"request_maintenance"])
+//    {
+//        menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_request_maintenance", nil), nil];
+//        [self.tableView reloadData];
+//    }
     // Wellness -> Fitness
     else if ([self.type isEqualToString:@"gym"]) {
         menuArray = [NSArray arrayWithObjects:NSLocalizedString(@"title_personal_trainers", nil), NSLocalizedString(@"title_classes", nil), nil];
@@ -116,6 +122,9 @@
         [self.type isEqualToString:@"request_car_elevator_choose_time"] ||
         [self.type isEqualToString:@"repeat_schedule"]) {
         status = 0;
+    }
+    else if ([self.type isEqualToString:@"request_maintenance"]) {
+        status = 1;
     }
     else if ([self.type isEqualToString:@"service_car"] ||
         [self.type isEqualToString:@"detailing"] ||
@@ -192,12 +201,14 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+        NSLog(@"result of getmenulist:%@", result);
         if ([result[@"status"] isEqualToString:@"success"]) {
             menuArray = [result[[NSString stringWithFormat:@"%@_list", self.type]] mutableCopy];
             self.tableView.hidden = NO;
             [self.tableView reloadData];
         }
     } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error of getmenulist:%@", error);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
@@ -287,6 +298,11 @@
     // Car Elevator -> Request/Schedule -> Select Car -> Ride Down/Valet
     else if ([self.type isEqualToString:@"request_car_elevator_choose_time"]) {
         cell.textLabel.text = [menuArray objectAtIndex:indexPath.row];
+    }
+    // In Unit -> Request Maintenance -> Request Maintenance
+    else if ([self.type isEqualToString:@"request_maintenance"])
+    {
+        cell.textLabel.text = [menuArray objectAtIndex:indexPath.row][@"title"];
     }
     // Car Concierge -> Detailing/Service/Storage
     else if ([self.type isEqualToString:@"detailing"] ||
@@ -484,6 +500,25 @@
         } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         }];
+    }
+    // In Unit -> Request Maintenance -> Request Maintenance
+    else if ([self.type isEqualToString:@"request_maintenance"])
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        CalendarVC *calendarVC = [storyboard instantiateViewControllerWithIdentifier:@"CalendarVC"];
+        calendarVC.view.backgroundColor = [UIColor clearColor];
+        calendarVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        calendarVC.homeVC = self.homeVC;
+        
+        NSMutableDictionary *scheduleData = [[menuArray objectAtIndex:indexPath.row] mutableCopy];
+        [scheduleData setObject:self.type forKey:@"type"];
+        
+        calendarVC.scheduleData = scheduleData;
+        
+        [self presentViewController:calendarVC animated:NO completion:^{
+            return;
+        }];
+
     }
     // Car Concierge -> Detailing/Service/Storage -> Selecting ...
     else if ([self.type isEqualToString:@"detailing"] ||
