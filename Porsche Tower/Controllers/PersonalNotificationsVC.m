@@ -96,6 +96,7 @@
 }
 
 - (IBAction)onBtnCancel:(id)sender {
+    [self.homeVC setSettingButtonHidden:NO];
     [self dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:NO];
         [self.homeVC.scrollView scrollToIndex:0 animated:NO];

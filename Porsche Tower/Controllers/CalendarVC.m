@@ -83,6 +83,8 @@
 }
 
 - (IBAction)onBtnCancel:(id)sender {
+    [self.homeVC setSettingButtonHidden:NO];
+    
     UIViewController *viewController = self.presentationController.presentingViewController;
     if ([viewController isKindOfClass:[MenuVC class]]) {
         [(MenuVC *)viewController updateBottomButtons];

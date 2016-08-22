@@ -55,6 +55,8 @@
     else {
         [self.lblSubTitle setFont:[UIFont fontWithName:NAME_OF_MAINFONT size:17]];
     }
+    if (self.view.bounds.size.width == 1366)
+        [self.lblSubTitle setFont:[UIFont fontWithName:NAME_OF_MAINFONT size:54]];
     
     Global *global = [Global sharedInstance];
     self.btnImageArray = global.btnImageArray;

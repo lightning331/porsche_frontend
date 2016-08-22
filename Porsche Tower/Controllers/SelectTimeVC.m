@@ -85,6 +85,7 @@
 }
 
 - (IBAction)onBtnCancel:(id)sender {
+    [self.homeVC setSettingButtonHidden:NO];
     NSString *type = [self.scheduleData objectForKey:@"type"];
     if ([type isEqualToString:@"pool_beach"])
     {

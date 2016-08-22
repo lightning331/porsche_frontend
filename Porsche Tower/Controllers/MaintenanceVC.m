@@ -160,6 +160,7 @@
 }
 
 - (IBAction)onBtnCancel:(id)sender {
+    [self.homeVC setSettingButtonHidden:NO];
     [self dismissViewControllerAnimated:NO completion:^{
         
     }];
