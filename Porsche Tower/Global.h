@@ -12,8 +12,8 @@
 //Porsh Design Font Name
 #define NAME_OF_MAINFONT @"PorscheDesignFont"
 
-//#define BASE_URL         @"http://192.168.1.87/porsche/"
-#define BASE_URL         @"http://pdtowerapp.com/"
+#define BASE_URL         @"http://192.168.1.87/porsche/"
+//#define BASE_URL         @"http://pdtowerapp.com/"
 
 #define LANGUAGE         @"Language"
 

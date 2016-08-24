@@ -915,15 +915,32 @@
                 //Documents
                 self.lblSubTitle.text = [NSString stringWithFormat:@"%@", [subMenuArray objectAtIndex:index]];
                 [self openMenu:@"document"];
-                
+                self.pickerView.hidden = YES;
             }
             else
             {
                 //Unit Manual
-                
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+                WebConnector *webConnector = [[WebConnector alloc] init];
+                [webConnector getDataList:@"unit_manual" completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+                    NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                    if ([result[@"status"] isEqualToString:@"success"]) {
+                        NSMutableArray *documentArray = [result[@"unit_manual"] mutableCopy];
+                        NSString *doc_url = documentArray[0][@"doc_url"];
+                        if (doc_url)
+                            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:doc_url]];
+                    }
+                } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"%@", error);
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
             }
             
-            self.pickerView.hidden = YES;
+            
             
         }
         else if (status == 8) { // Information Board
