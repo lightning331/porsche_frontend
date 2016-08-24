@@ -241,36 +241,36 @@
     
     [self setHiddenCategories:YES];
     
-    if (status == 7) {
-        subMenuArray = [[NSArray alloc] init];
-        [self.pickerView reloadAllComponents];
-        
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        
-        WebConnector *webConnector = [[WebConnector alloc] init];
-        [webConnector getDataList:@"document" completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
-            NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
-            if ([result[@"status"] isEqualToString:@"success"]) {
-                NSMutableArray *documentArray = [result[@"document_list"] mutableCopy];
-                NSMutableArray *documentNameArray = [[NSMutableArray alloc] init];
-                for (NSInteger i = 0; i < documentArray.count; i++) {
-                    [documentNameArray addObject:documentArray[i][@"name"]];
-                }
-                subMenuArray = [[NSArray alloc] initWithArray:documentNameArray];
-                [self.pickerView reloadAllComponents];
-            }
-        } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }];
-    }
-    else {
+//    if (status == 7) {
+//        subMenuArray = [[NSArray alloc] init];
+//        [self.pickerView reloadAllComponents];
+//        
+//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//        
+//        WebConnector *webConnector = [[WebConnector alloc] init];
+//        [webConnector getDataList:@"document" completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            
+//            NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+//            if ([result[@"status"] isEqualToString:@"success"]) {
+//                NSMutableArray *documentArray = [result[@"document_list"] mutableCopy];
+//                NSMutableArray *documentNameArray = [[NSMutableArray alloc] init];
+//                for (NSInteger i = 0; i < documentArray.count; i++) {
+//                    [documentNameArray addObject:documentArray[i][@"name"]];
+//                }
+//                subMenuArray = [[NSArray alloc] initWithArray:documentNameArray];
+//                [self.pickerView reloadAllComponents];
+//            }
+//        } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        }];
+//    }
+//    else {
         subMenuArray = SUBCATEGORY_ARRAY[status];
         [self.pickerView reloadAllComponents];
         [self.tableView reloadData];
-    }
+//    }
 }
 
 - (void)openMenu:(NSString *)type {
@@ -786,9 +786,49 @@
         }
         else if (status == 1) { // In-Unit
             if (index == 0) {
-                [self openMenu:@"request_maintenance"];
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_maintenance_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
-//                [alertView show];
+//                [self openMenu:@"request_maintenance"];
+                
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSCalendar *calendar = [NSCalendar currentCalendar];
+                [dateFormatter setTimeZone:[calendar timeZone]];
+                NSString *datetimeString = [dateFormatter stringFromDate:[NSDate date]];
+                
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                
+                /*
+                 WebConnector *webConnector = [[WebConnector alloc] init];
+                 [webConnector sendRestaurantRequest:@"order" restaurant:[self.scheduleData objectForKey:@"index"] datetime:datetimeString completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 
+                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                 
+                 NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                 if ([result[@"status"] isEqualToString:@"success"]) {
+                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_order_req_confirmed", nil) message:@"Your request was sent. A staff member will call to take your order shortly." delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
+                 [alertView show];
+                 }
+                 } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                 }];*/
+                
+//                NSString *type = [self.scheduleData objectForKey:@"type"];
+                NSString *index_num = @"5";
+                NSString *type = @"request_maintenance";
+                
+                WebConnector *webConnector = [[WebConnector alloc] init];
+                [webConnector sendScheduleRequest:type index:index_num datetime:datetimeString completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    NSLog(@"response object: %@", responseObject);
+                    
+                    NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                    if ([result[@"status"] isEqualToString:@"success"]) {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_request_sent",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        [alertView show];
+                        [self setHiddenCategories:NO];
+                    }
+                } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
             }
             else if (index == 1) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_front_desk_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_front_desk", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
@@ -870,7 +910,18 @@
             }
         }
         else if (status == 7) { // Documents
-            self.lblSubTitle.text = [NSString stringWithFormat:@"%@", [subMenuArray objectAtIndex:index]];
+            if (index == 0)
+            {
+                //Documents
+                self.lblSubTitle.text = [NSString stringWithFormat:@"%@", [subMenuArray objectAtIndex:index]];
+                [self openMenu:@"document"];
+                
+            }
+            else
+            {
+                //Unit Manual
+                
+            }
             
             self.pickerView.hidden = YES;
             

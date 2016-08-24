@@ -76,6 +76,7 @@
     // Wellness -> Salon Spa/Massage/Barber
     // Activities -> Golf Sim/Racing Sim/Community Room
     // Dining -> In House Dining/Local Restaurants
+    // In Unit -> Request Maintenance
     // Concierge -> Housekeeping/Dry Cleaning
     else {
         [self getMenuList];
@@ -149,6 +150,9 @@
     else if ([self.type isEqualToString:@"restaurants_in_house"] ||
              [self.type isEqualToString:@"local_restaurants"]) {
         status = 6;
+    }
+    else if ([self.type isEqualToString:@"document"]) {
+        status = 7;
     }
     else if ([self.type isEqualToString:@"housekeeping"] ||
              [self.type isEqualToString:@"transportation"] ||
@@ -364,7 +368,10 @@
              [self.type isEqualToString:@"car_rental"]) {
         cell.textLabel.text = [menuArray objectAtIndex:indexPath.row][@"company"];
     }
-    
+    // Documents -> Documents
+    else if ([self.type isEqualToString:@"document"]) {
+        cell.textLabel.text = [menuArray objectAtIndex:indexPath.row][@"name"];
+    }
     return cell;
 }
 
@@ -631,6 +638,15 @@
     // Concierge -> Dry Cleaning -> Selecting ...
     else if ([self.type isEqualToString:@"dry_cleaning"]) {
         [self openDescriptionView:indexPath.row hasCall:NO];
+    }
+    // Documents -> Documents -> Selecting ...
+    else if ([self.type isEqualToString:@"document"]) {
+        NSLog(@"file : %@", [menuArray objectAtIndex:indexPath.row][@"file"]);
+        if ([menuArray objectAtIndex:indexPath.row][@"file"])
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[menuArray objectAtIndex:indexPath.row][@"file"]]];
+            self.tableView.hidden = NO;
+        }
     }
 }
 

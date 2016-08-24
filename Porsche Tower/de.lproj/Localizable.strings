@@ -137,7 +137,7 @@
 "title_request_housekeeping" = 				"Request house keeping";
 "title_request_transportation" = 			"Request Transport";
 "title_dry_cleaning" = 						"Chemische Reinigung";
-
+"title_unit_manual" =                       "Einheit-Handbuch";
 //++++++++++++++++Storyboard+++++++++++++++++++++++++++
 
 "outlet_login" =                            "ANMELDUNG";

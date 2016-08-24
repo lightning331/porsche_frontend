@@ -118,6 +118,7 @@
     } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];*/
+    
     NSLog(@"%@", [self.scheduleData objectForKey:@"type"]);
     NSString *type = [self.scheduleData objectForKey:@"type"];
     WebConnector *webConnector = [[WebConnector alloc] init];
