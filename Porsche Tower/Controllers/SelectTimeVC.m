@@ -342,7 +342,7 @@
             break;
         case MFMailComposeResultSent:
             //NSLog(@"Mail sent");
-            NSLog(NSLocalizedString(@"msg_mail_send",nil));
+//            NSLog(NSLocalizedString(@"msg_mail_send",nil));
             [self messageAlert:NSLocalizedString(@"msg_mail_send",nil) stats:@"Sent"];
             break;
         case MFMailComposeResultFailed:

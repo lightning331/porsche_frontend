@@ -54,11 +54,11 @@
         CGContextRef context = UIGraphicsGetCurrentContext();
         
 //        CGColorRef backgroundShadow = [UIColor blackColor].CGColor;
-        CGColorRef backgroundShadow = [UIColor blueColor].CGColor;
-        CGSize backgroundShadowOffset = CGSizeMake(2, 3);
-        CGFloat backgroundShadowBlurRadius = 5;
-        
-        UIColor* darkColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.72];
+//        CGColorRef backgroundShadow = [UIColor blueColor].CGColor;
+//        CGSize backgroundShadowOffset = CGSizeMake(2, 3);
+//        CGFloat backgroundShadowBlurRadius = 5;
+//        
+//        UIColor* darkColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.72];
         
         UIColor* color = [UIColor colorWithRed: 0.82 green: 0.08 blue: 0 alpha: 0.86];
         UIColor* color2 = [UIColor colorWithRed: 0.66 green: 0.02 blue: 0.04 alpha: 0.88];
@@ -74,8 +74,8 @@
 //        CGFloat vDiff  = (height - headerHeight - innerPadding.height * 2) / 7;
         CGFloat vDiff  = (height - headerHeight - innerPadding.height * 2) / 6.25;
 
-        int tempStart = MAX(MIN(_startIndex, _endIndex), 0);
-        int tempEnd = MAX(_startIndex, _endIndex);
+        int tempStart = (int)MAX(MIN(_startIndex, _endIndex), 0);
+        int tempEnd = (int)MAX(_startIndex, _endIndex);
         
         int rowStart = tempStart / 7;
         int rowEnd = tempEnd / 7;

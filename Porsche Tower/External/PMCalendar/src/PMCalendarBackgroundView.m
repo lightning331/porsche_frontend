@@ -190,36 +190,34 @@ CGSize innerPadding = (CGSize){0, 0};
 
 -(void)drawRect:(CGRect)rect
 {
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     // color declarations
-    UIColor* bigBoxInnerShadowColor = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.56];
+//    UIColor* bigBoxInnerShadowColor = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.56];
 //    UIColor* backgroundLightColor = [UIColor colorWithWhite:0.2 alpha: 1];
     UIColor* backgroundLightColor = [UIColor colorWithRed:17.0/255 green:18.0/255 blue:20.0/255 alpha:1.0];
-    UIColor* lineLightColor = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.27];
-    UIColor* boxStroke = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.59];
+//    UIColor* lineLightColor = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.27];
+//    UIColor* boxStroke = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.59];
 
     // overlay gradient colors
-    UIColor* darkColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.45];
-    UIColor* lightColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.15];
+//    UIColor* darkColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.45];
+//    UIColor* lightColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.15];
 
-    NSArray* gradient2Colors = [NSArray arrayWithObjects: 
-                                (id)darkColor.CGColor, 
-                                (id)lightColor.CGColor, nil];
-    CGFloat gradient2Locations[] = {0, 1};
-    CGGradientRef gradient2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradient2Colors, gradient2Locations);
+//    NSArray* gradient2Colors = [NSArray arrayWithObjects:(id)darkColor.CGColor,(id)lightColor.CGColor, nil];
+//    CGFloat gradient2Locations[] = {0, 1};
+//    CGGradientRef gradient2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradient2Colors, gradient2Locations);
 
     // shadow declarations
-    CGColorRef bigBoxInnerShadow = bigBoxInnerShadowColor.CGColor;
-    CGSize bigBoxInnerShadowOffset = CGSizeMake(0, 1);
-    CGFloat bigBoxInnerShadowBlurRadius = 1;
-    CGColorRef backgroundShadow = [UIColor blackColor].CGColor;
-    CGSize backgroundShadowOffset = CGSizeMake(1, 1);
-    CGFloat backgroundShadowBlurRadius = 2;
-    CGColorRef shadow = [UIColor blackColor].CGColor;
-    CGSize shadowOffset = CGSizeMake(-1, -0);
-    CGFloat shadowBlurRadius = 0;
+//    CGColorRef bigBoxInnerShadow = bigBoxInnerShadowColor.CGColor;
+//    CGSize bigBoxInnerShadowOffset = CGSizeMake(0, 1);
+//    CGFloat bigBoxInnerShadowBlurRadius = 1;
+//    CGColorRef backgroundShadow = [UIColor blackColor].CGColor;
+//    CGSize backgroundShadowOffset = CGSizeMake(1, 1);
+//    CGFloat backgroundShadowBlurRadius = 2;
+//    CGColorRef shadow = [UIColor blackColor].CGColor;
+//    CGSize shadowOffset = CGSizeMake(-1, -0);
+//    CGFloat shadowBlurRadius = 0;
     
     // backgound box. it doesn't include arrow:
     CGRect boxBounds = CGRectMake(0, 0
@@ -227,8 +225,8 @@ CGSize innerPadding = (CGSize){0, 0};
                                   , self.bounds.size.height - arrowSize.height);
 
     // TODO: check if *2 is really needed.
-    CGFloat width = boxBounds.size.width - shadowPadding * 2;
-    CGFloat height = boxBounds.size.height - shadowPadding * 2;
+//    CGFloat width = boxBounds.size.width - shadowPadding * 2;
+//    CGFloat height = boxBounds.size.height - shadowPadding * 2;
     
     CGPoint tl = CGPointZero;
     

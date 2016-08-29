@@ -195,7 +195,7 @@
                 indexNeeded = indexOfViewToReuse - (self.visibleViewCount + 2);
             }
             
-            if (abs(indexNeeded) <= floorf(self.totalViewCount / 2)) {
+            if ((int)(labs(indexNeeded)) <= floorf(self.totalViewCount / 2)) {
                 //NSLog(@"index:%d indexNeeded:%d",indexOfViewToReuse,indexNeeded);
                 
                 [view removeFromSuperview];

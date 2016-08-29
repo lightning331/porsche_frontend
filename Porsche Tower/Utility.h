@@ -25,7 +25,7 @@
 + (BOOL) isItalianUser;
 
 //alert
-+ (void) showMessage: (NSString *) message title:(NSString *) title cancel:(NSString *)cancel;
+//+ (void) showMessage: (NSString *) message title:(NSString *) title cancel:(NSString *)cancel;
 //UUID
 +(NSString*) genUUID;
 

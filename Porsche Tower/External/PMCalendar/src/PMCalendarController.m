@@ -441,13 +441,13 @@ NSString *kPMCalendarRedrawNotification = @"kPMCalendarRedrawNotification";
 
 - (void) currentDateChanged:(NSDate *) currentDate
 {
-	int numDaysInMonth      = [currentDate numberOfDaysInMonth];
+	int numDaysInMonth      = (int)[currentDate numberOfDaysInMonth];
     NSInteger monthStartDay = [[currentDate monthStartDate] weekday];
     numDaysInMonth         += (monthStartDay + (self.digitsView.mondayFirstDayOfWeek?5:6)) % 7;
-    CGFloat height          = self.mainView.frame.size.height - outerPadding.height * 2 - arrowSize.height;
-    CGFloat vDiff           = (height - headerHeight - innerPadding.height * 2) / 7;
+//    CGFloat height          = self.mainView.frame.size.height - outerPadding.height * 2 - arrowSize.height;
+//    CGFloat vDiff           = (height - headerHeight - innerPadding.height * 2) / 7;
     CGRect frm              = CGRectInset(self.mainView.bounds, outerPadding.width, outerPadding.height);
-    int numberOfRows        = ceil((CGFloat)numDaysInMonth / 7.0f);
+//    int numberOfRows        = ceil((CGFloat)numDaysInMonth / 7.0f);
 //    frm.size.height         = (int)((numberOfRows + 1) * vDiff + headerHeight + innerPadding.height * 2 + arrowSize.height);
     
     CGRect calendarViewFrame = self.calendarView.frame;

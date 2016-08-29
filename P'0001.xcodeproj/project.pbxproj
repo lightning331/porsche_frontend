@@ -545,7 +545,7 @@
 		83E7360C1AFA84F500B59A52 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Daniel Liu";
 				TargetAttributes = {
 					83E736131AFA84F500B59A52 = {
@@ -776,6 +776,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benjamin Haas (CH27DB697K)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -848,6 +849,7 @@
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
 				PROVISIONING_PROFILE = "7892cdb3-4707-4ff7-9a75-f8800c4abd34";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -865,6 +867,7 @@
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
 				PROVISIONING_PROFILE = "b2aafb31-ac80-410f-a4ca-e133f693c1e4";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -887,6 +890,7 @@
 				);
 				INFOPLIST_FILE = "Porsche TowerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "foxyman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "P'0001Tests";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Porsche Tower.app/Porsche Tower";
@@ -905,6 +909,7 @@
 				);
 				INFOPLIST_FILE = "Porsche TowerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "foxyman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "P'0001Tests";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Porsche Tower.app/Porsche Tower";

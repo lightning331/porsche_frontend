@@ -136,7 +136,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSArray *dayTitles = [dateFormatter shortStandaloneWeekdaySymbols];
-    NSArray *monthTitles = [dateFormatter standaloneMonthSymbols];
+//    NSArray *monthTitles = [dateFormatter standaloneMonthSymbols];
 
     CGContextRef context = UIGraphicsGetCurrentContext();
 
@@ -145,13 +145,13 @@
     CGFloat shadow2BlurRadius = 1;
 
     CGFloat width = self.frame.size.width;
-    CGFloat height = self.frame.size.height;
+//    CGFloat height = self.frame.size.height;
 //    CGFloat hDiff  = width / 7;
     CGFloat hDiff  = (width - monthPickerWidth) / 7;
 //    CGFloat vDiff  = (height - headerHeight) / 7;
-    CGFloat vDiff  = (height - headerHeight) / 6.25;
+//    CGFloat vDiff  = (height - headerHeight) / 6.25;
     UIFont *calendarFont = self.font;
-    UIFont *monthFont = [UIFont fontWithName:@"Helvetica-Bold" size:calendarFont.pointSize];
+//    UIFont *monthFont = [UIFont fontWithName:@"Helvetica-Bold" size:calendarFont.pointSize];
     UIFont *weekdayFont = [UIFont fontWithName:@"Helvetica-Bold" size:calendarFont.pointSize / 2];
 
     for (int i = 0; i < dayTitles.count; i++) 
@@ -181,8 +181,8 @@
         CGContextRestoreGState(context);
     }
     
-    int month = currentMonth;
-    int year = currentYear;
+    int month = (int)currentMonth;
+//    int year = currentYear;
     
 //	NSString *monthTitle = [NSString stringWithFormat:@"%@ %d", [monthTitles objectAtIndex:(month - 1)], year];
 //    //// Month Header Drawing
@@ -299,7 +299,7 @@
     NSInteger index = [self indexForDate:_period.startDate];
     NSInteger length = [_period lengthInDays];
     
-    int numDaysInMonth      = [_currentDate numberOfDaysInMonth];
+    int numDaysInMonth      = (int)[_currentDate numberOfDaysInMonth];
     NSDate *monthStartDate  = [_currentDate monthStartDate];
     NSInteger monthStartDay = [monthStartDate weekday];
     monthStartDay           = (monthStartDay + (self.mondayFirstDayOfWeek?5:6)) % 7;
@@ -379,7 +379,7 @@
         }
         
         [tView setTextColor:[UIColor whiteColor]];
-        [tView setTextAlignment:UITextAlignmentCenter];
+        tView.textAlignment = NSTextAlignmentCenter;
         tView.numberOfLines=1;
     }
     // Fill the label text here
@@ -430,12 +430,12 @@
     CGFloat yInCalendar = point.y - (headerHeight + vDiff / 4);
     NSInteger row = yInCalendar / vDiff;
     
-    int numDaysInMonth      = [_currentDate numberOfDaysInMonth];
+    int numDaysInMonth      = (int)[_currentDate numberOfDaysInMonth];
     NSDate *monthStartDate  = [_currentDate monthStartDate];
     NSInteger monthStartDay = [monthStartDate weekday];
     monthStartDay           = (monthStartDay + (self.mondayFirstDayOfWeek?5:6)) % 7;
     numDaysInMonth         += monthStartDay;
-    int maxNumberOfRows     = ceil((CGFloat)numDaysInMonth / 7.0f) - 1;
+//    int maxNumberOfRows     = ceil((CGFloat)numDaysInMonth / 7.0f) - 1;
     
     if (monthStartDay == 0) {
         monthStartDay = 7;
@@ -702,9 +702,9 @@
 //    CGFloat vDiff  = (height - headerHeight) / 7;
     CGFloat vDiff  = (height - headerHeight) / 6.25;
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGColorRef shadow2 = [UIColor blackColor].CGColor;
+//    CGColorRef shadow2 = [UIColor blackColor].CGColor;
     CGSize shadow2Offset = CGSizeMake(1, 1);
-    CGFloat shadow2BlurRadius = 1;
+//    CGFloat shadow2BlurRadius = 1;
 
     void (^drawString)(NSString *, CGRect, UIColor *) = ^(NSString *string, CGRect rect, UIColor *color) {
         CGContextSaveGState(context);
@@ -722,11 +722,11 @@
     // digits drawing
 	NSDate *dateOnFirst = [_currentDate monthStartDate];
 	int weekdayOfFirst = ([dateOnFirst weekday] + (_mondayFirstDayOfWeek?5:6)) % 7 + 1;
-	int numDaysInMonth = [dateOnFirst numberOfDaysInMonth];
+	int numDaysInMonth = (int)[dateOnFirst numberOfDaysInMonth];
         
     //Find number of days in previous month
     NSDate *prevDateOnFirst = [[_currentDate dateByAddingMonths:-1] monthStartDate];
-    int numDaysInPrevMonth = [prevDateOnFirst numberOfDaysInMonth];
+    int numDaysInPrevMonth = (int)[prevDateOnFirst numberOfDaysInMonth];
     
     
     if (weekdayOfFirst == 1) {
