@@ -127,7 +127,7 @@
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:pickup forKey:@"pickup"];
     
-    [httpManager POST:@" " parameters:parameters success:completed failure:errorBlock];
+    [httpManager POST:@"cancel_car_elevator" parameters:parameters success:completed failure:errorBlock];
 }
 
 - (void)getTimeIncrease:(NSString *)pickup completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
