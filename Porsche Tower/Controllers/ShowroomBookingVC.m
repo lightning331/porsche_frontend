@@ -104,13 +104,20 @@
 }
 
 - (IBAction)onBtnPlus:(id)sender {
+    int status = 0;
+    if ([self.type isEqualToString:@"detailing"] ||
+        [self.type isEqualToString:@"service_car"] ||
+        [self.type isEqualToString:@"storage"])
+        status = 2;
+    else
+        status = 0;
     for (UIImageView* imgView in self.bottomItems)
         if ([self.btnImageArray objectAtIndex:0] == imgView.image)
             return;
     if (self.bottomItems.count == self.btnImageArray.count)
         [self.bottomItems removeObjectAtIndex:0];
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[self.btnImageArray objectAtIndex:0]];
-    imgView.tag = 0;
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[self.btnImageArray objectAtIndex:status]];
+    imgView.tag = status;
     [self.bottomItems addObject:imgView];
     [self updateBottomButtons];
 }

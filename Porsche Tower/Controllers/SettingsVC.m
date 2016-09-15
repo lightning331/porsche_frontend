@@ -10,6 +10,7 @@
 #import "Setting.h"
 #import "AppDelegate.h"
 #import "Global.h"
+#import "LoginVC.h"
 
 @interface SettingsVC ()
 {
@@ -46,7 +47,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    [self.homeVC.lblSubTitle setText:NSLocalizedString(@"outlet_settings", nil)];
     [self updateBottomButtons];
 }
 
@@ -177,6 +178,9 @@
 
 - (IBAction)onBtnHome:(id)sender {
     [self.homeVC setSettingButtonHidden:NO];
+    [self.homeVC.lblSubTitle setHidden:NO];
+    [self.homeVC.lblSettings setHidden:YES];
+    
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:NO];
     }];
@@ -189,6 +193,10 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs removeObjectForKey:@"UseTouchID"];
     [prefs removeObjectForKey:@"CurrentUser"];
+    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    LoginVC *lvc = [storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+//    [self.navigationController pushViewController:lvc animated:YES];
     
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate logout];
@@ -260,7 +268,7 @@
         imgView.userInteractionEnabled = YES;
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                    action:@selector(handleTapBottom:)];
+                                                                                     action:@selector(handleTapBottom:)];
         [imgView addGestureRecognizer:singleTap];
         
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressBottom:)];
@@ -275,6 +283,9 @@
 - (void)handleTapBottom:(UITapGestureRecognizer *)tap {
     NSInteger index = 0;
     index = tap.view.tag;
+    
+    [self.homeVC.lblSubTitle setHidden:NO];
+    [self.homeVC.lblSettings setHidden:YES];
     
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC showSubcategories:index];

@@ -48,6 +48,11 @@
     
     self.navigationController.delegate = self;
     
+    //subtitle
+    
+    [self.lblSettings setHidden:YES];
+    [self.lblSubTitle setHidden:NO];
+    
     // Sub Title Font
     if ([[UIDevice currentDevice].model containsString:@"iPad"]) {
         [self.lblSubTitle setFont:[UIFont fontWithName:NAME_OF_MAINFONT size:27]];
@@ -411,7 +416,10 @@
         
     }];
     
-    [self.lblSubTitle setText:NSLocalizedString(@"outlet_settings", nil)];
+//    [self.lblSubTitle setText:NSLocalizedString(@"outlet_settings", nil)];
+    [self.lblSettings setHidden:NO];
+    [self.lblSubTitle setHidden:YES];
+    
 }
 
 - (IBAction)onBtnHome:(id)sender {

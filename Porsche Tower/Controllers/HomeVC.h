@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgTopLeft;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblSubTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblSettings;
 
 @property (weak, nonatomic) IBOutlet DLCustomScrollView *scrollViewBack;
 @property (weak, nonatomic) IBOutlet DLCustomScrollView *scrollView;

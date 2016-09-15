@@ -794,7 +794,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "7892cdb3-4707-4ff7-9a75-f8800c4abd34";
+				PROVISIONING_PROFILE = "bf84b228-74e6-4891-af1b-5b195eefc49f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -831,7 +831,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b2aafb31-ac80-410f-a4ca-e133f693c1e4";
+				PROVISIONING_PROFILE = "7cc052ff-75f1-48be-9d79-7948a70bbd66";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -851,7 +851,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "7892cdb3-4707-4ff7-9a75-f8800c4abd34";
+				PROVISIONING_PROFILE = "bf84b228-74e6-4891-af1b-5b195eefc49f";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -869,7 +869,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "b2aafb31-ac80-410f-a4ca-e133f693c1e4";
+				PROVISIONING_PROFILE = "7cc052ff-75f1-48be-9d79-7948a70bbd66";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

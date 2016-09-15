@@ -283,6 +283,10 @@
     [timer invalidate];
     [currentTimer invalidate];
     
+    [self.homeVC setSettingButtonHidden:NO];
+    [self.homeVC.lblSettings setHidden:YES];
+    [self.homeVC.lblSubTitle setHidden:NO];
+    
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC setHiddenCategories:NO];
     }];
