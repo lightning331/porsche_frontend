@@ -145,7 +145,7 @@
 - (void)updateBottomButtons {
     for (int i = 0; i < self.bottomItems.count; i++ ) {
         UIImageView *imgView = [self.bottomItems objectAtIndex:i];
-        imgView.frame = CGRectMake(self.btnHome.frame.origin.x + ((self.btnPlus.frame.origin.x - self.btnHome.frame.origin.x) / self.btnImageArray.count) * (i+ 1), self.btnHome.frame.origin.y, self.btnHome.frame.size.width, self.btnHome.frame.size.height);
+        imgView.frame = CGRectMake(self.btnHome.frame.origin.x + ((self.btnPlus.frame.origin.x - self.btnHome.frame.origin.x) / (CATEGORY_COUNT + 1)) * (i+ 1), self.btnHome.frame.origin.y, self.btnHome.frame.size.width, self.btnHome.frame.size.height);
         
         imgView.userInteractionEnabled = YES;
         

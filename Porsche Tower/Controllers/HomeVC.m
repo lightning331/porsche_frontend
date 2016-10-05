@@ -106,18 +106,18 @@
     
     //Background Image Size for each device
     if (self.view.bounds.size.width == 736)
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.4f, img.size.height);
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 2.4f, img.size.height);
     else if (self.view.bounds.size.width == 667)
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.5, img.size.height * 1.3f);
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 2.8f, img.size.height * 1.3f);
     else if (self.view.bounds.size.width == 568)
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.8f, img.size.height);
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 3.2f, img.size.height);
     else if (self.view.bounds.size.width == 1024) {
         self.viewSize = img1.size.width;
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width, img.size.height / img.size.width * self.scrollView.bounds.size.width);
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.9f, img.size.height / img.size.width * self.scrollView.bounds.size.width / 2.0f);
     }
     else if (self.view.bounds.size.width == 1366) {
         self.viewSize = img1.size.width;
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width, img.size.height / img.size.width * self.scrollView.bounds.size.width);
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.3f, img.size.height / img.size.width * self.scrollView.bounds.size.width / 1.3f);
     }
     else
         self.viewBackSize = CGSizeMake(img.size.width, img.size.height);
@@ -183,7 +183,7 @@
 - (void)updateBottomButtons {
     for (int i = 0; i < bottomItems.count; i++ ) {
         UIImageView *imgView = [bottomItems objectAtIndex:i];
-        imgView.frame = CGRectMake(self.btnHome.frame.origin.x + ((self.btnPlus.frame.origin.x - self.btnHome.frame.origin.x) / CATEGORY_COUNT) * (i+ 1), self.btnHome.frame.origin.y, self.btnHome.frame.size.width, self.btnHome.frame.size.height);
+        imgView.frame = CGRectMake(self.btnHome.frame.origin.x + ((self.btnPlus.frame.origin.x - self.btnHome.frame.origin.x) / (CATEGORY_COUNT + 1)) * (i+ 1), self.btnHome.frame.origin.y, self.btnHome.frame.size.width, self.btnHome.frame.size.height);
         
         imgView.userInteractionEnabled = YES;
         

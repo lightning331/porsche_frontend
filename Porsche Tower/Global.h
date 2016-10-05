@@ -12,8 +12,8 @@
 //Porsh Design Font Name
 #define NAME_OF_MAINFONT @"PorscheDesignFont"
 
-//#define BASE_URL         @"http://192.168.1.87/porsche/"
-#define BASE_URL         @"http://pdtowerapp.com/"
+#define BASE_URL         @"http://192.168.0.87/porsche/"
+//#define BASE_URL         @"http://pdtowerapp.com/"
 
 #define LANGUAGE         @"Language"
 
@@ -27,7 +27,7 @@
 
 #define CATEGORY_ARRAY @[NSLocalizedString(@"title_car_elevator", nil), NSLocalizedString(@"title_in_unit", nil), NSLocalizedString(@"title_car_concierge", nil), NSLocalizedString(@"title_pool_beach", nil), NSLocalizedString(@"title_wellness", nil), NSLocalizedString(@"title_activities", nil), NSLocalizedString(@"title_dining", nil), NSLocalizedString(@"title_documents", nil), NSLocalizedString(@"title_information_board", nil), NSLocalizedString(@"title_local_info", nil), NSLocalizedString(@"title_concierge", nil)]
 
-#define CATEGORY_COUNT CATEGORY_ARRAY.count
+#define CATEGORY_COUNT      CATEGORY_ARRAY.count
 
 #define SUBCATEGORY_ARRAY @[@[NSLocalizedString(@"title_request_car_elevator", nil), NSLocalizedString(@"title_schedule_car_elevator", nil), NSLocalizedString(@"title_scheduled_pickups", nil)], \
                             @[NSLocalizedString(@"title_request_maintenance", nil), NSLocalizedString(@"title_request_front_desk_call_back", nil), NSLocalizedString(@"title_view_front_desk_camera", nil), NSLocalizedString(@"title_request_security", nil)], \
