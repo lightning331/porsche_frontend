@@ -2446,7 +2446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4w-Sa-srs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="391"/>
+            <point key="canvasLocation" x="265" y="428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pkl-Gm-M9y">
@@ -2462,7 +2462,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPy-5Z-SnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-400" y="391"/>
+            <point key="canvasLocation" x="-405" y="428"/>
         </scene>
         <!--WeatherVC-->
         <scene sceneID="QNr-jc-gsr">

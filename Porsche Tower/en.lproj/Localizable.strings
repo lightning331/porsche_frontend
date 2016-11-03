@@ -43,6 +43,7 @@
 "title_taxis" = 							"Taxis";
 "title_shuttles" = 							"Shuttles";
 "title_car_rental" = 						"Car Rental";
+"msg_has_been_pickup" =                     "Your Car Has Been Scheduled For Pick-up";
 
 //- ShowroomBookingVC
 
@@ -68,6 +69,7 @@
 
 "title_error" = 							"Error";
 "msg_cant_select_date" = 					"Can't select this date";
+"msg_cant_select_time" =                    "Can't select this time";
 
 //- SelectTimeVC
 

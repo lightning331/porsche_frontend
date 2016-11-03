@@ -43,6 +43,7 @@
 "title_taxis" = 							"Taxis";
 "title_shuttles" = 							"Servicio de transporte";
 "title_car_rental" = 						"Alquiler de coches";
+"msg_has_been_pickup" =                     "Su coche ha sido programada para ser recogidos";
 
 //- ShowroomBookingVC
 
@@ -68,6 +69,7 @@
 
 "title_error" = 							"Error";
 "msg_cant_select_date" = 					"No se puede seleccionar esta fecha";
+"msg_cant_select_time" = 					"No se puede seleccionar este momento";
 
 //- SelectTimeVC
 

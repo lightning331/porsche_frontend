@@ -497,7 +497,7 @@
             
             NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
             if ([result[@"status"] isEqualToString:@"success"]) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Your Car Has Been Scheduled For Pick-up" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_has_been_pickup", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
                 
                 [self.homeVC dismissViewControllerAnimated:NO completion:^{

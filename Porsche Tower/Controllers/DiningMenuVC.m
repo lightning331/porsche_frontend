@@ -110,7 +110,7 @@
         
         NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
         if ([result[@"status"] isEqualToString:@"success"]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_order_req_confirmed", nil) message:@"Your request was sent. A staff member will call to take your order shortly." delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_order_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
             [alertView show];
         }
     } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {

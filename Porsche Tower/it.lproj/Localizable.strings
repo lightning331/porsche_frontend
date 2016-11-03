@@ -45,6 +45,7 @@
 "title_taxis" = 							"Taxi";
 "title_shuttles" = 							"Navette";
 "title_car_rental" = 						"Noleggio auto";
+"msg_has_been_pickup" =                     "La vostra auto è stata fissata per pick-up";
 
 //- ShowroomBookingVC
 
@@ -70,6 +71,7 @@
 
 "title_error" = 							"Errore";
 "msg_cant_select_date" = 					"Non è possibile selezionare questa data";
+"msg_cant_select_time" =                    "Non è possibile selezionare questa volta";
 
 //- SelectTimeVC
 

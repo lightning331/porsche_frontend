@@ -27,6 +27,7 @@
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     [parameters setObject:email forKey:@"email"];
     [parameters setObject:password forKey:@"password"];
+    [parameters setObject:@"ios" forKey:@"os_type"];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *deviceToken = [prefs objectForKey:@"DeviceToken"];
