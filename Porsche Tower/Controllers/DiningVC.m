@@ -130,6 +130,7 @@
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_request_sent",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
             [self.homeVC dismissViewControllerAnimated:NO completion:^{
+                [self.homeVC setSettingButtonHidden:NO];
                 [self.homeVC setHiddenCategories:NO];
             }];
         }

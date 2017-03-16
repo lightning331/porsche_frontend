@@ -289,6 +289,7 @@
     
     [self.homeVC dismissViewControllerAnimated:NO completion:^{
         [self.homeVC showSubcategories:index];
+        [self.homeVC setSettingButtonHidden:NO];
     }];
 }
 

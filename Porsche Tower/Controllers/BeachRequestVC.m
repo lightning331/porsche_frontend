@@ -150,6 +150,7 @@
             [alertView show];
                         
             [self.homeVC dismissViewControllerAnimated:NO completion:^{
+                [self.homeVC setSettingButtonHidden:NO];
                 [self.homeVC setHiddenCategories:NO];
             }];
         }

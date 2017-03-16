@@ -852,12 +852,14 @@
 				CODE_SIGN_ENTITLEMENTS = "P'0001.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Benjamin Haas (CH27DB697K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benjamin Haas (CH27DB697K)";
+				DEVELOPMENT_TEAM = 9FX43XXU4W;
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "bf84b228-74e6-4891-af1b-5b195eefc49f";
+				PROVISIONING_PROFILE = "17874ed3-defe-4455-933b-78d13c11dc99";
+				PROVISIONING_PROFILE_SPECIFIER = "Porsche Development";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
