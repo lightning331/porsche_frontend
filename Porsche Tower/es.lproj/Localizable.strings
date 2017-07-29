@@ -44,6 +44,7 @@
 "title_shuttles" = 							"Servicio de transporte";
 "title_car_rental" = 						"Alquiler de coches";
 "msg_has_been_pickup" =                     "Su coche ha sido programada para ser recogidos";
+"msg_elevator_unavailable" =                "Ascensor sistema actualmente disponible en el App. Póngase en contacto con conserje de coches Para más información.";
 
 //- ShowroomBookingVC
 

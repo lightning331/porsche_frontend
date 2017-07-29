@@ -23,6 +23,15 @@
     return self;
 }
 
+- (void)getAutoField:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    NSDictionary *owner = [prefs objectForKey:@"CurrentUser"][0];
+    [parameters setObject:owner[@"id"] forKey:@"owner_id"];
+    
+    [httpManager POST:@"get_auto_field" parameters:parameters success:completed failure:errorBlock];
+}
+
 - (void)login:(NSString *)email password:(NSString *)password completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     [parameters setObject:email forKey:@"email"];

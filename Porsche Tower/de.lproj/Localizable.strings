@@ -44,6 +44,7 @@
 "title_shuttles" = 							"Shuttles";
 "title_car_rental" = 						"Autovermietung";
 "msg_has_been_pickup" =                     "Ihr Fahrzeug ist für Pick-up geplant";
+"msg_elevator_unavailable" =                "Elevator System derzeit nicht verfügbar Von App. Bitte Kontakt Auto Concierge Weitere Informationen.";
 
 //- ShowroomBookingVC
 

@@ -32,5 +32,6 @@ typedef void (^ErrorBlock)(AFHTTPRequestOperation *operation, NSError *error);
 - (void)scheduleCarElevator:(NSString *)car valet:(NSString *)valet elevator:(NSString *)elevator requestTime:(NSString *)requestTime repeat:(NSString *)repeat completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)getWeatherInformation:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)cancelScheduledCarElevator:(NSString *)pickup completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
+- (void)getAutoField:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 
 @end

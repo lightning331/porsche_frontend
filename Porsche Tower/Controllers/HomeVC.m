@@ -318,6 +318,7 @@
 }
 
 - (void)gotoCarSelect {
+    
     [self showSubcategories:0];
     
     self.lblSubTitle.text = [subMenuArray objectAtIndex:0];
@@ -334,6 +335,10 @@
     [self customPresentViewController:showroomBookingVC animated:NO completion:^{
         
     }];
+}
+
+- (void)getAutoField {
+    
 }
 
 - (void)gotoPersonalNotifications
@@ -717,21 +722,42 @@
         self.tableView.hidden = YES;
         
         if (indexPath.row == 0 || indexPath.row == 1) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ShowroomBookingVC *showroomBookingVC = [storyboard instantiateViewControllerWithIdentifier:@"ShowroomBookingVC"];
-            showroomBookingVC.view.backgroundColor = [UIColor clearColor];
-            showroomBookingVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-            showroomBookingVC.homeVC = self;
-            
-            if (indexPath.row == 0) {
-                showroomBookingVC.type = @"request";
-            } else if (indexPath.row == 1) {
-                showroomBookingVC.type = @"schedule";
-            }
-            
-            self.definesPresentationContext = YES;
-            [self customPresentViewController:showroomBookingVC animated:NO completion:^{
+            WebConnector *webConnector = [[WebConnector alloc] init];
+            [webConnector getAutoField:^(AFHTTPRequestOperation *operation, id responseObject) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 
+                NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                if ([result[@"status"] isEqualToString:@"success"]) {
+                    NSString *autoField = result[@"auto_field"];
+                    if ([autoField isEqualToString:@"1"]) {
+                        // User able to see cars
+                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        ShowroomBookingVC *showroomBookingVC = [storyboard instantiateViewControllerWithIdentifier:@"ShowroomBookingVC"];
+                        showroomBookingVC.view.backgroundColor = [UIColor clearColor];
+                        showroomBookingVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+                        showroomBookingVC.homeVC = self;
+                        
+                        if (indexPath.row == 0) {
+                            showroomBookingVC.type = @"request";
+                        } else if (indexPath.row == 1) {
+                            showroomBookingVC.type = @"schedule";
+                        }
+                        
+                        self.definesPresentationContext = YES;
+                        [self customPresentViewController:showroomBookingVC animated:NO completion:^{
+                            
+                        }];
+                    }
+                    else {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_elevator_unavailable",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        [alertView show];
+                        self.tableView.hidden = NO;
+                        // Error message
+                    }
+                }
+            } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                // Error message
             }];
         } else if (indexPath.row == 2) {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

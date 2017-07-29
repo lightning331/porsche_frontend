@@ -44,6 +44,7 @@
 "title_shuttles" = 							"Shuttles";
 "title_car_rental" = 						"Car Rental";
 "msg_has_been_pickup" =                     "Your Car Has Been Scheduled For Pick-up";
+"msg_elevator_unavailable" =                "Elevator System Currently Unavailable From App. Please Contact Car Concierge For More Information.";
 
 //- ShowroomBookingVC
 

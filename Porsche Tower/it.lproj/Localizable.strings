@@ -46,6 +46,7 @@
 "title_shuttles" = 							"Navette";
 "title_car_rental" = 						"Noleggio auto";
 "msg_has_been_pickup" =                     "La vostra auto è stata fissata per pick-up";
+"msg_elevator_unavailable" =                "Ascensore sistema attualmente disponibile da App. Si prega di Contatto Auto portineria Ulteriori informazioni.";
 
 //- ShowroomBookingVC
 
