@@ -55,6 +55,7 @@
 "title_car_in_gargage" = 					"Auto in garage";
 "msg_parked_gargage_contact_valet" = 		"È parcheggiata nel garage. Si prega di contattare il Valet di avere la vostra auto porta a porta consegnato.";
 "title_close" = 							"Vicino";
+"msg_car_unavailable" =                     "Spiacenti, questa macchina è al momento disponibile. Si prega di Contatto Auto portineria Ulteriori informazioni.";
 
 //- ElevatorControlVC
 

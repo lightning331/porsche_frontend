@@ -53,6 +53,7 @@
 "title_car_in_gargage" = 					"Auto in der Garage";
 "msg_parked_gargage_contact_valet" = 		"Befindet sich in der Garage geparkt. Bitte geben Sie die Park kontaktieren Sie Ihren Auto Bordsteinkante geliefert zu haben.";
 "title_close" = 							"Schließen";
+"msg_car_unavailable" =                     "Oops! Dieses Auto ist derzeit nicht verfügbar. Bitte Kontakt Auto Concierge Weitere Informationen.";
 
 //- ElevatorControlVC
 

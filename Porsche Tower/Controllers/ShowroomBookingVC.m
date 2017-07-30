@@ -78,14 +78,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - UI Actions
 
@@ -130,7 +130,7 @@
     for (int i = 0; i < self.bottomItems.count; i++ ) {
         UIImageView *imgView = [self.bottomItems objectAtIndex:i];
         imgView.frame = CGRectMake(self.btnHome.frame.origin.x + ((self.btnPlus.frame.origin.x - self.btnHome.frame.origin.x) / (CATEGORY_COUNT + 1)) * (i+ 1), self.btnHome.frame.origin.y, self.btnHome.frame.size.width, self.btnHome.frame.size.height);
-                
+        
         imgView.userInteractionEnabled = YES;
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -164,7 +164,7 @@
     lblName.text = carInfoArray[indexPath.row][@"name"];
     
     UILabel *lblSpace = (UILabel *)[cell viewWithTag:103];
-
+    
     NSString *space = carInfoArray[indexPath.row][@"space"];
     if ([space isEqualToString:@"garage"]) {
         viewInfo.backgroundColor = [UIColor colorWithRed:156.0/255 green:3.0/255 blue:20.0/255 alpha:1.0];
@@ -203,60 +203,87 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.type isEqualToString:@"request"]) {
-        if ([carInfoArray[indexPath.row][@"status"] isEqualToString:@"out"]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_unavailable", nil) message:NSLocalizedString(@"msg_unavailable_contact_valet", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:NSLocalizedString(@"title_valet", nil), nil];
-            alertView.tag = 1001;
-            [alertView show];
-        } else if ([carInfoArray[indexPath.row][@"space"] isEqualToString:@"garage"]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_in_gargage", nil) message:NSLocalizedString(@"msg_parked_gargage_contact_valet", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:NSLocalizedString(@"title_valet", nil), nil];
-            alertView.tag = 1001;
-            [alertView show];
-        } else {
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            NSMutableDictionary *requestElevator = [[NSMutableDictionary alloc] init];
+        WebConnector *webConnector = [[WebConnector alloc] init];
+        [webConnector checkCarAvailability:carInfoArray[indexPath.row][@"index"] completionHandler: ^(AFHTTPRequestOperation *operation, id responseObject) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             
-            NSMutableDictionary *carInfo = [carInfoArray[indexPath.row] mutableCopy];
-            if ([carInfo objectForKey:@"imageData"])
-                [carInfo removeObjectForKey:@"imageData"];
-            [requestElevator setObject:carInfo forKey:@"SelectedCar"];
-            
-            NSMutableArray *owners = [userDefaults objectForKey:@"CurrentUser"];
-            for (int i = 0; i < owners.count; i++) {
-                if ([carInfo[@"owner"] isEqualToString:owners[i][@"index"]]) {
-                    [requestElevator setObject:[owners[i] mutableCopy] forKey:@"Owner"];
+            NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+            if ([result[@"status"] isEqualToString:@"success"]) {
+                NSString *parkingSpaceID = result[@"parkingSpaceID"];
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                [userDefaults setObject:parkingSpaceID forKey:@"parkingSpaceID"];
+                
+                NSString *location = result[@"location"];
+                if ([location isEqualToString:@"1"]) {
+                    // the car is available
+                    if ([carInfoArray[indexPath.row][@"status"] isEqualToString:@"out"]) {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_unavailable", nil) message:NSLocalizedString(@"msg_unavailable_contact_valet", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:NSLocalizedString(@"title_valet", nil), nil];
+                        alertView.tag = 1001;
+                        [alertView show];
+                    } else if ([carInfoArray[indexPath.row][@"space"] isEqualToString:@"garage"]) {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_in_gargage", nil) message:NSLocalizedString(@"msg_parked_gargage_contact_valet", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:NSLocalizedString(@"title_valet", nil), nil];
+                        alertView.tag = 1001;
+                        [alertView show];
+                    } else {
+                        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                        NSMutableDictionary *requestElevator = [[NSMutableDictionary alloc] init];
+                        
+                        NSMutableDictionary *carInfo = [carInfoArray[indexPath.row] mutableCopy];
+                        if ([carInfo objectForKey:@"imageData"])
+                            [carInfo removeObjectForKey:@"imageData"];
+                        [requestElevator setObject:carInfo forKey:@"SelectedCar"];
+                        
+                        NSMutableArray *owners = [userDefaults objectForKey:@"CurrentUser"];
+                        for (int i = 0; i < owners.count; i++) {
+                            if ([carInfo[@"owner"] isEqualToString:owners[i][@"index"]]) {
+                                [requestElevator setObject:[owners[i] mutableCopy] forKey:@"Owner"];
+                            }
+                        }
+                        
+                        [userDefaults setObject:requestElevator forKey:@"RequestElevator"];
+                        
+                        if ([carInfoArray[indexPath.row][@"status"] isEqualToString:@"active"]) {
+                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                            ElevatorControlVC *elevatorControlVC = [storyboard instantiateViewControllerWithIdentifier:@"ElevatorControlVC"];
+                            elevatorControlVC.view.backgroundColor = [UIColor clearColor];
+                            elevatorControlVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+                            elevatorControlVC.homeVC = self.homeVC;
+                            
+                            self.definesPresentationContext = YES;
+                            self.collectionView.hidden = YES;
+                            [self presentViewController:elevatorControlVC animated:NO completion:^{
+                                
+                            }];
+                        }
+                        else {
+                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                            MenuVC *menuVC = [storyboard instantiateViewControllerWithIdentifier:@"MenuVC"];
+                            menuVC.view.backgroundColor = [UIColor clearColor];
+                            menuVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+                            menuVC.homeVC = self.homeVC;
+                            menuVC.type = @"request_car_elevator";
+                            
+                            self.definesPresentationContext = YES;
+                            self.collectionView.hidden = YES;
+                            [self presentViewController:menuVC animated:NO completion:^{
+                                
+                            }];
+                        }
+                    }
+                }
+                else {
+                    //car is not available
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_car_unavailable",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alertView show];
+                    // Error message
                 }
             }
+        } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            //car is not available
             
-            [userDefaults setObject:requestElevator forKey:@"RequestElevator"];
-            
-            if ([carInfoArray[indexPath.row][@"status"] isEqualToString:@"active"]) {
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                ElevatorControlVC *elevatorControlVC = [storyboard instantiateViewControllerWithIdentifier:@"ElevatorControlVC"];
-                elevatorControlVC.view.backgroundColor = [UIColor clearColor];
-                elevatorControlVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-                elevatorControlVC.homeVC = self.homeVC;
-                
-                self.definesPresentationContext = YES;
-                self.collectionView.hidden = YES;
-                [self presentViewController:elevatorControlVC animated:NO completion:^{
-                    
-                }];
-            }
-            else {
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                MenuVC *menuVC = [storyboard instantiateViewControllerWithIdentifier:@"MenuVC"];
-                menuVC.view.backgroundColor = [UIColor clearColor];
-                menuVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-                menuVC.homeVC = self.homeVC;
-                menuVC.type = @"request_car_elevator";
-                
-                self.definesPresentationContext = YES;
-                self.collectionView.hidden = YES;
-                [self presentViewController:menuVC animated:NO completion:^{
-                    
-                }];
-            }
-        }
+            // Error message
+        }];
     } else if ([self.type isEqualToString:@"schedule"]) {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSMutableDictionary *scheduleElevator = [[NSMutableDictionary alloc] init];

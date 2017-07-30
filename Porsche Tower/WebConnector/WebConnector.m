@@ -32,6 +32,13 @@
     [httpManager POST:@"get_auto_field" parameters:parameters success:completed failure:errorBlock];
 }
 
+- (void)checkCarAvailability:(NSString*)car_index completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:car_index forKey:@"car_index"];
+    
+    [httpManager POST:@"check_car_availability" parameters:parameters success:completed failure:errorBlock];
+}
+
 - (void)login:(NSString *)email password:(NSString *)password completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     [parameters setObject:email forKey:@"email"];
@@ -124,11 +131,15 @@
 }
 
 - (void)requestCarElevator:(NSString *)car valet:(NSString *)valet elevator:(NSString *)elevator delay:(NSString *)delay completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSDictionary *parkingSpaceID = [prefs objectForKey:@"parkingSpaceID"];
+    
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:car forKey:@"car"];
     [parameters setObject:valet forKey:@"valet"];
     [parameters setObject:elevator forKey:@"elevator"];
     [parameters setObject:delay forKey:@"delay"];
+    [parameters setObject:parkingSpaceID forKey:@"parkingSpaceID"];
     
     [httpManager POST:@"request_car_elevator" parameters:parameters success:completed failure:errorBlock];
 }

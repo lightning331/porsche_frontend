@@ -53,6 +53,7 @@
 "title_car_in_gargage" = 					"Car in Garage";
 "msg_parked_gargage_contact_valet" = 		"is parked in the Garage. Please contact the Valet to have your Car delivered curbside.";
 "title_close" = 							"Close";
+"msg_car_unavailable" =                     "Oops! This Car is Currently Unavailable. Please Contact Car Concierge For More Information.";
 
 //- ElevatorControlVC
 

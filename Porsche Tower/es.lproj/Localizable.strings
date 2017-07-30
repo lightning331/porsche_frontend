@@ -53,6 +53,7 @@
 "title_car_in_gargage" = 					"Coche en el garaje";
 "msg_parked_gargage_contact_valet" = 		"Está aparcado en el garaje. Por favor, póngase en contacto con el Valet de tener la acera entregado su coche.";
 "title_close" = 							"Cerca";
+"msg_car_unavailable" =                     "Vaya! Este coche no está disponible actualmente. Póngase en contacto con conserje de coches Para más información.";
 
 //- ElevatorControlVC
 
