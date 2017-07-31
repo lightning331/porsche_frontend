@@ -16,6 +16,7 @@
 #import "DescriptionWithCallVC.h"
 #import "ElevatorControlVC.h"
 #import "DiningVC.h"
+#import "ImageMenuVC.h"
 
 @interface MenuVC () {
     NSArray *menuArray;
@@ -214,6 +215,19 @@
     } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error of getmenulist:%@", error);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+
+- (void)openImageMenu {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
+    imageVC.view.backgroundColor = [UIColor clearColor];
+    imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    imageVC.homeVC = self.homeVC;
+    
+    self.definesPresentationContext = YES;
+    [self presentViewController:imageVC animated:NO completion:^{
+        return;
     }];
 }
 
@@ -536,7 +550,8 @@
     }
     // Wellness -> Spa -> Selecting ...
     else if ([self.type isEqualToString:@"spa"]) {
-        [self openDescriptionView:indexPath.row hasCall:NO];
+//        [self openDescriptionView:indexPath.row hasCall:NO];
+        [self openImageMenu];
     }
     // Wellness -> Fitness -> Selecting ...
     else if ([self.type isEqualToString:@"gym"]) {

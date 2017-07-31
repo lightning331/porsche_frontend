@@ -11,6 +11,7 @@
 		245320AF33713421AFFB2B94 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC1EBEAD4BE97C75D258DF9 /* libPods.a */; };
 		650B56B31D488D17006779AD /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B56B21D488D17006779AD /* Setting.m */; };
 		650B56B61D4899C4006779AD /* LocalizationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B56B51D4899C4006779AD /* LocalizationSystem.m */; };
+		6511701E1F2FCF7700FCE08E /* ImageMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6511701D1F2FCF7700FCE08E /* ImageMenuVC.m */; };
 		65C568111D45459200F3C40C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C568131D45459200F3C40C /* Localizable.strings */; };
 		65C568191D46630800F3C40C /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C568181D46630800F3C40C /* BaseVC.m */; };
 		65C5681E1D4664BF00F3C40C /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C5681D1D4664BF00F3C40C /* Utility.m */; };
@@ -77,6 +78,8 @@
 		650B56B21D488D17006779AD /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 		650B56B41D4899C4006779AD /* LocalizationSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationSystem.h; sourceTree = "<group>"; };
 		650B56B51D4899C4006779AD /* LocalizationSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationSystem.m; sourceTree = "<group>"; };
+		6511701C1F2FCF7700FCE08E /* ImageMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMenuVC.h; sourceTree = "<group>"; };
+		6511701D1F2FCF7700FCE08E /* ImageMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMenuVC.m; sourceTree = "<group>"; };
 		65C568081D45453E00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		65C568091D45453F00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/StoryboardiPad.strings; sourceTree = "<group>"; };
 		65C5680A1D45453F00F3C40C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				6D116C891B55571200C3BF22 /* SelectTimeVC.m */,
 				6DFA74811B77E7AB00AFF19C /* GymServiceVC.h */,
 				6DFA74821B77E7AB00AFF19C /* GymServiceVC.m */,
+				6511701C1F2FCF7700FCE08E /* ImageMenuVC.h */,
+				6511701D1F2FCF7700FCE08E /* ImageMenuVC.m */,
 				6DFA74841B7DD48000AFF19C /* DescriptionWithCallVC.h */,
 				6DFA74851B7DD48000AFF19C /* DescriptionWithCallVC.m */,
 				6D02FD2E1C6B337E006D3246 /* WeatherVC.h */,
@@ -685,6 +690,7 @@
 				6D6C02E11B501308006E0508 /* PMCalendarController.m in Sources */,
 				65C568191D46630800F3C40C /* BaseVC.m in Sources */,
 				650B56B31D488D17006779AD /* Setting.m in Sources */,
+				6511701E1F2FCF7700FCE08E /* ImageMenuVC.m in Sources */,
 				83E7361D1AFA84F500B59A52 /* AppDelegate.m in Sources */,
 				6D6C02E31B501308006E0508 /* PMDimmingView.m in Sources */,
 				83205F261AFD4E8000D42AA5 /* TPKeyboardAvoidingCollectionView.m in Sources */,
