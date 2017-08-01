@@ -105,19 +105,19 @@
     NSLog(@"bound.width : %f scrollview.width : %f", self.view.bounds.size.width, self.scrollView.bounds.size.width);
     
     //Background Image Size for each device
-    if (self.view.bounds.size.width == 736)
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 2.4f, img.size.height);
-    else if (self.view.bounds.size.width == 667)
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 2.8f, img.size.height * 1.3f);
-    else if (self.view.bounds.size.width == 568)
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 3.2f, img.size.height);
+    if (self.view.bounds.size.width == 736) //iPhone 6p
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.5f, img.size.height);
+    else if (self.view.bounds.size.width == 667) //iPhone 6
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.6f, img.size.height * 1.3f);
+    else if (self.view.bounds.size.width == 568) //iPhone 5
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.8f, img.size.height);
     else if (self.view.bounds.size.width == 1024) {
         self.viewSize = img1.size.width;
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.9f, img.size.height / img.size.width * self.scrollView.bounds.size.width / 2.0f);
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.0f, img.size.height / img.size.width * self.scrollView.bounds.size.width / 1.0f);
     }
     else if (self.view.bounds.size.width == 1366) {
         self.viewSize = img1.size.width;
-        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 1.3f, img.size.height / img.size.width * self.scrollView.bounds.size.width / 1.3f);
+        self.viewBackSize = CGSizeMake(self.scrollView.bounds.size.width / 0.75f, img.size.height / img.size.width * self.scrollView.bounds.size.width / 0.75f);
     }
     else
         self.viewBackSize = CGSizeMake(img.size.width, img.size.height);
