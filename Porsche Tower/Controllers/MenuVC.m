@@ -218,17 +218,41 @@
     }];
 }
 
-- (void)openImageMenu {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
-    imageVC.view.backgroundColor = [UIColor clearColor];
-    imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    imageVC.homeVC = self.homeVC;
+- (void)openImageMenu:(NSInteger)index {
+    if (index == 0) {
+        // View Spa Menu
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
+        imageVC.view.backgroundColor = [UIColor clearColor];
+        imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        imageVC.homeVC = self.homeVC;
+        imageVC.pdf_url = @"http://pdtowerapp.com/uploads/Spa_Menu.pdf";
+        
+        self.definesPresentationContext = YES;
+        [self presentViewController:imageVC animated:NO completion:^{
+            return;
+        }];
+    }
+    else if (index == 1){
+        // Make an appointment
+        MenuVC *menuVC = (MenuVC *)self.presentationController.presentingViewController;
+        [self dismissViewControllerAnimated:NO completion:^{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            CalendarVC *calendarVC = [storyboard instantiateViewControllerWithIdentifier:@"CalendarVC"];
+            calendarVC.view.backgroundColor = [UIColor clearColor];
+            calendarVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            calendarVC.homeVC = self.homeVC;
+            NSMutableDictionary *scheduleData = [[menuArray objectAtIndex:index] mutableCopy];
+            [scheduleData setObject:self.type forKey:@"type"];
+            calendarVC.scheduleData = scheduleData;
+            
+            menuVC.definesPresentationContext = YES;
+            [menuVC presentViewController:calendarVC animated:NO completion:^{
+                return;
+            }];
+        }];
+    }
     
-    self.definesPresentationContext = YES;
-    [self presentViewController:imageVC animated:NO completion:^{
-        return;
-    }];
 }
 
 - (void)openDescriptionView:(NSInteger)index hasCall:(BOOL)hasCall {
@@ -551,7 +575,7 @@
     // Wellness -> Spa -> Selecting ...
     else if ([self.type isEqualToString:@"spa"]) {
 //        [self openDescriptionView:indexPath.row hasCall:NO];
-        [self openImageMenu];
+        [self openImageMenu:indexPath.row];
     }
     // Wellness -> Fitness -> Selecting ...
     else if ([self.type isEqualToString:@"gym"]) {

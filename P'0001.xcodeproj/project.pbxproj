@@ -873,7 +873,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "17874ed3-defe-4455-933b-78d13c11dc99";
+				PROVISIONING_PROFILE = "094b5b14-db3f-410f-9213-f8864a5443c2";
 				PROVISIONING_PROFILE_SPECIFIER = "Porsche Development";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -888,12 +888,14 @@
 				CODE_SIGN_ENTITLEMENTS = "P'0001.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: UNLIMITED ELECTRICAL CONTRACTORS CORP (9FX43XXU4W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: UNLIMITED ELECTRICAL CONTRACTORS CORP (9FX43XXU4W)";
+				DEVELOPMENT_TEAM = 9FX43XXU4W;
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "7cc052ff-75f1-48be-9d79-7948a70bbd66";
+				PROVISIONING_PROFILE = "f355e84a-4467-4364-84af-2675fbedf3eb";
+				PROVISIONING_PROFILE_SPECIFIER = "Porsche Distribution";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

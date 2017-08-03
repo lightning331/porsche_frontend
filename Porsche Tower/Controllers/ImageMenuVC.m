@@ -9,6 +9,7 @@
 #import "ImageMenuVC.h"
 #import "Global.h"
 #import "MenuVC.h"
+#import <MBProgressHUD.h>
 
 
 @interface ImageMenuVC ()
@@ -31,6 +32,11 @@
     self.bottomItems = global.bottomItems;
     if ([[UIDevice currentDevice].model containsString:@"iPad"]) {
     }
+    
+    NSURL *targetURL = [NSURL URLWithString:@"http://pdtowerapp.com/uploads/Spa_Menu.pdf"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    [self.wbPDF loadRequest:request];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -45,6 +51,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 /*

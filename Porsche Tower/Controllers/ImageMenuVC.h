@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "HomeVC.h"
 
-@interface ImageMenuVC : BaseVC <UIAlertViewDelegate>
+@interface ImageMenuVC : BaseVC <UIAlertViewDelegate, UIWebViewDelegate>
 
 @property HomeVC *homeVC;
 @property NSMutableDictionary *scheduleData;
+@property NSString *pdf_url;
 
 @property (weak, nonatomic) IBOutlet UIView *viewContent;
 @property (weak, nonatomic) IBOutlet UIButton *btnHome;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlus;
+@property (weak, nonatomic) IBOutlet UIWebView *wbPDF;
 
 - (IBAction)onBtnCategory:(id)sender;
 - (IBAction)onBtnClose:(id)sender;
