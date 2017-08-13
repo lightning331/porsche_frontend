@@ -26,6 +26,7 @@
 "msg_order_req_confirmed" = 				"Solicitud de Orden Confirmada";
 "msg_housekeeping_req_confirmed" = 			"Solicitud HouseKeeping Confirmado";
 "msg_transportation_req_confirmed" = 		"Solicitud de Transporte Confirmado";
+"msg_dry_cleaning_req_confirmed" =          "Solicitar la limpieza en seco Confirmed";
 "title_remove_shortcut" = 					"Eliminar acceso directo";
 "msg_sure_to_remove_shortcut" = 			"¿Está seguro que desea eliminar este acceso directo de la barra de herramientas?";
 
@@ -140,7 +141,7 @@
 "title_view_beach" = 						"Vista de la playa";
 "title_request_housekeeping" = 				"Solicitud de mantenimiento";
 "title_request_transportation" = 			"Solicitud de Transporte";
-"title_dry_cleaning" = 						"Limpieza en seco";
+"title_dry_cleaning" = 						"Solicitar la limpieza en seco";
 "title_unit_manual" =                       "Manual de unidad";
 
 //++++++++++++++++Storyboard+++++++++++++++++++++++++++

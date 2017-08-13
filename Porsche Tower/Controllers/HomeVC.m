@@ -1042,16 +1042,63 @@
         else if (status == 10) { // Concierge
             self.lblSubTitle.text = [subMenuArray objectAtIndex:index];
             
-            if (index == 0) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_housekeeping_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
-                [alertView show];
+            if (index == 0) { // Request Transportation
+//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_transportation_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
+//                [alertView show];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSCalendar *calendar = [NSCalendar currentCalendar];
+                [dateFormatter setTimeZone:[calendar timeZone]];
+                NSString *datetimeString = [dateFormatter stringFromDate:[NSDate date]];
+                
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                
+                NSString *type = @"transportation";
+                WebConnector *webConnector = [[WebConnector alloc] init];
+                [webConnector sendScheduleRequest:type index:type datetime:datetimeString completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    
+                    NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                    if ([result[@"status"] isEqualToString:@"success"]) {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_transportation_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
+                        [alertView show];
+                        [self dismissViewControllerAnimated:NO completion:^{
+                            [self setSettingButtonHidden:NO];
+                            [self setHiddenCategories:NO];
+                        }];
+                    }
+                } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
+
             }
-            else if (index == 1) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_transportation_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
-                [alertView show];
-            }
-            else if (index == 2) {
-                [self openMenu:@"dry_cleaning"];
+            else if (index == 1) { //Request Dry Cleaning
+//                [self openMenu:@"dry_cleaning"];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSCalendar *calendar = [NSCalendar currentCalendar];
+                [dateFormatter setTimeZone:[calendar timeZone]];
+                NSString *datetimeString = [dateFormatter stringFromDate:[NSDate date]];
+                
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                
+                NSString *type = @"dry_cleaning";
+                WebConnector *webConnector = [[WebConnector alloc] init];
+                [webConnector sendScheduleRequest:type index:type datetime:datetimeString completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    
+                    NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                    if ([result[@"status"] isEqualToString:@"success"]) {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_dry_cleaning_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
+                        [alertView show];
+                        [self dismissViewControllerAnimated:NO completion:^{
+                            [self setSettingButtonHidden:NO];
+                            [self setHiddenCategories:NO];
+                        }];
+                    }
+                } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
             }
         }
     }

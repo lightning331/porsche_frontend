@@ -26,6 +26,7 @@
 "msg_order_req_confirmed" = 				"Order Request Confirmed";
 "msg_housekeeping_req_confirmed" = 			"HouseKeeping Request Confirmed";
 "msg_transportation_req_confirmed" = 		"Transportation Request Confirmed";
+"msg_dry_cleaning_req_confirmed" =          "Dry Cleaning Request Confirmed";
 "title_remove_shortcut" = 					"Remove Shortcut";
 "msg_sure_to_remove_shortcut" = 			"Are you sure you want to remove this shortcut from the toolbar?";
 
@@ -140,7 +141,7 @@
 "title_view_beach" = 						"View Beach";
 "title_request_housekeeping" = 				"Request HouseKeeping";
 "title_request_transportation" = 			"Request Transportation";
-"title_dry_cleaning" = 						"Dry Cleaning";
+"title_dry_cleaning" = 						"Request Dry Cleaning";
 "title_unit_manual" =                       "Unit Manual";
 
 //++++++++++++++++Storyboard+++++++++++++++++++++++++++

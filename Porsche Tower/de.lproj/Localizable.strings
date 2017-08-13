@@ -26,6 +26,7 @@
 "msg_order_req_confirmed" = 				"Order Anfrage bestätigt";
 "msg_housekeeping_req_confirmed" = 			"Haushalt Anfrage bestätigt";
 "msg_transportation_req_confirmed" = 		"Transport Anfrage bestätigt";
+"msg_dry_cleaning_req_confirmed" =          "Chemische Reinigung Anfrage bestätigt";
 "title_remove_shortcut" = 					"Entfernen Shortcut";
 "msg_sure_to_remove_shortcut" = 			"Sind Sie sicher, dass Sie diese Abkürzung aus der Symbolleiste zu entfernen?";
 
@@ -140,7 +141,7 @@
 "title_view_beach" = 						"Aussicht Strand";
 "title_request_housekeeping" = 				"Anfordern house keeping";
 "title_request_transportation" = 			"Anfordern Transport";
-"title_dry_cleaning" = 						"Chemische Reinigung";
+"title_dry_cleaning" = 						"Fordern Chemische Reinigung";
 "title_unit_manual" =                       "Einheit-Handbuch";
 //++++++++++++++++Storyboard+++++++++++++++++++++++++++
 

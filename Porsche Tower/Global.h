@@ -40,7 +40,7 @@
                             @[NSLocalizedString(@"title_documents", nil), NSLocalizedString(@"title_unit_manual", nil)], \
                             @[NSLocalizedString(@"title_directory", nil), NSLocalizedString(@"title_personal_notifications", nil), NSLocalizedString(@"title_building_maintenance", nil), NSLocalizedString(@"title_building_events", nil)], \
                             @[NSLocalizedString(@"title_weather", nil), NSLocalizedString(@"title_view_weather", nil), NSLocalizedString(@"title_view_beach", nil)], \
-                            @[NSLocalizedString(@"title_request_housekeeping", nil), NSLocalizedString(@"title_request_transportation", nil), NSLocalizedString(@"title_dry_cleaning", nil)]]
+                            @[NSLocalizedString(@"title_request_transportation", nil), NSLocalizedString(@"title_dry_cleaning", nil)]]
 
 
 
