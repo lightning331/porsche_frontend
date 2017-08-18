@@ -23,6 +23,8 @@
 + (BOOL) isGermanUser;
 + (BOOL) isSpanishUser;
 + (BOOL) isItalianUser;
++ (NSString *) URLEncodeString:(NSString *) str;
++ (NSString *) ExtractingDigits:(NSString *) str;
 
 //alert
 //+ (void) showMessage: (NSString *) message title:(NSString *) title cancel:(NSString *)cancel;

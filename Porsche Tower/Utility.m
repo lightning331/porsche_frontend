@@ -153,6 +153,22 @@
     
 }
 
++(NSString *) URLEncodeString:(NSString *) str {
+    
+    NSMutableString *tempStr = [NSMutableString stringWithString:str];
+    [tempStr replaceOccurrencesOfString:@" " withString:@"+" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [tempStr length])];
+    
+    
+    return [[NSString stringWithFormat:@"%@",tempStr] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
++(NSString *) ExtractingDigits:(NSString *) str {
+    NSMutableCharacterSet *nonNumberCharacterSet = [NSMutableCharacterSet decimalDigitCharacterSet];
+    [nonNumberCharacterSet invert];
+    
+    return [[str componentsSeparatedByCharactersInSet:nonNumberCharacterSet] componentsJoinedByString:@""];
+}
+
 #pragma mark Ip- address Fectch & Location
 
 +(NSString *)getExternalIPAddress{

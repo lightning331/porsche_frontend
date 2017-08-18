@@ -19,6 +19,7 @@
 #import "ScheduledPickupsVC.h"
 #import <MBProgressHUD.h>
 #import "WebConnector.h"
+#import "Utility.h"
 
 #define TIME 1.4
 #define TAG_BOTTOM_BUTTON   20
@@ -1051,8 +1052,14 @@
                     
                     NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
                     NSString *phoneNumber = result[@"staff"][@"phone"];
+                    //extracting digits
+//                    NSString *strPhone = [Utility ExtractingDigits:phoneNumber];
+                    
+                    //removing spaces
+                    NSString *strPhone = [phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+                    NSString *teleStr = [NSString stringWithFormat:@"telprompt:%@", strPhone];
+                    NSURL *phoneURL = [NSURL URLWithString:teleStr];
                     if ([result[@"status"] isEqualToString:@"success"]) {
-                        NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@", phoneNumber]];
                         if ([[UIApplication sharedApplication] canOpenURL:phoneURL]) {
                             [[UIApplication sharedApplication] openURL:phoneURL];
                         }

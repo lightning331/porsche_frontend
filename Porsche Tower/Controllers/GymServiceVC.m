@@ -84,7 +84,9 @@
 }
 
 - (IBAction)onBtnCall:(id)sender {
-    NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@", [self.emailData objectForKey:@"phone"]]];
+    NSString *strPhone = [[self.emailData objectForKey:@"phone"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *teleStr = [NSString stringWithFormat:@"telprompt:%@", strPhone];
+    NSURL *phoneURL = [NSURL URLWithString:teleStr];
     if ([[UIApplication sharedApplication] canOpenURL:phoneURL]) {
         [[UIApplication sharedApplication] openURL:phoneURL];
     }
