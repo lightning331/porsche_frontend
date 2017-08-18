@@ -1041,8 +1041,35 @@
         }
         else if (status == 10) { // Concierge
             self.lblSubTitle.text = [subMenuArray objectAtIndex:index];
-            
-            if (index == 0) { // Request Transportation
+            if (index == 0) { // Call Concierge
+//                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                
+                NSString *name = @"Concierge";
+                WebConnector *webConnector = [[WebConnector alloc] init];
+                [webConnector getStaffList:name completionHandler:^(AFHTTPRequestOperation *operation, id responseObject) {
+//                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    
+                    NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                    NSString *phoneNumber = result[@"staff"][@"phone"];
+                    if ([result[@"status"] isEqualToString:@"success"]) {
+                        NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@", phoneNumber]];
+                        if ([[UIApplication sharedApplication] canOpenURL:phoneURL]) {
+                            [[UIApplication sharedApplication] openURL:phoneURL];
+                        }
+                        else {
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:NSLocalizedString(@"msg_call_not_available",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                            [alert show];
+                        }
+                        [self dismissViewControllerAnimated:NO completion:^{
+                            [self setSettingButtonHidden:NO];
+                            [self setHiddenCategories:NO];
+                        }];
+                    }
+                } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
+            }
+            else if (index == 1) { // Request Transportation
 //                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"msg_transportation_req_confirmed", nil) message:NSLocalizedString(@"msg_req_sent_staff_member", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"title_close", nil) otherButtonTitles:nil];
 //                [alertView show];
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -1072,7 +1099,7 @@
                 }];
 
             }
-            else if (index == 1) { //Request Dry Cleaning
+            else if (index == 2) { //Request Dry Cleaning
 //                [self openMenu:@"dry_cleaning"];
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];

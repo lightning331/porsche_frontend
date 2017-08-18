@@ -139,6 +139,7 @@
 "title_weather" = 							"Weather";
 "title_view_weather" = 						"View Weather";
 "title_view_beach" = 						"View Beach";
+"title_call_concierge" =                    "Call Concierge";
 "title_request_housekeeping" = 				"Request HouseKeeping";
 "title_request_transportation" = 			"Request Transportation";
 "title_dry_cleaning" = 						"Request Dry Cleaning";

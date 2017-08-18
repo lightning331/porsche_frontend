@@ -68,6 +68,14 @@
     [httpManager POST:[NSString stringWithFormat:@"get_%@", type] parameters:parameters success:completed failure:errorBlock];
 }
 
+- (void)getStaffList:(NSString *)name completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:name forKey:@"name"];
+    
+    [httpManager POST:@"get_staff" parameters:parameters success:completed failure:errorBlock];
+}
+
 - (void)getRestaurantMenu:(NSString *)restaurant completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:restaurant forKey:@"restaurant"];

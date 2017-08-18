@@ -139,6 +139,7 @@
 "title_weather" = 							"Clima";
 "title_view_weather" = 						"Ver el clima";
 "title_view_beach" = 						"Vista de la playa";
+"title_call_concierge" =                    "Llame a Concierge";
 "title_request_housekeeping" = 				"Solicitud de mantenimiento";
 "title_request_transportation" = 			"Solicitud de Transporte";
 "title_dry_cleaning" = 						"Solicitar la limpieza en seco";

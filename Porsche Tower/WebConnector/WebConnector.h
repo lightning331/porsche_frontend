@@ -19,6 +19,7 @@ typedef void (^ErrorBlock)(AFHTTPRequestOperation *operation, NSError *error);
 
 - (void)login:(NSString *)email password:(NSString *)password completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)getDataList:(NSString *)type completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
+- (void)getStaffList:(NSString *)name completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)getRestaurantMenu:(NSString *)restaurant completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)sendScheduleRequest:(NSString *)type index:(NSString *)index datetime:(NSString *)datetime completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)sendScheduleRequestForPoolBeach:(NSString *)location datetime:(NSString *)datetime towels:(NSInteger)towels chairs:(NSInteger)chairs umbrella:(NSInteger)umbrella completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
