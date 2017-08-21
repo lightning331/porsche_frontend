@@ -65,6 +65,12 @@
     
     //applicationIconBadgeNumber = 0
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [webConnector resetBadgeCount:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+        if ([result[@"status"] isEqualToString:@"success"]) {
+        }
+    } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

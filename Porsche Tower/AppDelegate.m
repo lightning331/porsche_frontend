@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginVC.h"
 #import "HomeVC.h"
+#import "WebConnector.h"
 
 @interface AppDelegate ()
 
@@ -154,21 +155,35 @@
         }
     }
     
-    if (application.applicationState == UIApplicationStateInactive) {
-        NSLog(@"*******************Inactive");
-        completionHandler(UIBackgroundFetchResultNewData);
-        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    }
-    else if (application.applicationState == UIApplicationStateBackground) {
-        NSLog(@"*******************Backround");
-        completionHandler(UIBackgroundFetchResultNewData);
-        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    }
-    else {
-        NSLog(@"*******************Activie");
-        completionHandler(UIBackgroundFetchResultNewData);
-        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    }
+    WebConnector *webConnector = [[WebConnector alloc] init];
+    
+//    if (application.applicationState == UIApplicationStateInactive) {
+//        NSLog(@"*******************Inactive");
+//        completionHandler(UIBackgroundFetchResultNewData);
+//        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+//        [webConnector resetBadgeCount:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+//            if ([result[@"status"] isEqualToString:@"success"]) {
+//            }
+//        } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        }];
+//    }
+//    else if (application.applicationState == UIApplicationStateBackground) {
+//        NSLog(@"*******************Backround");
+//        completionHandler(UIBackgroundFetchResultNewData);
+////        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+//    }
+//    else {
+//        NSLog(@"*******************Activie");
+//        completionHandler(UIBackgroundFetchResultNewData);
+//        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+//        [webConnector resetBadgeCount:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+//            if ([result[@"status"] isEqualToString:@"success"]) {
+//            }
+//        } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        }];
+//    }
 }
 
 @end

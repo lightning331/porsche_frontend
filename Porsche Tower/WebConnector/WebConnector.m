@@ -23,6 +23,15 @@
     return self;
 }
 
+- (void)resetBadgeCount:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    NSDictionary *owner = [prefs objectForKey:@"CurrentUser"][0];
+    [parameters setObject:owner[@"index"] forKey:@"owner_id"];
+    
+    [httpManager POST:@"reset_badge_count" parameters:parameters success:completed failure:errorBlock];
+}
+
 - (void)getAutoField:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
