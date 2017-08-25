@@ -208,7 +208,7 @@
                 [self.view endEditing:YES];
                 
             } else {
-                NSString *url = [NSString stringWithFormat:@"%@index.php/Login/LoginProcess?email=%@&password=%@", BASE_URL, email, password];
+                NSString *url = [NSString stringWithFormat:@"%@Auth/LoginProcess?email=%@&password=%@", BASE_URL, email, password];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
                 
                 self.txtEmail.text = @"";

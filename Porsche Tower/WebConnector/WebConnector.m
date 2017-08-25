@@ -13,7 +13,7 @@
 
 - (id)init {
     if (self = [super init]) {        
-        baseUrl = [NSString stringWithFormat:@"%@index.php/mobile/Mobile", BASE_URL];
+        baseUrl = [NSString stringWithFormat:@"%@mobile/Mobile", BASE_URL];
         
         NSURL *url = [NSURL URLWithString:baseUrl];
         
@@ -21,6 +21,16 @@
     }
     
     return self;
+}
+
+- (void)resetPassword:(NSString*)password completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    NSDictionary *owner = [prefs objectForKey:@"CurrentUser"][0];
+    [parameters setObject:owner[@"index"] forKey:@"owner_id"];
+    [parameters setObject:password forKey:@"password"];
+    
+    [httpManager POST:@"reset_password" parameters:parameters success:completed failure:errorBlock];
 }
 
 - (void)resetBadgeCount:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock {
@@ -36,7 +46,7 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     NSDictionary *owner = [prefs objectForKey:@"CurrentUser"][0];
-    [parameters setObject:owner[@"id"] forKey:@"owner_id"];
+    [parameters setObject:owner[@"index"] forKey:@"owner_id"];
     
     [httpManager POST:@"get_auto_field" parameters:parameters success:completed failure:errorBlock];
 }

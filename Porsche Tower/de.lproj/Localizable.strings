@@ -89,6 +89,11 @@
 
 "msg_call_not_available" = 					"Ruf ist nicht verfügbar";
 
+//- SettingsVC
+"msg_password_mismatch" =                   "Neues Passwort und Bestätigungskennwort stimmen nicht überein.";
+"msg_password_success" =                    "Ihr Passwort wurde erfolgreich aktualisiert.";
+"msg_password_failure" =                    "Passwort ändern fehlgeschlagen. Bitte versuchen Sie es später noch einmal.";
+
 
 //++++++++Global.h+++++++++++++++
 
@@ -149,6 +154,8 @@
 "outlet_login" =                            "ANMELDUNG";
 "outlet_email" =                            "Email";
 "outlet_password" =                         "Passwort";
+"outlet_new_password" =                     "Neues Kennwort";
+"outlet_confirm_password" =                 "Bestätige das Passwort";
 "outlet_signin" =                           "ANMELDEN";
 "outlet_use_touchid" =                      "USE TOUCH ID";
 "outlet_cancel" =                           "Stornieren";

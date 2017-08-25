@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "Global.h"
 #import "LoginVC.h"
+#import "WebConnector.h"
+#import <MBProgressHUD.h>
 
 @interface SettingsVC ()
 {
@@ -203,6 +205,57 @@
 }
 
 - (IBAction)onResetPass:(id)sender {
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: NSLocalizedString(@"outlet_reset_pass", nil)
+                                                                              message: @""
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = NSLocalizedString(@"outlet_new_password", nil);
+        textField.textColor = [UIColor blueColor];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.secureTextEntry = YES;
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = NSLocalizedString(@"outlet_confirm_password", nil);
+        textField.textColor = [UIColor blueColor];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.secureTextEntry = YES;
+    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSArray * textfields = alertController.textFields;
+        UITextField *tf_new_password = textfields[0];
+        UITextField *tf_confirm_password = textfields[1];
+        NSString *newpass = tf_new_password.text;
+        NSString *cfmpass = tf_confirm_password.text;
+        
+        if ([newpass isEqualToString:cfmpass]) {  //password match
+            // call reset api
+            WebConnector *webConnector = [[WebConnector alloc] init];
+            [webConnector resetPassword:newpass completionHandler: ^(AFHTTPRequestOperation *operation, id responseObject) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+                NSMutableDictionary *result = (NSMutableDictionary *)responseObject;
+                if ([result[@"status"] isEqualToString:@"success"]) {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_password_success",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        [alertView show];
+                }
+                else {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_password_failure",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alertView show];
+                }
+            } errorHandler:^(AFHTTPRequestOperation *operation, NSError *error) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                // Error message
+            }];
+        }
+        else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"msg_password_mismatch",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        }
+        
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (IBAction)onTouchID:(id)sender {

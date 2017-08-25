@@ -36,5 +36,6 @@ typedef void (^ErrorBlock)(AFHTTPRequestOperation *operation, NSError *error);
 - (void)getAutoField:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)checkCarAvailability:(NSString*)car_index completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 - (void)resetBadgeCount:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
+- (void)resetPassword:(NSString*)password completionHandler:(CompleteBlock)completed errorHandler:(ErrorBlock)errorBlock;
 
 @end

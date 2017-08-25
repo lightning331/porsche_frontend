@@ -91,6 +91,11 @@
 
 "msg_call_not_available" = 					"Call non è disponibile";
 
+//- SettingsVC
+"msg_password_mismatch" =                   "La nuova password e la password di conferma non corrispondono.";
+"msg_password_success" =                    "La tua password è stata aggiornata con successo.";
+"msg_password_failure" =                    "La modifica della password è fallita. Per favore riprova più tardi.";
+
 
 //++++++++Global.h+++++++++++++++
 
@@ -152,6 +157,8 @@
 "outlet_login" =                            "ACCESSO";
 "outlet_email" =                            "E-mail";
 "outlet_password" =                         "Parola d'ordine";
+"outlet_new_password" =                     "nuova password";
+"outlet_confirm_password" =                 "conferma password";
 "outlet_signin" =                           "REGISTRATI";
 "outlet_use_touchid" =                      "USARE ID TOUCH";
 "outlet_cancel" =                           "Annulla";
