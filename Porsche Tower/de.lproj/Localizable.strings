@@ -62,6 +62,7 @@
 "msg_sure_to_cancel_elevator" = 			"Sind Sie sicher, dass Sie die diesen Aufzug abbrechen?";
 "title_car_ready_pickup" = 					"Auto bereit für abholen";
 "msg_car_delivered_ready_to_pickup" = 		"Ihr Auto wurde Bordsteinkante geliefert und ist bereit, abholen zu sein.";
+"msg_car_ridedown_success" =                "Dein Auto kommt an. Bitte halten Sie immer die Arme im Fahrzeug.";
 
 //- ScheduledPickups
 

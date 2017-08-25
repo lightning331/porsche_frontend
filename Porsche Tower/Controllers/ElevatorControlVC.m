@@ -375,7 +375,12 @@
         }
     }
     else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_ready_pickup", nil) message:NSLocalizedString(@"msg_car_delivered_ready_to_pickup", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        NSString *msg_alert = NSLocalizedString(@"msg_car_ridedown_success", nil);
+        if ([valet isEqualToString:@"Valet"]) {
+            msg_alert = NSLocalizedString(@"msg_car_delivered_ready_to_pickup", nil);
+        }
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_car_ready_pickup", nil) message:msg_alert delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         
         [self successElevator];

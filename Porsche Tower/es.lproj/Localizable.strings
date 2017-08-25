@@ -62,6 +62,7 @@
 "msg_sure_to_cancel_elevator" = 			"¿Estás seguro de que desea cancelar la presente Ascensor?";
 "title_car_ready_pickup" = 					"Listo coche para Pick-up";
 "msg_car_delivered_ready_to_pickup" = 		"Tu coche ha sido entregado en la acera y está lista para ser recogida.";
+"msg_car_ridedown_success" =                "Su coche está llegando. Mantenga los brazos dentro del vehículo en todo momento.";
 
 //- ScheduledPickups
 

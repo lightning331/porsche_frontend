@@ -64,6 +64,7 @@
 "msg_sure_to_cancel_elevator" = 			"Sei sicuro di voler annullare il questo ascensore?";
 "title_car_ready_pickup" = 					"Pronto Car per pick-up";
 "msg_car_delivered_ready_to_pickup" = 		"La tua auto è stata consegnata Curbside ed è pronto per essere pick-up.";
+"msg_car_ridedown_success" =                "La tua auto sta arrivando. Tieni sempre le braccia all'interno del veicolo in ogni momento.";
 
 //- ScheduledPickups
 
