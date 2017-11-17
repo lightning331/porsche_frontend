@@ -218,15 +218,33 @@
     }];
 }
 
+- (void)openImageMenuWithURL:(NSString*)pdf_url {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
+    imageVC.view.backgroundColor = [UIColor clearColor];
+    imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    imageVC.homeVC = self.homeVC;
+    imageVC.pdf_url = pdf_url;
+    
+    self.definesPresentationContext = YES;
+    [self presentViewController:imageVC animated:NO completion:^{
+        return;
+    }];
+}
+
 - (void)openImageMenu:(NSInteger)index {
+    NSString *pdf_url = [menuArray[index] objectForKey:@"file"];
+    
     if (index == 0) {
         // View Spa Menu
+    
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
         imageVC.view.backgroundColor = [UIColor clearColor];
         imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         imageVC.homeVC = self.homeVC;
-        imageVC.pdf_url = @"http://pdtowerapp.com/uploads/Spa_Menu.pdf";
+        imageVC.pdf_url = pdf_url;
+//        imageVC.pdf_url = [NSString stringWithFormat:@"%@/uploads/Spa_Menu.pdf", BASE_URL];
         
         self.definesPresentationContext = YES;
         [self presentViewController:imageVC animated:NO completion:^{
@@ -299,6 +317,10 @@
     diningVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     diningVC.homeVC = self.homeVC;
     
+    NSArray *pdf_name_array = [NSArray arrayWithObjects:@"Breakfast_Restaurant_Menu.pdf", @"Lunch_Restaurant_Menu.pdf", @"Dinner_Restaurant_Menu.pdf", @"Childrens_Restaurant_Menu.pdf", @"Pool_and_Bar_Menu.pdf", nil];
+    
+    NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/%@", BASE_URL, pdf_name_array[index]];
+    diningVC.menu_pdf_url = pdf_url;
     diningVC.scheduleData = [scheduleData mutableCopy];
     
     self.definesPresentationContext = YES;
@@ -586,6 +608,8 @@
         }
         else if (indexPath.row == 1) {
             self.type = @"gym_classes";
+            NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Fitness_Class_Schedule.pdf", BASE_URL];
+            [self openImageMenuWithURL:pdf_url];
         }
 //        else if (indexPath.row == 2) {
 //            self.type = @"gym_equipment";
@@ -636,7 +660,10 @@
     }
     // Activities -> Theater -> Selecting ...
     else if ([self.type isEqualToString:@"theater"]) {
-        
+        if (indexPath.row == 1) {
+            NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Movie_Schedule01.pdf", BASE_URL];
+            [self openImageMenuWithURL:pdf_url];
+        }
     }
     // Dining -> In House Dining/Local Restaurants -> Selecting ...
     else if ([self.type isEqualToString:@"restaurants_in_house"] ||

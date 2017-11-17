@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fdG-vJ-xIm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fdG-vJ-xIm">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,6 +13,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
         <array key="PorscheDesignFont.otf">
             <string>PorscheDesignFont</string>
         </array>
@@ -60,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAR ELEVATOR" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tt5-Ac-37D">
-                                <rect key="frame" x="174.5" y="45" width="220" height="17.5"/>
+                                <rect key="frame" x="223" y="45" width="123.5" height="20"/>
                                 <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -77,8 +80,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="yFv-HE-Biu"/>
                                 </connections>
                             </tableView>
-                            <pickerView contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuO-BA-rFd">
-                                <rect key="frame" x="0.0" y="52" width="568" height="216"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuO-BA-rFd">
+                                <rect key="frame" x="0.0" y="79" width="568" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="CBn-Wf-ttg"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UBt-I4-S6L"/>
@@ -680,7 +683,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:59PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InJ-bo-UH9">
-                                <rect key="frame" x="495" y="26" width="62" height="10"/>
+                                <rect key="frame" x="516.5" y="25" width="40.5" height="12"/>
                                 <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -731,7 +734,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIy-An-XN2">
-                                                <rect key="frame" x="331" y="61.5" width="64" height="6"/>
+                                                <rect key="frame" x="346.5" y="63.5" width="31.5" height="7"/>
                                                 <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="6"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -749,7 +752,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:59" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdv-Ob-MTd">
-                                                <rect key="frame" x="322.5" y="40.5" width="79" height="21"/>
+                                                <rect key="frame" x="335.5" y="39" width="53" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="21"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1560,7 +1563,7 @@
                                 <rect key="frame" x="20" y="69" width="528" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLc-6t-hFQ">
-                                        <rect key="frame" x="188.5" y="4.5" width="151.5" height="17.5"/>
+                                        <rect key="frame" x="220" y="3.5" width="89" height="20"/>
                                         <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2476,13 +2479,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="568" height="82"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PORSCHE DESIGN" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZj-LD-trL">
-                                                <rect key="frame" x="26" y="10" width="211.5" height="14"/>
+                                                <rect key="frame" x="26" y="10" width="123" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOWER MIAMI" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnB-Ka-UrH">
-                                                <rect key="frame" x="26" y="26" width="152.5" height="14"/>
+                                                <rect key="frame" x="26" y="28.5" width="94.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2589,7 +2592,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P'0001" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8T-av-Xar">
-                                                <rect key="frame" x="26" y="40" width="148.5" height="30"/>
+                                                <rect key="frame" x="26" y="45" width="94.5" height="35"/>
                                                 <fontDescription key="fontDescription" name="PorscheDesignFont" family="Porsche Design Font" pointSize="30"/>
                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2686,7 +2689,6 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="fdG-vJ-xIm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5jG-OZ-hM6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

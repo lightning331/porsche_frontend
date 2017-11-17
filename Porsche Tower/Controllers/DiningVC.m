@@ -13,6 +13,7 @@
 #import <MBProgressHUD.h>
 #import "WebConnector.h"
 #import "CalendarVC.h"
+#import "ImageMenuVC.h"
 
 @interface DiningVC ()
 
@@ -142,20 +143,36 @@
 }
 
 - (IBAction)onBtnViewMenu:(id)sender {
-    MenuVC *menuVC = (MenuVC *)self.presentationController.presentingViewController;
-    [self dismissViewControllerAnimated:NO completion:^{
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        DiningMenuVC *diningMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"DiningMenuVC"];
-        diningMenuVC.view.backgroundColor = [UIColor clearColor];
-        diningMenuVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        diningMenuVC.homeVC = self.homeVC;
-        
-        diningMenuVC.scheduleData = [self.scheduleData mutableCopy];
-        
-        menuVC.definesPresentationContext = YES;
-        [menuVC presentViewController:diningMenuVC animated:NO completion:^{
-            return;
-        }];
+//    MenuVC *menuVC = (MenuVC *)self.presentationController.presentingViewController;
+//    [self dismissViewControllerAnimated:NO completion:^{
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        DiningMenuVC *diningMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"DiningMenuVC"];
+//        diningMenuVC.view.backgroundColor = [UIColor clearColor];
+//        diningMenuVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//        diningMenuVC.homeVC = self.homeVC;
+//
+//        diningMenuVC.scheduleData = [self.scheduleData mutableCopy];
+//
+//        menuVC.definesPresentationContext = YES;
+//        [menuVC presentViewController:diningMenuVC animated:NO completion:^{
+//            return;
+//        }];
+//    }];
+    
+    [self openImageMenuWithURL:self.menu_pdf_url];
+}
+
+- (void)openImageMenuWithURL:(NSString*)pdf_url {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
+    imageVC.view.backgroundColor = [UIColor clearColor];
+    imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    imageVC.homeVC = self.homeVC;
+    imageVC.pdf_url = pdf_url;
+    
+    self.definesPresentationContext = YES;
+    [self presentViewController:imageVC animated:NO completion:^{
+        return;
     }];
 }
 

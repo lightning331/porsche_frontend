@@ -62,6 +62,7 @@
 
 "title_elevator_activated" = 				"Car Elevator attivato";
 "msg_sure_to_cancel_elevator" = 			"Sei sicuro di voler annullare il questo ascensore?";
+"msg_call_car_concierge" =                  "Chiamare Car Concierge per annullare la richiesta.\n";
 "title_car_ready_pickup" = 					"Pronto Car per pick-up";
 "msg_car_delivered_ready_to_pickup" = 		"La tua auto è stata consegnata Curbside ed è pronto per essere pick-up.";
 "msg_car_ridedown_success" =                "La tua auto sta arrivando. Tieni sempre le braccia all'interno del veicolo in ogni momento.";
@@ -129,10 +130,10 @@
 "title_salon_spa" = 						"Spa Salon";
 "title_fitness" = 							"Fitness";
 "title_request_room" = 						"Richiesta Camera";
-"title_golf_sim" = 							"Golf Sim";
+"title_golf_sim" = 							"Sim di sport";
 "title_racing_sim" = 						"Racing Sim";
 "title_theater" = 							"Teatro";
-"title_community_room" = 					"Sala della Comunità";
+"title_community_room" = 					"Camera Club";
 "title_in_house_dining" = 					"Ristorante";
 "title_request_a_call" = 					"Richiesta di una chiamata";
 "title_warranties" = 						"Garanzie";

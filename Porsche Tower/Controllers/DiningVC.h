@@ -14,6 +14,7 @@
 
 @property HomeVC *homeVC;
 @property NSMutableDictionary *scheduleData;
+@property NSString *menu_pdf_url;
 
 @property (weak, nonatomic) IBOutlet UIView *viewContent;
 @property (weak, nonatomic) IBOutlet UITextView *txtDescription;

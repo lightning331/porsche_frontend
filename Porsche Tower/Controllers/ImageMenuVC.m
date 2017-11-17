@@ -33,14 +33,20 @@
     if ([[UIDevice currentDevice].model containsString:@"iPad"]) {
     }
     
-    NSURL *targetURL = [NSURL URLWithString:@"http://pdtowerapp.com/uploads/Spa_Menu.pdf"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    NSURL *targetURL = [NSURL URLWithString:@"http://pdtowerapp.com/uploads/Spa_Menu.pdf"];
+    NSURL *targetURL = [NSURL URLWithString:self.pdf_url];
+    NSLog(@"result of getmenulist:%@", self.pdf_url);
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     [self.wbPDF loadRequest:request];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     
     self.viewContent.layer.borderColor = [UIColor redColor].CGColor;
     self.viewContent.layer.borderWidth = 2;

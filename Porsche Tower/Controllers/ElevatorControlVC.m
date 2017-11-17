@@ -164,9 +164,32 @@
         [self sendRequest];
     }
     else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_elevator_activated", nil) message:NSLocalizedString(@"msg_sure_to_cancel_elevator", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-        alertView.tag = 1001;
-        [alertView show];
+        //car concierge phone number
+        NSString *strPhone = @"(786) 805-6961";
+        
+        NSString *alertMessage = [NSString stringWithFormat:@"%@%@", NSLocalizedString(@"msg_call_car_concierge", nil), strPhone];
+        
+        UIAlertController * alertController = [UIAlertController alertControllerWithTitle: NSLocalizedString(@"title_elevator_activated", nil) message: alertMessage preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Call" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            // Call car concierge
+            NSString *strPhone = @"786-805-6961";
+            NSString *teleStr = [NSString stringWithFormat:@"telprompt:%@", strPhone];
+            NSURL *phoneURL = [NSURL URLWithString:teleStr];
+            if ([[UIApplication sharedApplication] canOpenURL:phoneURL]) {
+                [[UIApplication sharedApplication] openURL:phoneURL];
+            }
+            else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:NSLocalizedString(@"msg_call_not_available",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }
+        }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title_elevator_activated", nil) message:NSLocalizedString(@"msg_sure_to_cancel_elevator", nil) delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+            alertView.tag = 1001;
+            [alertView show];
+        }]];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 

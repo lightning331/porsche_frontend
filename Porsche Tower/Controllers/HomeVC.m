@@ -17,6 +17,7 @@
 #import "WeatherVC.h"
 #import "SelectTimeVC.h"
 #import "ScheduledPickupsVC.h"
+#import "ImageMenuVC.h"
 #import <MBProgressHUD.h>
 #import "WebConnector.h"
 #import "Utility.h"
@@ -391,6 +392,20 @@
 
 - (void)setSettingButtonHidden: (BOOL)hidden{
     [self.btnSettings setHidden:hidden];
+}
+
+- (void)openImageMenu:(NSString*)pdf_url {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
+    imageVC.view.backgroundColor = [UIColor clearColor];
+    imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    imageVC.homeVC = self;
+    imageVC.pdf_url = pdf_url;
+    
+    self.definesPresentationContext = YES;
+    [self presentViewController:imageVC animated:NO completion:^{
+        return;
+    }];
 }
 
 #pragma mark - UI Actions
@@ -921,16 +936,22 @@
             self.lblSubTitle.text = [subMenuArray objectAtIndex:index];
             
             if (index == 0) {
-                [self openMenu:@"golf_sim"];
+//                [self openMenu:@"golf_sim"];
+                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Sports_Sim.pdf", BASE_URL];
+                [self openImageMenu:pdf_url];
             }
             else if (index == 1) {
-                [self openMenu:@"racing_sim"];
+//                [self openMenu:@"racing_sim"];
+                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Racing_Sim.pdf", BASE_URL];
+                [self openImageMenu:pdf_url];
             }
             else if (index == 2) {
                 [self openMenu:@"theater"];
             }
             else if (index == 3) {
-                [self openMenu:@"community_room"];
+//                [self openMenu:@"community_room"];
+                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Club_Room01.pdf", BASE_URL];
+                [self openImageMenu:pdf_url];
             }
         }
         else if (status == 6) { // Dining
@@ -980,8 +1001,13 @@
         }
         else if (status == 8) { // Information Board
             self.lblSubTitle.text = [subMenuArray objectAtIndex:index];
-            
-            if (index == 1) {
+            //directory
+            if (index == 0) {
+                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Directory.pdf", BASE_URL];
+                [self openImageMenu:pdf_url];
+            }
+            //personal notifications
+            else if (index == 1) {
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 PersonalNotificationsVC *personalNotificationsVC = [storyboard instantiateViewControllerWithIdentifier:@"PersonalNotificationsVC"];
                 personalNotificationsVC.view.backgroundColor = [UIColor clearColor];
