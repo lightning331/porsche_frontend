@@ -408,6 +408,10 @@
     else if ([self.type isEqualToString:@"theater"]) {
         cell.textLabel.text = [menuArray objectAtIndex:indexPath.row];
     }
+    // Activities -> Theater -> Movie Schedule
+    else if ([self.type isEqualToString:@"movie_schedule"]) {
+        cell.textLabel.text = [menuArray objectAtIndex:indexPath.row][@"service"];
+    }
     // Dining -> In House Dining/Local Restaurants
     else if ([self.type isEqualToString:@"restaurants_in_house"] ||
              [self.type isEqualToString:@"local_restaurants"]) {
@@ -608,8 +612,8 @@
         }
         else if (indexPath.row == 1) {
             self.type = @"gym_classes";
-            NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Fitness_Class_Schedule.pdf", BASE_URL];
-            [self openImageMenuWithURL:pdf_url];
+//            NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Fitness_Class_Schedule.pdf", BASE_URL];
+//            [self openImageMenuWithURL:pdf_url];
         }
 //        else if (indexPath.row == 2) {
 //            self.type = @"gym_equipment";
@@ -660,10 +664,14 @@
     }
     // Activities -> Theater -> Selecting ...
     else if ([self.type isEqualToString:@"theater"]) {
+        self.homeVC.lblSubTitle.text = [menuArray objectAtIndex:indexPath.row];
+        // Movie Schedule
         if (indexPath.row == 1) {
-            NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Movie_Schedule01.pdf", BASE_URL];
-            [self openImageMenuWithURL:pdf_url];
+//            NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Movie_Schedule01.pdf", BASE_URL];
+//            [self openImageMenuWithURL:pdf_url];
+            self.type = @"movie_schedule";
         }
+        [self getMenuList];
     }
     // Dining -> In House Dining/Local Restaurants -> Selecting ...
     else if ([self.type isEqualToString:@"restaurants_in_house"] ||

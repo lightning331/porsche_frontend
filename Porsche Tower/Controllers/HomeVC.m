@@ -936,22 +936,22 @@
             self.lblSubTitle.text = [subMenuArray objectAtIndex:index];
             
             if (index == 0) {
-//                [self openMenu:@"golf_sim"];
-                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Sports_Sim.pdf", BASE_URL];
-                [self openImageMenu:pdf_url];
+                [self openMenu:@"golf_sim"];
+//                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Sports_Sim.pdf", BASE_URL];
+//                [self openImageMenu:pdf_url];
             }
             else if (index == 1) {
-//                [self openMenu:@"racing_sim"];
-                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Racing_Sim.pdf", BASE_URL];
-                [self openImageMenu:pdf_url];
+                [self openMenu:@"racing_sim"];
+//                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Racing_Sim.pdf", BASE_URL];
+//                [self openImageMenu:pdf_url];
             }
             else if (index == 2) {
                 [self openMenu:@"theater"];
             }
             else if (index == 3) {
-//                [self openMenu:@"community_room"];
-                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Club_Room01.pdf", BASE_URL];
-                [self openImageMenu:pdf_url];
+                [self openMenu:@"community_room"];
+//                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Club_Room01.pdf", BASE_URL];
+//                [self openImageMenu:pdf_url];
             }
         }
         else if (status == 6) { // Dining
