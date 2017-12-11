@@ -1003,8 +1003,9 @@
             self.lblSubTitle.text = [subMenuArray objectAtIndex:index];
             //directory
             if (index == 0) {
-                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Directory.pdf", BASE_URL];
-                [self openImageMenu:pdf_url];
+                [self openMenu:@"directory"];
+//                NSString *pdf_url = [NSString stringWithFormat:@"%@uploads/Directory.pdf", BASE_URL];
+//                [self openImageMenu:pdf_url];
             }
             //personal notifications
             else if (index == 1) {

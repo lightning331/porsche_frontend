@@ -270,6 +270,20 @@
             }];
         }];
     }
+    else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ImageMenuVC *imageVC = [storyboard instantiateViewControllerWithIdentifier:@"ImageMenuVC"];
+        imageVC.view.backgroundColor = [UIColor clearColor];
+        imageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        imageVC.homeVC = self.homeVC;
+        imageVC.pdf_url = pdf_url;
+        //        imageVC.pdf_url = [NSString stringWithFormat:@"%@/uploads/Spa_Menu.pdf", BASE_URL];
+        
+        self.definesPresentationContext = YES;
+        [self presentViewController:imageVC animated:NO completion:^{
+            return;
+        }];
+    }
     
 }
 
@@ -436,6 +450,11 @@
     else if ([self.type isEqualToString:@"document"]) {
         cell.textLabel.text = [menuArray objectAtIndex:indexPath.row][@"name"];
     }
+    // InfoBoard -> Directory
+    else if ([self.type isEqualToString:@"directory"]) {
+        cell.textLabel.text = [menuArray objectAtIndex:indexPath.row][@"service"];
+    }
+
     return cell;
 }
 
@@ -622,8 +641,7 @@
         [self getMenuList];
     }
     // Wellness -> Fitness -> Personal Trainers/Classes -> Selecting ...
-    else if ([self.type isEqualToString:@"gym_classes"] ||
-             [self.type isEqualToString:@"gym_trainers"]) {
+    else if ([self.type isEqualToString:@"gym_trainers"]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         GymServiceVC *gymServiceVC = [storyboard instantiateViewControllerWithIdentifier:@"GymServiceVC"];
         gymServiceVC.view.backgroundColor = [UIColor clearColor];
@@ -651,6 +669,10 @@
             return;
         }];
     }
+    else if ([self.type isEqualToString:@"gym_classes"]) {
+        NSString *pdf_url = [menuArray[indexPath.row] objectForKey:@"file"];
+        [self openImageMenuWithURL:pdf_url];
+    }
     // Wellness -> Massage/Barber -> Selecting ...
     else if ([self.type isEqualToString:@"massage"] ||
              [self.type isEqualToString:@"barber"]) {
@@ -660,7 +682,9 @@
     else if ([self.type isEqualToString:@"golf_sim"] ||
              [self.type isEqualToString:@"racing_sim"] ||
              [self.type isEqualToString:@"community_room"]) {
-        [self openDescriptionView:indexPath.row hasCall:NO];
+//        [self openDescriptionView:indexPath.row hasCall:NO];
+        NSString *pdf_url = [menuArray[indexPath.row] objectForKey:@"file"];
+        [self openImageMenuWithURL:pdf_url];
     }
     // Activities -> Theater -> Selecting ...
     else if ([self.type isEqualToString:@"theater"]) {
@@ -672,6 +696,10 @@
             self.type = @"movie_schedule";
         }
         [self getMenuList];
+    }
+    else if ([self.type isEqualToString:@"movie_schedule"]) {
+        NSString *pdf_url = [menuArray[indexPath.row] objectForKey:@"file"];
+        [self openImageMenuWithURL:pdf_url];
     }
     // Dining -> In House Dining/Local Restaurants -> Selecting ...
     else if ([self.type isEqualToString:@"restaurants_in_house"] ||
@@ -722,6 +750,11 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[menuArray objectAtIndex:indexPath.row][@"file"]]];
             self.tableView.hidden = NO;
         }
+    }
+    // InfoBoard -> Directory -> Selecting ...
+    else if ([self.type isEqualToString:@"directory"]) {
+        NSString *pdf_url = [menuArray[indexPath.row] objectForKey:@"file"];
+        [self openImageMenuWithURL:pdf_url];
     }
 }
 
