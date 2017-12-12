@@ -71,9 +71,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if ([ENVIRONMENT isEqualToString:DEV_MODE]) {
-        [self loginProcess:@"foxymen9@gmail.com" password:@"test"];
-    }
+#ifdef DEV_MODE
+    [self loginProcess:@"foxymen9@gmail.com" password:@"test"];
+#endif
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([[prefs objectForKey:@"UseTouchID"] boolValue]) {
         self.viewContent.hidden = YES;

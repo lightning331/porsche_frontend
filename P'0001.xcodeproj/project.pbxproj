@@ -567,6 +567,7 @@
 					83E736131AFA84F500B59A52 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 9FX43XXU4W;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -866,15 +867,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = "P'0001.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Benjamin Haas (CH27DB697K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benjamin Haas (CH27DB697K)";
-				DEVELOPMENT_TEAM = 9FX43XXU4W;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "094b5b14-db3f-410f-9213-f8864a5443c2";
-				PROVISIONING_PROFILE_SPECIFIER = "Porsche Development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -887,15 +889,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = "P'0001.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: UNLIMITED ELECTRICAL CONTRACTORS CORP (9FX43XXU4W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: UNLIMITED ELECTRICAL CONTRACTORS CORP (9FX43XXU4W)";
-				DEVELOPMENT_TEAM = 9FX43XXU4W;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "f355e84a-4467-4364-84af-2675fbedf3eb";
-				PROVISIONING_PROFILE_SPECIFIER = "Porsche Distribution";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

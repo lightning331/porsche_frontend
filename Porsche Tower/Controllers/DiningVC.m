@@ -143,21 +143,23 @@
 }
 
 - (IBAction)onBtnViewMenu:(id)sender {
-    MenuVC *menuVC = (MenuVC *)self.presentationController.presentingViewController;
-    [self dismissViewControllerAnimated:NO completion:^{
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        DiningMenuVC *diningMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"DiningMenuVC"];
-        diningMenuVC.view.backgroundColor = [UIColor clearColor];
-        diningMenuVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        diningMenuVC.homeVC = self.homeVC;
-
-        diningMenuVC.scheduleData = [self.scheduleData mutableCopy];
-
-        menuVC.definesPresentationContext = YES;
-        [menuVC presentViewController:diningMenuVC animated:NO completion:^{
-            return;
-        }];
-    }];
+//    MenuVC *menuVC = (MenuVC *)self.presentationController.presentingViewController;
+//    [self dismissViewControllerAnimated:NO completion:^{
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        DiningMenuVC *diningMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"DiningMenuVC"];
+//        diningMenuVC.view.backgroundColor = [UIColor clearColor];
+//        diningMenuVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//        diningMenuVC.homeVC = self.homeVC;
+//
+//        diningMenuVC.scheduleData = [self.scheduleData mutableCopy];
+//
+//        menuVC.definesPresentationContext = YES;
+//        [menuVC presentViewController:diningMenuVC animated:NO completion:^{
+//            return;
+//        }];
+//    }];
+    
+    // Need to show menuVC 
     
 //    [self openImageMenuWithURL:self.menu_pdf_url];
 }
