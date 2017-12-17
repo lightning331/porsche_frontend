@@ -213,8 +213,8 @@
                 NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                 [userDefaults setObject:parkingSpaceID forKey:@"parkingSpaceID"];
                 
-//                NSString *location = result[@"location"];
-                NSString *location = @"1";
+                NSString *location = result[@"location"];
+//                NSString *location = @"1";
                 if ([location isEqualToString:@"1"]) {
                     // the car is available
                     if ([carInfoArray[indexPath.row][@"status"] isEqualToString:@"out"]) {

@@ -158,10 +158,8 @@
 //            return;
 //        }];
 //    }];
-    
-    // Need to show menuVC 
-    
-//    [self openImageMenuWithURL:self.menu_pdf_url];
+    NSString *pdf_url = [self.scheduleData objectForKey:@"file"];
+    [self openImageMenuWithURL:pdf_url];
 }
 
 - (void)openImageMenuWithURL:(NSString*)pdf_url {
