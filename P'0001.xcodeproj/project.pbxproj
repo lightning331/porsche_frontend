@@ -877,6 +877,7 @@
 				PRODUCT_NAME = "P'0001";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SERVER_URL = "http://192.168.0.82:8012/porsche/";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -899,6 +900,7 @@
 				PRODUCT_NAME = "P'0001";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SERVER_URL = "http://pdtowerapp.com/";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

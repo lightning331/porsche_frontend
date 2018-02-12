@@ -71,6 +71,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"server url:%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"SERVER_URL"]);
 #ifdef DEV_MODE
     [self loginProcess:@"foxymen9@gmail.com" password:@"test"];
 #endif
