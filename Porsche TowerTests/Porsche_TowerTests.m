@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "P'0001-Bridging-Header.h"
 
 @interface Porsche_TowerTests : XCTestCase
 

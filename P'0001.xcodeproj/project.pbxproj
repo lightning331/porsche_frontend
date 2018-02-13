@@ -72,6 +72,7 @@
 		05B08DC21D4FCC3F009C480E /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
 		05B08DC31D4FCC3F009C480E /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		05F8B7F71D93DDBD000E5DE9 /* P'0001.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "P'0001.entitlements"; sourceTree = "<group>"; };
+		15DB08DA20332912000709A4 /* P'0001-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P'0001-Bridging-Header.h"; sourceTree = "<group>"; };
 		3377A8F042258775D7271217 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		545BDEDB77B8692721BB0C78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		650B56B11D488D17006779AD /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
@@ -477,6 +478,7 @@
 			children = (
 				83E736331AFA84F500B59A52 /* Porsche_TowerTests.m */,
 				83E736311AFA84F500B59A52 /* Supporting Files */,
+				15DB08DA20332912000709A4 /* P'0001-Bridging-Header.h */,
 			);
 			path = "Porsche TowerTests";
 			sourceTree = "<group>";
@@ -561,12 +563,14 @@
 		83E7360C1AFA84F500B59A52 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Daniel Liu";
 				TargetAttributes = {
 					83E736131AFA84F500B59A52 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 9FX43XXU4W;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -865,19 +869,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "P'0001.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Benjamin Haas (CH27DB697K)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: UNLIMITED ELECTRICAL CONTRACTORS CORP (9FX43XXU4W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9FX43XXU4W;
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SERVER_URL = "http://192.168.0.82:8012/porsche/";
+				PROVISIONING_PROFILE = "094b5b14-db3f-410f-9213-f8864a5443c2";
+				PROVISIONING_PROFILE_SPECIFIER = "Porsche Development";
+				SERVER_URL = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Porsche TowerTests/P'0001-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -888,19 +896,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "P'0001.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: UNLIMITED ELECTRICAL CONTRACTORS CORP (9FX43XXU4W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9FX43XXU4W;
 				INFOPLIST_FILE = "Porsche Tower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unlimitec.Porsche-Tower";
 				PRODUCT_NAME = "P'0001";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SERVER_URL = "http://pdtowerapp.com/";
+				PROVISIONING_PROFILE = "f355e84a-4467-4364-84af-2675fbedf3eb";
+				PROVISIONING_PROFILE_SPECIFIER = "Porsche Distribution";
+				SERVER_URL = "-DRELEASE_VERSION";
+				SWIFT_OBJC_BRIDGING_HEADER = "Porsche TowerTests/P'0001-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

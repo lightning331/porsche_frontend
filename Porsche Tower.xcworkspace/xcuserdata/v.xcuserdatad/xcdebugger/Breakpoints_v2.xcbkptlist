@@ -42,12 +42,12 @@
                   moduleName = "P&apos;0001"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/WORK/Work/daniel/benjamin/Porsche/PDTower/Porsche%20Tower/External/DLCustomScrollView/DLCustomScrollView.m"
-                  timestampString = "540151796.964981"
+                  timestampString = "540229046.460852"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
                   endingLineNumber = "82"
-                  offsetFromSymbolStart = "34">
+                  offsetFromSymbolStart = "72">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -57,12 +57,12 @@
                   moduleName = "P&apos;0001"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/WORK/Work/daniel/benjamin/Porsche/PDTower/Porsche%20Tower/External/DLCustomScrollView/DLCustomScrollView.m"
-                  timestampString = "540151796.967114"
+                  timestampString = "540229046.462734"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
                   endingLineNumber = "82"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -112,22 +112,6 @@
             startingLineNumber = "178"
             endingLineNumber = "178"
             landmarkName = "-scrollViewDidScroll:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Porsche Tower/Controllers/LoginVC.m"
-            timestampString = "540151796.604502"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

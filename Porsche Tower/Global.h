@@ -12,8 +12,14 @@
 //Porsh Design Font Name
 #define NAME_OF_MAINFONT @"PorscheDesignFont"
 
-//#define DEV_MODE @"development"
-#define PROD_MODE @"production"
+#define DEV_MODE @"development"
+//#define PROD_MODE @"production"
+
+#ifdef RELEASE_VERSION
+#define SERVER_URL @"http://pdtowerapp.com/"
+#else
+#define SERVER_URL @"http://192.168.0.82:8012/porsche/"
+#endif
 
 #ifdef DEV_MODE
 #define BASE_URL         @"http://192.168.0.82:8012/porsche/"
